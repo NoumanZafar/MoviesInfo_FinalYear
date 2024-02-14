@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Features = () => {
+const Trends = () => {
   return (
     <div>
-      Features
+      Trends
     </div>
   )
 }
 
-export default Features
+export default Trends

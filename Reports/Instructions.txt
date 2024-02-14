@@ -31,6 +31,22 @@ MYSQL SERVER IS CASE SENSITIVE (TABLE NAME AND DATABASE NAME)
 mvn spring-boot:run to run in eclipse 
 
 
+Front End:
+npm create vite@latest
+give project a name
+select react
+select language javascript
+open the folder in vs code 
+npm install
+to run npm run dev
+intsall extension in vs code ES7 React/GrapgQL/React-Native snippets
+npm install react-router-dom (Routing- Link)
+npm install react-icons  
+
+
+
+https://www.youtube.com/watch?v=_A-O22Eezac (Web)
+https://pastebin.com/UbVBqg4h (CSS)
 
 
 
