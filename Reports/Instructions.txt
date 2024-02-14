@@ -1,0 +1,39 @@
+Backend:
+install maven
+go to https://start.spring.io/ 
+	1: select maven and java
+	2: change groupid and artifactid, description
+	3: add dependencies
+		1: maven web
+		2:mysql driver
+	4: download
+import in eclipse as existing maven project
+change pom.xml file
+
+open aws ec2 instance page
+start the instance
+go to this path in cmd C:\Program Files\MySQL\MySQL Server 8.0\bin>
+take the Public IPv4 address from running ec2 instance
+run this command mysql -h 18.218.105.233 -u "nouman" -p
+Nouman3255! -- pass
+once its connected to server run the database
+
+
+run it as spring boot application
+run mvn speedment:generate and mvn speedment:tool
+change database host in speedment window to Public IPv4 address
+give the username and password of server
+give the database u want to use
+press connect
+in new window with database tables hit generate
+
+MYSQL SERVER IS CASE SENSITIVE (TABLE NAME AND DATABASE NAME)
+mvn spring-boot:run to run in eclipse 
+
+
+
+
+
+
+https://speedment.com/quick-start/
+https://speedment.github.io/speedment-doc/tutorials.html
