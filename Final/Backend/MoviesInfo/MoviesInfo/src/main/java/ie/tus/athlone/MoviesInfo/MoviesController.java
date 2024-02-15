@@ -31,9 +31,9 @@ public class MoviesController {
 		return movies.stream().collect(Collectors.toList());
 	}
 
-	@GetMapping("{id}")
-	public List<Movies> getMovieByID(@PathVariable int id) {
-		return movies.stream().filter(movie -> movie.getMovieId() == id).collect(Collectors.toList());
+	@GetMapping("{name}")
+	public List<Movies> getMovieByID(@PathVariable String name) {
+		return movies.stream().filter(movie -> movie.getTitle().toUpperCase().contains(name.toUpperCase())).collect(Collectors.toList());
 	}
 
 }

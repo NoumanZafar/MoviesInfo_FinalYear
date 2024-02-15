@@ -5,6 +5,7 @@ import '../Styles/Movies.css'
 
 const Movies = () => {
   const { toggle, inputValue } = useContext(Container)
+  let input = inputValue
   const [moviesData, setMoviesData] = useState([])
   const baseApi = "http://localhost:8080"
 
