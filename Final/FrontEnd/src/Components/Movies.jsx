@@ -4,43 +4,51 @@ import { Container } from './Navbar'
 import '../Styles/Movies.css'
 
 const Movies = () => {
-  const { toggle } = useContext(Container)
+  const { toggle, inputValue } = useContext(Container)
   const [moviesData, setMoviesData] = useState([])
   const baseApi = "http://localhost:8080"
 
-  //get the movie data from server
   const movieCall = async () => {
-    //get rerquest
-    const data = await axios.get(baseApi + '/movies')
-    //set the movie data to movieData -- useState
-    setMoviesData(data.data)
-  }
+    let url;
+    if(inputValue){
+      url = `${baseApi}/movies/${inputValue}`;
+    } else {
+      url = `${baseApi}/movies`;
+    }
+  
+    try {
+      const response = await axios.get(url);
+      console.log('Response data:', response); // Log the response data
+      setMoviesData(response.data);
+    } catch (error) {
+      console.error('Error fetching movie data:', error);
+    }
+  };
+  
 
   //kinda main method
   useEffect(() => {
     movieCall()
-  }, [])
-  console.log(moviesData)
+  }, [inputValue])
+  //console.log('movie data '+moviesData.length)
 
   return (
     <Fragment>
       <div className={toggle ? 'mainBgColor' : 'secondaryBgColor'}>
         <div className='movies-container'>
-          {/** map the data here */}
-          {moviesData.map((movie) => {
-            return (
-              <Fragment>
-                <div id='container'>
-                  <img src={movie.posterUrl} alt="" />
-                  <h3 id={movie.title.length > 28 ? 'smaller-Text' : ''} className={toggle ? 'titleColorDark' : ''}>{movie.title}</h3>
-                </div>
-              </Fragment>
-            )
-          })}
+        {Array.isArray(moviesData) && moviesData.length > 0 && moviesData.map((movie) => (
+           <Fragment key={movie.movieId}>
+              <div id='container'>
+                <img src={movie.posterUrl} alt="" />
+                <h3 id={movie.title.length > 28 ? 'smaller-Text' : ''} className={toggle ? 'titleColorDark' : ''}>{movie.title}</h3>
+              </div>
+            </Fragment>
+          ))}
         </div>
       </div>
     </Fragment>
-  )
+  );
+  
 }
 
 export default Movies

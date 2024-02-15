@@ -28,21 +28,12 @@ public class MoviesController {
 
 	@GetMapping("")
 	public List<Movies> getAllMovies() {
-		return movies
-				.stream()
-				.collect(Collectors
-						.toList());
+		return movies.stream().collect(Collectors.toList());
 	}
 
-	// variable name and mapping name should be same
 	@GetMapping("{id}")
-	public Movies getMovieByID(@PathVariable int id) {
-		return movies
-				.stream()
-				.filter(Movies
-						.MOVIE_ID
-						.equal(id))
-				.findAny()
-				.orElse(null);
+	public List<Movies> getMovieByID(@PathVariable int id) {
+		return movies.stream().filter(movie -> movie.getMovieId() == id).collect(Collectors.toList());
 	}
+
 }
