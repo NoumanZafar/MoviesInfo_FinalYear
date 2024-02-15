@@ -8,6 +8,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.manager.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
+import com.speedment.runtime.field.BooleanField;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.ComparableForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -79,6 +80,17 @@ public interface GeneratedReviews {
     );
     /**
      * This Field corresponds to the {@link Reviews} field that can be obtained
+     * using the {@link Reviews#getIsLike()} method.
+     */
+    BooleanField<Reviews, Boolean> IS_LIKE = BooleanField.create(
+        Identifier.IS_LIKE,
+        Reviews::getIsLike,
+        Reviews::setIsLike,
+        TypeMapper.primitive(),
+        false
+    );
+    /**
+     * This Field corresponds to the {@link Reviews} field that can be obtained
      * using the {@link Reviews#getComment()} method.
      */
     StringField<Reviews, String> COMMENT = StringField.create(
@@ -120,6 +132,14 @@ public interface GeneratedReviews {
      * @return the rating of this Reviews
      */
     BigDecimal getRating();
+    
+    /**
+     * Returns the isLike of this Reviews. The isLike field corresponds to the
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.IS_LIKE.
+     * 
+     * @return the isLike of this Reviews
+     */
+    boolean getIsLike();
     
     /**
      * Returns the comment of this Reviews. The comment field corresponds to the
@@ -166,6 +186,15 @@ public interface GeneratedReviews {
     Reviews setRating(BigDecimal rating);
     
     /**
+     * Sets the isLike of this Reviews. The isLike field corresponds to the
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.IS_LIKE.
+     * 
+     * @param isLike to set of this Reviews
+     * @return       this Reviews instance
+     */
+    Reviews setIsLike(boolean isLike);
+    
+    /**
      * Sets the comment of this Reviews. The comment field corresponds to the
      * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.COMMENT.
      * 
@@ -198,6 +227,7 @@ public interface GeneratedReviews {
         USER_ID   ("USER_ID"),
         MOVIE_ID  ("MOVIE_ID"),
         RATING    ("RATING"),
+        IS_LIKE   ("IS_LIKE"),
         COMMENT   ("COMMENT");
         
         private final String columnId;

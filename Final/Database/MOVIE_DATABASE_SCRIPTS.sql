@@ -15,15 +15,8 @@ CREATE TABLE MOVIES (
     MOVIE_ID INT PRIMARY KEY,
     TITLE VARCHAR(255) NOT NULL,
     RELEASE_DATE DATE,
-    GENRE VARCHAR(255)
-);
-
-DROP TABLE IF EXISTS MOVIE_IMAGES;
-CREATE TABLE MOVIE_IMAGES (
-    IMAGE_ID INT PRIMARY KEY,
-    MOVIE_ID INT,
-    IMAGE_URL VARCHAR(255) NOT NULL,
-    FOREIGN KEY (MOVIE_ID) REFERENCES MOVIES(MOVIE_ID)
+    GENRE VARCHAR(255),
+    POSTER_URL VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS CLIPS;
@@ -40,17 +33,8 @@ CREATE TABLE REVIEWS (
     USER_ID INT,
     MOVIE_ID INT,
     RATING DECIMAL(3, 1) NOT NULL,
-    COMMENT TEXT,
-    FOREIGN KEY (USER_ID) REFERENCES USERS(USER_ID),
-    FOREIGN KEY (MOVIE_ID) REFERENCES MOVIES(MOVIE_ID)
-);
-
-DROP TABLE IF EXISTS LIKES_DISLIKES;
-CREATE TABLE LIKES_DISLIKES (
-    LIKE_ID INT PRIMARY KEY,
-    USER_ID INT,
-    MOVIE_ID INT,
     IS_LIKE BOOLEAN NOT NULL,
+    COMMENT TEXT,
     FOREIGN KEY (USER_ID) REFERENCES USERS(USER_ID),
     FOREIGN KEY (MOVIE_ID) REFERENCES MOVIES(MOVIE_ID)
 );
@@ -83,38 +67,60 @@ VALUES
 ;
 
 
-INSERT INTO MOVIES (MOVIE_ID, TITLE, RELEASE_DATE, GENRE)
+INSERT INTO MOVIES (MOVIE_ID, TITLE, RELEASE_DATE, GENRE, POSTER_URL)
 VALUES
-    (101, 'Inception', '2010-07-16', 'Science Fiction'),
-    (102, 'The Dark Knight', '2008-07-18', 'Action'),
-    (103, 'The Shawshank Redemption', '1994-09-22', 'Drama')
+    (101, 'Inception', '2010-07-16', 'Science Fiction', 'https://image.tmdb.org/t/p/original/xymM5aW6MDcH5AR9I3CamSegJd6.jpg'),
+    (102, 'The Dark Knight', '2008-07-18', 'Action', 'https://www.themoviedb.org/t/p/original/eP5NL7ZlGoW9tE9qnCdHpOLH1Ke.jpg'),
+    (103, 'The Shawshank Redemption', '1994-09-22', 'Drama', 'https://static-01.daraz.pk/p/8950eef7ff576d795965be4aef33f648.jpg'),
+    (104, 'Pulp Fiction', '1994-10-14', 'Crime', 'https://www.themoviedb.org/t/p/original/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg'),
+    (105, 'Forrest Gump', '1994-07-06', 'Drama', 'https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg'),
+    (106, 'The Matrix', '1999-03-31', 'Science Fiction', 'https://image.tmdb.org/t/p/original/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg'),
+    (107, 'Fight Club', '1999-10-15', 'Drama', 'https://www.themoviedb.org/t/p/original/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg'),
+    (108, 'Gladiator', '2000-05-01', 'Action', 'https://image.tmdb.org/t/p/original/bHNRRnCluPs1Rz66426ymN610ws.jpg'),
+    (109, 'The Lord of the Rings: The Fellowship of the Ring', '2001-12-19', 'Fantasy', 'https://www.themoviedb.org/t/p/original/56zTpe2xvaA4alU51sRWPoKPYZy.jpg'),
+    (110, 'The Lion King', '1994-06-15', 'Animation', 'https://image.tmdb.org/t/p/original/8ydwwfck0F3DHx57jZdFUEqEk4q.jpg'),
+    (111, 'Inglourious Basterds', '2009-08-21', 'War', 'https://www.themoviedb.org/t/p/original/7sf9CgJz30aXDvrg7DYYUQ2U91T.jpg'),
+    (112, 'The Godfather', '1972-03-15', 'Crime', 'https://www.themoviedb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'),
+    (113, 'The Godfather: Part II', '1974-12-20', 'Crime', 'https://image.tmdb.org/t/p/original/5ZSfJ9aleg2rGhVWp0Dcqv38Nr5.jpg'),
+    (114, 'The Dark Knight Rises', '2012-07-20', 'Action', 'https://image.tmdb.org/t/p/original/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg'),
+    (115, 'Interstellar', '2014-11-05', 'Science Fiction', 'https://image.tmdb.org/t/p/original/4pWbfjzUkusGXAZQoduARaI0qu2.jpg'),
+    (116, 'The Prestige', '2006-10-20', 'Drama', 'https://image.tmdb.org/t/p/original/punmWKefqHUGo2f3dO3lpfRbOB2.jpg'),
+    (117, 'The Silence of the Lambs', '1991-02-14', 'Thriller', 'https://image.tmdb.org/t/p/original/frwEq21s71aDvwSdQDipvZGeA9M.jpg'),
+    (118, 'The Departed', '2006-10-05', 'Crime', 'https://image.tmdb.org/t/p/original/8niBn8AZtAqQcsGvUudfdtIy4vj.jpg'),
+    (119, 'The Green Mile', '1999-12-10', 'Fantasy', 'https://www.themoviedb.org/t/p/original/sOHqdY1RnSn6kcfAHKu28jvTebE.jpg'),
+    (120, 'The Lord of the Rings: The Return of the King', '2003-12-17', 'Fantasy', 'https://www.themoviedb.org/t/p/original/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg'),
+    (121, 'The Lord of the Rings: The Two Towers', '2002-12-18', 'Fantasy', 'https://www.themoviedb.org/t/p/original/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg'),
+    (122, 'The Godfather: Part III', '1990-12-24', 'Crime', 'https://image.tmdb.org/t/p/original/gh2ShN6ku8VOT8wNyEOgZQwhNtE.jpg'),
+    (123, 'Goodfellas', '1990-09-12', 'Crime', 'https://image.tmdb.org/t/p/original/Aavp1fVJChzJbOzmVHhkSwpMvbB.jpg'),
+    (124, 'Se7en', '1995-09-22', 'Crime', 'https://image.tmdb.org/t/p/original/xXwyNNJjfx9Wua0Z1Y9o76yVooC.jpg'),
+    (125, 'East Is East', '1999-09-05', 'Comedy', 'https://image.tmdb.org/t/p/original/tDchJ4mB23vGgwdQCmq9FCQ4W23.jpg'),
+    (126, 'The Sixth Sense', '1999-08-06', 'Thriller', 'https://image.tmdb.org/t/p/original/rzwXPA8wBbzObyNjwY6mcesGPsw.jpg'),
+    (127, 'The Usual Suspects', '1995-07-19', 'Crime', 'https://image.tmdb.org/t/p/original/bUPmtQzrRhzqYySeiMpv7GurAfm.jpg'),
+    (128, 'Léon: The Professional', '1994-09-14', 'Thriller', 'https://image.tmdb.org/t/p/original/yI6X2cCM5YPJtxMhUd3dPGqDAhw.jpg'),
+    (129, 'American History X', '1998-10-30', 'Drama', 'https://image.tmdb.org/t/p/original/euypWkaYFOLW3e5rLIcTAjWnhhT.jpg'),
+    (130, 'Saving Private Ryan', '1998-07-24', 'War', 'https://image.tmdb.org/t/p/original/zJdsvHIkcDG18DpoKoF0HITG8Hq.jpg'),
+    (131, 'Avatar', '2009-12-18', 'Adventure', 'https://image.tmdb.org/t/p/original/3C5brXxnBxfkeKWwA1Fh4xvy4wr.jpg'),
+    (132, 'The Avengers', '2012-04-05', 'Action', 'https://image.tmdb.org/t/p/original/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg'),
+    (133, 'Jurassic Park', '1993-06-11', 'sci-Fi', 'https://image.tmdb.org/t/p/original/2c0ajTi8nvrsYl5Oi1lVi6F0kd2.jpg'),
+    (134, 'Titanic', '1997-12-19', 'Romance', 'https://image.tmdb.org/t/p/original/As0zX43h3w6kD2NS4uVHu9HKdEh.jpg'),
+    (135, 'The Social Network', '2010-10-01', 'Biography', 'https://image.tmdb.org/t/p/original/ktt1aeYosypMBoVzgtJROVYYLNE.jpg'),
+    (136, 'Jaws', '1975-06-20', 'Thriller', 'https://image.tmdb.org/t/p/original/eWl3pAlYoM6yM9KTNmTL5hHMew1.jpg'),
+    (137, 'E.T. the Extra-Terrestrial', '1982-06-11', 'Animation', 'https://image.tmdb.org/t/p/original/xLmPOUiArpmuvqBrUTYGGmQVYpI.jpg'),
+    (138, 'Back to the Future', '1985-07-03', 'Science Fiction', 'https://image.tmdb.org/t/p/original/gcCbAMXptil3zInWAsZZ4ecH0Z9.jpg'),
+    (139, 'Mad Max: Fury Road', '2016-05-15', 'Action', 'https://image.tmdb.org/t/p/original/hA2ple9q4qnwxp3hKVNhroipsir.jpg'),
+    (140, 'The Shape of Water', '2017-12-01', 'Drama', 'https://image.tmdb.org/t/p/original/nHKksz2SHsBc7X0jVSlbVye3lDB.jpg'),
+    (141, 'La La Land', '2016-12-09', 'Romance', 'https://image.tmdb.org/t/p/original/jXCW8lNM1IaPqbMW9x15rJ9TPNG.jpg'),
+    (142, 'Black Panther', '2018-02-16', 'Adventure', 'https://media.themoviedb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg'),
+    (143, 'Get Out', '2017-11-24', 'Horror', 'https://image.tmdb.org/t/p/original/4WkwNg0wZvFJooVVgyIYkzVNUeA.jpg'),
+    (144, 'The Revenant', '2015-10-25', 'Crime', 'https://image.tmdb.org/t/p/original/mlexvVL41DlVlLoKzw5757kAA9F.jpg'),
+    (145, 'The Wolf of Wall Street', '2013-12-25', 'Biography', 'https://image.tmdb.org/t/p/original/utfEHZ9jG1emGdvJ4GgfMcHoznp.jpg'),
+    (146, 'Gravity', '2013-10-04', 'Thriller', 'https://image.tmdb.org/t/p/original/xrTN0UwnkNtowUA4e9ypciubuMO.jpg'),
+    (147, 'The Martian', '2015-02-15', 'Sci-Fi', 'https://image.tmdb.org/t/p/original/qAlJOHvN0lUuRCfvatUu6avUbR3.jpg'),
+    (148, 'Moonlight', '2016-10-21', 'Drama', 'https://image.tmdb.org/t/p/original/4911T5FbJ9eD2Faz5Z8cT3SUhU3.jpg'),
+    (149, 'Birdman', '2014-10-17', 'Comedy', 'https://image.tmdb.org/t/p/original/zbUgf2cidcJu9eysAhMzJt5SKdU.jpg'),
+    (150, 'Django Unchained', '2012-12-25', 'Western', 'https://image.tmdb.org/t/p/original/x5dUIdwYJSKgGedZjNUEJBLhwMM.jpg')
 ;
 
-
-INSERT INTO MOVIE_IMAGES (IMAGE_ID, MOVIE_ID, IMAGE_URL)
-VALUES
-
-    -- Inception
-    (1001, 101, 'https://image.tmdb.org/t/p/original/xymM5aW6MDcH5AR9I3CamSegJd6.jpg'),
-    (1002, 101, 'https://2.bp.blogspot.com/-Oc8wpBqF0T8/T8iUAPdIjWI/AAAAAAAAAK8/13_3WQsSIOY/s1600/inception-movie-poster2.jpg'),
-    (1003, 101, 'https://th.bing.com/th/id/R.5e602579be841695cf06f8dcdba1b60d?rik=VeMoDknliJw5Xw&riu=http%3a%2f%2fwww.impawards.com%2f2010%2fposters%2finception_ver2_xlg.jpg&ehk=JHYUvXQQlAb%2fbVDfB5yxnVFWnKu6ImRgq9f0iPQIGrE%3d&risl=&pid=ImgRaw&r=0'),
-    (1004, 101, 'https://image.tmdb.org/t/p/original/eM2Y0RN3mUwp40Nm9I22Slgzl4c.jpg'),
-    (1005, 101, 'https://th.bing.com/th/id/OIP.vgeaus8Zvvh2ACkRmCVDFQAAAA?pid=ImgDet&w=440&h=660&rs=1'),
-
-    -- The Dark Night
-    (1006, 102, 'https://www.themoviedb.org/t/p/original/eP5NL7ZlGoW9tE9qnCdHpOLH1Ke.jpg'),
-    (1007, 102, 'https://th.bing.com/th/id/OIP.fc_FKhmrZ6YTdPTVKAJKEwHaLG?pid=ImgDet&w=474&h=710&rs=1'),
-    (1008, 102, 'https://th.bing.com/th/id/OIP.NumWC-Sw1BFgi8ax3f2JnAHaLH?pid=ImgDet&w=474&h=711&rs=1'),
-    (1009, 102, 'https://cdn.shopify.com/s/files/1/1416/8662/products/dark_knight_2008_joker_style_teaser_original_film_art_2000x.jpg?v=1562541481'),
-    (1010, 102, 'https://payload.cargocollective.com/1/10/320683/10018575/cc_1200.JPG'),
-
-    -- The Shawshank Redemption
-    (1011, 103, 'https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg'),
-    (1012, 103, 'https://static-01.daraz.pk/p/8950eef7ff576d795965be4aef33f648.jpg'),
-    (1013, 103, 'https://i.pinimg.com/474x/04/5d/54/045d5428c1d3588758c1ad5ed3e7c260.jpg'),
-    (1014, 103, 'https://www.tallengestore.com/cdn/shop/products/Movie_Poster_Art_-_The_Shawshank_Redemption_-_Tallenge_Hollywood_Poster_Collection_9e0e143e-20a5-4e91-b757-2c38daa34d41.jpg?v=1578138055'),
-    (1015, 103, 'https://media.posterlounge.com/img/products/630000/624786/624786_poster.jpg')
-;
 
 
 INSERT INTO CLIPS (CLIP_ID, MOVIE_ID, CLIP_URL)
@@ -138,19 +144,11 @@ VALUES
 ;
 
 
-INSERT INTO REVIEWS (REVIEW_ID, USER_ID, MOVIE_ID, RATING, COMMENT)
+INSERT INTO REVIEWS (REVIEW_ID, USER_ID, MOVIE_ID, RATING, IS_LIKE, COMMENT)
 VALUES
-    (3001, 1, 101, 4.5, 'Mind-bending plot!'),
-    (3002, 2, 102, 5.0, 'Heath Ledger was phenomenal.'),
-    (3003, 1, 103, 5.0, 'One of the best movies ever made!')
-;
-
-
-INSERT INTO LIKES_DISLIKES (LIKE_ID, USER_ID, MOVIE_ID, IS_LIKE)
-VALUES
-    (4001, 1, 101, TRUE),
-    (4002, 2, 102, TRUE),
-    (4003, 2, 103, FALSE)
+    (3001, 1, 101, 4.5, TRUE, 'Mind-bending plot!'),
+    (3002, 2, 102, 5.0, FALSE,'Heath Ledger was phenomenal.'),
+    (3003, 1, 103, 5.0, TRUE,'One of the best movies ever made!')
 ;
 
 

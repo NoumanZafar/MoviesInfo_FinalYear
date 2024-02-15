@@ -38,6 +38,7 @@ public abstract class GeneratedMoviesSqlAdapter implements SqlAdapter<Movies> {
             .setTitle(       resultSet.getString(2 + offset))
             .setReleaseDate( resultSet.getDate(3 + offset))
             .setGenre(       resultSet.getString(4 + offset))
+            .setPosterUrl(   resultSet.getString(5 + offset))
             ;
     }
     

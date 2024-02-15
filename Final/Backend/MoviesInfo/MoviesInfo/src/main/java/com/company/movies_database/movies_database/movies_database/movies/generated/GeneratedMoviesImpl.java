@@ -25,6 +25,7 @@ public abstract class GeneratedMoviesImpl implements Movies {
     private String title;
     private Date releaseDate;
     private String genre;
+    private String posterUrl;
     
     protected GeneratedMoviesImpl() {}
     
@@ -46,6 +47,11 @@ public abstract class GeneratedMoviesImpl implements Movies {
     @Override
     public Optional<String> getGenre() {
         return Optional.ofNullable(genre);
+    }
+    
+    @Override
+    public String getPosterUrl() {
+        return posterUrl;
     }
     
     @Override
@@ -73,12 +79,19 @@ public abstract class GeneratedMoviesImpl implements Movies {
     }
     
     @Override
+    public Movies setPosterUrl(String posterUrl) {
+        this.posterUrl = posterUrl;
+        return this;
+    }
+    
+    @Override
     public String toString() {
         final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
         sj.add("movieId = "     + Objects.toString(getMovieId()));
         sj.add("title = "       + Objects.toString(getTitle()));
         sj.add("releaseDate = " + Objects.toString(OptionalUtil.unwrap(getReleaseDate())));
         sj.add("genre = "       + Objects.toString(OptionalUtil.unwrap(getGenre())));
+        sj.add("posterUrl = "   + Objects.toString(getPosterUrl()));
         return "MoviesImpl " + sj.toString();
     }
     
@@ -91,6 +104,7 @@ public abstract class GeneratedMoviesImpl implements Movies {
         if (!Objects.equals(this.getTitle(), thatMovies.getTitle())) { return false; }
         if (!Objects.equals(this.getReleaseDate(), thatMovies.getReleaseDate())) { return false; }
         if (!Objects.equals(this.getGenre(), thatMovies.getGenre())) { return false; }
+        if (!Objects.equals(this.getPosterUrl(), thatMovies.getPosterUrl())) { return false; }
         return true;
     }
     
@@ -101,6 +115,7 @@ public abstract class GeneratedMoviesImpl implements Movies {
         hash = 31 * hash + Objects.hashCode(getTitle());
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getReleaseDate()));
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getGenre()));
+        hash = 31 * hash + Objects.hashCode(getPosterUrl());
         return hash;
     }
 }

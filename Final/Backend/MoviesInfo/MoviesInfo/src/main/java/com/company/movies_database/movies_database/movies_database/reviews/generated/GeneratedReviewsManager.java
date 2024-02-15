@@ -30,6 +30,7 @@ public interface GeneratedReviewsManager extends Manager<Reviews> {
         Reviews.USER_ID,
         Reviews.MOVIE_ID,
         Reviews.RATING,
+        Reviews.IS_LIKE,
         Reviews.COMMENT
     ));
     

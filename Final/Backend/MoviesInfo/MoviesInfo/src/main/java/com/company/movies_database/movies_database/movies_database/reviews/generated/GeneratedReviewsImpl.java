@@ -29,6 +29,7 @@ public abstract class GeneratedReviewsImpl implements Reviews {
     private Integer userId;
     private Integer movieId;
     private BigDecimal rating;
+    private boolean isLike;
     private String comment;
     
     protected GeneratedReviewsImpl() {}
@@ -51,6 +52,11 @@ public abstract class GeneratedReviewsImpl implements Reviews {
     @Override
     public BigDecimal getRating() {
         return rating;
+    }
+    
+    @Override
+    public boolean getIsLike() {
+        return isLike;
     }
     
     @Override
@@ -79,6 +85,12 @@ public abstract class GeneratedReviewsImpl implements Reviews {
     @Override
     public Reviews setRating(BigDecimal rating) {
         this.rating = rating;
+        return this;
+    }
+    
+    @Override
+    public Reviews setIsLike(boolean isLike) {
+        this.isLike = isLike;
         return this;
     }
     
@@ -113,6 +125,7 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         sj.add("userId = "   + Objects.toString(OptionalUtil.unwrap(getUserId())));
         sj.add("movieId = "  + Objects.toString(OptionalUtil.unwrap(getMovieId())));
         sj.add("rating = "   + Objects.toString(getRating()));
+        sj.add("isLike = "   + Objects.toString(getIsLike()));
         sj.add("comment = "  + Objects.toString(OptionalUtil.unwrap(getComment())));
         return "ReviewsImpl " + sj.toString();
     }
@@ -126,6 +139,7 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         if (!Objects.equals(this.getUserId(), thatReviews.getUserId())) { return false; }
         if (!Objects.equals(this.getMovieId(), thatReviews.getMovieId())) { return false; }
         if (!Objects.equals(this.getRating(), thatReviews.getRating())) { return false; }
+        if (this.getIsLike() != thatReviews.getIsLike()) { return false; }
         if (!Objects.equals(this.getComment(), thatReviews.getComment())) { return false; }
         return true;
     }
@@ -137,6 +151,7 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getUserId()));
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getMovieId()));
         hash = 31 * hash + Objects.hashCode(getRating());
+        hash = 31 * hash + Boolean.hashCode(getIsLike());
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getComment()));
         return hash;
     }

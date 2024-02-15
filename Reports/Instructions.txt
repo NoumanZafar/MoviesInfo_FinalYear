@@ -17,6 +17,9 @@ take the Public IPv4 address from running ec2 instance
 run this command mysql -h 18.218.105.233 -u "nouman" -p
 Nouman3255! -- pass
 once its connected to server run the database
+if there is any change to server or database go to src -> main -> json and 
+delete/change ip address at bottom of the page
+speedment.json and run mvn speedment:tool
 
 
 run it as spring boot application
@@ -42,6 +45,8 @@ to run npm run dev
 intsall extension in vs code ES7 React/GrapgQL/React-Native snippets
 npm install react-router-dom (Routing- Link)
 npm install react-icons  
+
+npm install axios
 
 
 

@@ -29,7 +29,8 @@ public interface GeneratedMoviesManager extends Manager<Movies> {
         Movies.MOVIE_ID,
         Movies.TITLE,
         Movies.RELEASE_DATE,
-        Movies.GENRE
+        Movies.GENRE,
+        Movies.POSTER_URL
     ));
     
     @Override

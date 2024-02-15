@@ -70,6 +70,17 @@ public interface GeneratedMovies {
         TypeMapper.identity(),
         false
     );
+    /**
+     * This Field corresponds to the {@link Movies} field that can be obtained
+     * using the {@link Movies#getPosterUrl()} method.
+     */
+    StringField<Movies, String> POSTER_URL = StringField.create(
+        Identifier.POSTER_URL,
+        Movies::getPosterUrl,
+        Movies::setPosterUrl,
+        TypeMapper.identity(),
+        false
+    );
     
     /**
      * Returns the movieId of this Movies. The movieId field corresponds to the
@@ -103,6 +114,14 @@ public interface GeneratedMovies {
      * @return the genre of this Movies
      */
     Optional<String> getGenre();
+    
+    /**
+     * Returns the posterUrl of this Movies. The posterUrl field corresponds to
+     * the database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.POSTER_URL.
+     * 
+     * @return the posterUrl of this Movies
+     */
+    String getPosterUrl();
     
     /**
      * Sets the movieId of this Movies. The movieId field corresponds to the
@@ -140,12 +159,22 @@ public interface GeneratedMovies {
      */
     Movies setGenre(String genre);
     
+    /**
+     * Sets the posterUrl of this Movies. The posterUrl field corresponds to the
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.POSTER_URL.
+     * 
+     * @param posterUrl to set of this Movies
+     * @return          this Movies instance
+     */
+    Movies setPosterUrl(String posterUrl);
+    
     enum Identifier implements ColumnIdentifier<Movies> {
         
         MOVIE_ID     ("MOVIE_ID"),
         TITLE        ("TITLE"),
         RELEASE_DATE ("RELEASE_DATE"),
-        GENRE        ("GENRE");
+        GENRE        ("GENRE"),
+        POSTER_URL   ("POSTER_URL");
         
         private final String columnId;
         private final TableIdentifier<Movies> tableIdentifier;

@@ -6,10 +6,6 @@ import com.company.movies_database.MoviesDatabaseApplicationImpl;
 import com.company.movies_database.MoviesDatabaseInjectorProxy;
 import com.company.movies_database.movies_database.movies_database.clips.ClipsManagerImpl;
 import com.company.movies_database.movies_database.movies_database.clips.ClipsSqlAdapter;
-import com.company.movies_database.movies_database.movies_database.likes_dislikes.LikesDislikesManagerImpl;
-import com.company.movies_database.movies_database.movies_database.likes_dislikes.LikesDislikesSqlAdapter;
-import com.company.movies_database.movies_database.movies_database.movie_images.MovieImagesManagerImpl;
-import com.company.movies_database.movies_database.movies_database.movie_images.MovieImagesSqlAdapter;
 import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManagerImpl;
 import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleSqlAdapter;
 import com.company.movies_database.movies_database.movies_database.movies.MoviesManagerImpl;
@@ -41,17 +37,13 @@ public abstract class GeneratedMoviesDatabaseApplicationBuilder extends Abstract
     protected GeneratedMoviesDatabaseApplicationBuilder() {
         super(MoviesDatabaseApplicationImpl.class, GeneratedMoviesDatabaseMetadata.class);
         withManager(ClipsManagerImpl.class);
-        withManager(LikesDislikesManagerImpl.class);
         withManager(MoviesManagerImpl.class);
-        withManager(MovieImagesManagerImpl.class);
         withManager(MoviePeopleManagerImpl.class);
         withManager(PeopleManagerImpl.class);
         withManager(ReviewsManagerImpl.class);
         withManager(UsersManagerImpl.class);
         withComponent(ClipsSqlAdapter.class);
-        withComponent(LikesDislikesSqlAdapter.class);
         withComponent(MoviesSqlAdapter.class);
-        withComponent(MovieImagesSqlAdapter.class);
         withComponent(MoviePeopleSqlAdapter.class);
         withComponent(PeopleSqlAdapter.class);
         withComponent(ReviewsSqlAdapter.class);
