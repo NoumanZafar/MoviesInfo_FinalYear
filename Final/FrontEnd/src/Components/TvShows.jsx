@@ -86,7 +86,7 @@ const TvShows = () => {
           {Array.isArray(clipData) && clipData.length > 0 && clipData.map((clip) => (
             <Fragment key={clip.clipId}>
               <div>
-                <ReactPlayer url={clip.clipUrl}/>
+                <ReactPlayer url={clip.clipUrl} controls/>
                 <p>{clip.clipUrl}</p>
               </div>
             </Fragment>
