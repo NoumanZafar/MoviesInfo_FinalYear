@@ -32,7 +32,7 @@ const Movies = () => {
 
   const onClickPicture = (movieId) => {
     console.log("Clicked image ID:", movieId);
-    // Navigate to TvShows page with the movieId as a query parameter
+    // Navigate to TvShows page with the movieId as a url query parameter
     navigate(`/tvShows?movieId=${movieId}`);
   };
 

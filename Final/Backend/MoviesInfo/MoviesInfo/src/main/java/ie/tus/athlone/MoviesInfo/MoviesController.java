@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.movies_database.MoviesDatabaseApplication;
+import com.company.movies_database.movies_database.movies_database.clips.Clips;
 import com.company.movies_database.movies_database.movies_database.movies.Movies;
 import com.company.movies_database.movies_database.movies_database.movies.MoviesManager;
 
@@ -26,14 +27,26 @@ public class MoviesController {
 		movies = app.getOrThrow(MoviesManager.class);
 	}
 
+	//SELECT * FROM MOVIES;
 	@GetMapping("")
 	public List<Movies> getAllMovies() {
 		return movies.stream().collect(Collectors.toList());
 	}
 
+	//SELECT * FROM MOVIES WHERE NAME = '';
 	@GetMapping("{name}")
 	public List<Movies> getMovieByID(@PathVariable String name) {
-		return movies.stream().filter(movie -> movie.getTitle().toUpperCase().contains(name.toUpperCase())).collect(Collectors.toList());
+		return movies.stream().filter(movie -> movie.getTitle().toUpperCase().contains(name.toUpperCase()))
+				.collect(Collectors.toList());
 	}
-
+	
+	//SELECT * FROM MOVIES WHERE MOVIE_ID = '';
+	@GetMapping("/id/{id}")
+	public List<Movies> getMovieByID(@PathVariable int id) {
+		return movies
+				.stream()
+				.filter(movie -> movie.getMovieId() == id)
+				.collect(Collectors.toList());
+	}
+	
 }

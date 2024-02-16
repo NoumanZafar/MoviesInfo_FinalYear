@@ -192,6 +192,15 @@
                     "id" : "POSTER_URL",
                     "ordinalPosition" : 5,
                     "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "M_DESCRIPTION",
+                    "id" : "M_DESCRIPTION",
+                    "ordinalPosition" : 6,
+                    "enabled" : true
                   }
                 ],
                 "name" : "MOVIES",
@@ -609,7 +618,7 @@
           }
         ],
         "typeName" : "MySQL",
-        "ipAddress" : "18.227.81.5",
+        "ipAddress" : "3.145.58.6",
         "name" : "MOVIES_DATABASE",
         "id" : "MOVIES_DATABASE",
         "enabled" : true,

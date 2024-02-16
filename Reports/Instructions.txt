@@ -45,6 +45,10 @@ to run npm run dev
 intsall extension in vs code ES7 React/GrapgQL/React-Native snippets
 npm install react-router-dom (Routing- Link)
 npm install react-icons  
+npm install react-player
+npm uninstall react-player
+
+to see all the packages npm list --depth=0
 
 npm install axios
 

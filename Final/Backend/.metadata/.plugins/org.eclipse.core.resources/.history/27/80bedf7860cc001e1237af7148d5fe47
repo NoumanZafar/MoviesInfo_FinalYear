@@ -1,0 +1,10 @@
+package ie.tus.athlone.MoviesInfo;
+
+public class ClipsController {
+
+//	//SELECT * FROM CLIPS WHERE MOVIE_ID = '';
+//	@GetMapping("/clips/{id}")
+//	public List<Clips> getMovieClips(@PathVariable int id){
+//		
+//	}
+}

@@ -1,0 +1,17 @@
+package ie.tus.athlone.MoviesInfo;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.company.movies_database.movies_database.movies_database.clips.Clips;
+
+public class ClipsController {
+
+//	//SELECT * FROM CLIPS WHERE MOVIE_ID = '';
+//	@GetMapping("/clips/{id}")
+//	public List<Clips> getMovieClips(@PathVariable int id){
+//		
+//	}
+}

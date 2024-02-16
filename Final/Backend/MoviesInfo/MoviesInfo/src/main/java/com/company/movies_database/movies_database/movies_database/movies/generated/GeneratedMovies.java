@@ -81,6 +81,17 @@ public interface GeneratedMovies {
         TypeMapper.identity(),
         false
     );
+    /**
+     * This Field corresponds to the {@link Movies} field that can be obtained
+     * using the {@link Movies#getMDescription()} method.
+     */
+    StringField<Movies, String> M_DESCRIPTION = StringField.create(
+        Identifier.M_DESCRIPTION,
+        Movies::getMDescription,
+        Movies::setMDescription,
+        TypeMapper.identity(),
+        false
+    );
     
     /**
      * Returns the movieId of this Movies. The movieId field corresponds to the
@@ -122,6 +133,15 @@ public interface GeneratedMovies {
      * @return the posterUrl of this Movies
      */
     String getPosterUrl();
+    
+    /**
+     * Returns the mDescription of this Movies. The mDescription field
+     * corresponds to the database column
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.M_DESCRIPTION.
+     * 
+     * @return the mDescription of this Movies
+     */
+    String getMDescription();
     
     /**
      * Sets the movieId of this Movies. The movieId field corresponds to the
@@ -168,13 +188,24 @@ public interface GeneratedMovies {
      */
     Movies setPosterUrl(String posterUrl);
     
+    /**
+     * Sets the mDescription of this Movies. The mDescription field corresponds
+     * to the database column
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.M_DESCRIPTION.
+     * 
+     * @param mDescription to set of this Movies
+     * @return             this Movies instance
+     */
+    Movies setMDescription(String mDescription);
+    
     enum Identifier implements ColumnIdentifier<Movies> {
         
-        MOVIE_ID     ("MOVIE_ID"),
-        TITLE        ("TITLE"),
-        RELEASE_DATE ("RELEASE_DATE"),
-        GENRE        ("GENRE"),
-        POSTER_URL   ("POSTER_URL");
+        MOVIE_ID      ("MOVIE_ID"),
+        TITLE         ("TITLE"),
+        RELEASE_DATE  ("RELEASE_DATE"),
+        GENRE         ("GENRE"),
+        POSTER_URL    ("POSTER_URL"),
+        M_DESCRIPTION ("M_DESCRIPTION");
         
         private final String columnId;
         private final TableIdentifier<Movies> tableIdentifier;

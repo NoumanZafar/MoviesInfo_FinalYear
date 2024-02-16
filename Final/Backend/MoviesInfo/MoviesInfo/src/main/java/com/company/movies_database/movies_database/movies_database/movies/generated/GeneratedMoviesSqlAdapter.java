@@ -34,11 +34,12 @@ public abstract class GeneratedMoviesSqlAdapter implements SqlAdapter<Movies> {
     
     protected Movies apply(ResultSet resultSet, int offset) throws SQLException {
         return createEntity()
-            .setMovieId(     getInt(resultSet, 1 + offset))
-            .setTitle(       resultSet.getString(2 + offset))
-            .setReleaseDate( resultSet.getDate(3 + offset))
-            .setGenre(       resultSet.getString(4 + offset))
-            .setPosterUrl(   resultSet.getString(5 + offset))
+            .setMovieId(      getInt(resultSet, 1 + offset))
+            .setTitle(        resultSet.getString(2 + offset))
+            .setReleaseDate(  resultSet.getDate(3 + offset))
+            .setGenre(        resultSet.getString(4 + offset))
+            .setPosterUrl(    resultSet.getString(5 + offset))
+            .setMDescription( resultSet.getString(6 + offset))
             ;
     }
     
