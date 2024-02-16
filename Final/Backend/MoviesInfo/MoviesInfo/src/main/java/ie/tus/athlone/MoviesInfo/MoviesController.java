@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.movies_database.MoviesDatabaseApplication;
-import com.company.movies_database.movies_database.movies_database.clips.Clips;
 import com.company.movies_database.movies_database.movies_database.movies.Movies;
 import com.company.movies_database.movies_database.movies_database.movies.MoviesManager;
 

@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Container } from './Navbar';
 import '../Styles/TvShows.css';
@@ -31,10 +32,14 @@ const TvShows = () => {
     let url = `${baseApi}/clips/${movieId}`;
     //console.log(url)
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+      }
+      });
       setClipData(response.data);
     } catch (error) {
-      console.error('Error fetching movie data:', error);
+      console.error('Error fetching Clips data:', error);
     }
   };
 
@@ -81,6 +86,7 @@ const TvShows = () => {
           {Array.isArray(clipData) && clipData.length > 0 && clipData.map((clip) => (
             <Fragment key={clip.clipId}>
               <div>
+                <ReactPlayer url={clip.clipUrl}/>
                 <p>{clip.clipUrl}</p>
               </div>
             </Fragment>

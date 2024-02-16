@@ -48,7 +48,10 @@ npm install react-icons
 npm install react-player
 npm uninstall react-player
 
+npm install react-youtube
+
 to see all the packages npm list --depth=0
+
 
 npm install axios
 
