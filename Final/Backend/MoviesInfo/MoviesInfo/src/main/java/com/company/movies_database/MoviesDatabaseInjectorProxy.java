@@ -35,7 +35,7 @@ public final class MoviesDatabaseInjectorProxy implements InjectorProxy {
     }
     
     @Override
-    public <T> T newInstance(Constructor<T> constructor, Object... args) throws InvocationTargetException, InstantiationException, IllegalAccessException {
+    public <T> T newInstance(Constructor<T> constructor, Object... args) throws InstantiationException, IllegalAccessException, InvocationTargetException {
         return constructor.newInstance(args);
     }
     
@@ -43,7 +43,7 @@ public final class MoviesDatabaseInjectorProxy implements InjectorProxy {
     public Object invoke(
             Method method,
             Object obj,
-            Object... args) throws IllegalArgumentException, InvocationTargetException, IllegalAccessException {
+            Object... args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         return method.invoke(obj, args);
     }
 }

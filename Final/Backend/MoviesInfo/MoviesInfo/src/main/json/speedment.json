@@ -3,7 +3,7 @@
     "speedmentVersion" : "Speedment:3.2.10",
     "nameProtected" : false,
     "expanded" : true,
-    "appId" : "659718a2-8317-4e1d-a7c5-054133a60047",
+    "appId" : "fa04036c-149a-427b-adcb-5e51813e8673",
     "companyName" : "company",
     "name" : "MOVIES_DATABASE",
     "packageLocation" : "src/main/java/",
@@ -14,10 +14,8 @@
         "port" : 3306,
         "schemas" : [
           {
-            "expanded" : true,
             "tables" : [
               {
-                "expanded" : true,
                 "foreignKeys" : [
                   {
                     "expanded" : false,
@@ -38,6 +36,7 @@
                     "enabled" : true
                   }
                 ],
+                "expanded" : true,
                 "primaryKeyColumns" : [
                   {
                     "expanded" : true,
@@ -85,9 +84,10 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "expanded" : true,
                     "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
                     "nullable" : false,
+                    "autoIncrement" : true,
                     "name" : "CLIP_ID",
                     "id" : "CLIP_ID",
                     "ordinalPosition" : 1,
@@ -149,9 +149,10 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "expanded" : true,
                     "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
                     "nullable" : false,
+                    "autoIncrement" : true,
                     "name" : "MOVIE_ID",
                     "id" : "MOVIE_ID",
                     "ordinalPosition" : 1,
@@ -208,7 +209,6 @@
                 "enabled" : true
               },
               {
-                "expanded" : true,
                 "foreignKeys" : [
                   {
                     "expanded" : false,
@@ -247,6 +247,7 @@
                     "enabled" : true
                   }
                 ],
+                "expanded" : true,
                 "primaryKeyColumns" : [
                   {
                     "expanded" : true,
@@ -259,7 +260,8 @@
                     "expanded" : true,
                     "name" : "PERSON_ID",
                     "id" : "PERSON_ID",
-                    "ordinalPosition" : 2
+                    "ordinalPosition" : 2,
+                    "enabled" : true
                   }
                 ],
                 "indexes" : [
@@ -307,8 +309,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "expanded" : true,
                     "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
                     "nullable" : false,
                     "name" : "MOVIE_ID",
                     "id" : "MOVIE_ID",
@@ -317,8 +319,8 @@
                   },
                   {
                     "databaseType" : "java.lang.Integer",
-                    "expanded" : true,
                     "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
                     "nullable" : false,
                     "name" : "PERSON_ID",
                     "id" : "PERSON_ID",
@@ -337,7 +339,8 @@
                     "expanded" : true,
                     "name" : "PERSON_ID",
                     "id" : "PERSON_ID",
-                    "ordinalPosition" : 1
+                    "ordinalPosition" : 1,
+                    "enabled" : true
                   }
                 ],
                 "indexes" : [
@@ -354,19 +357,22 @@
                         "ordinalPosition" : 1
                       }
                     ],
-                    "id" : "PRIMARY"
+                    "id" : "PRIMARY",
+                    "enabled" : true
                   }
                 ],
                 "isView" : false,
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "expanded" : true,
                     "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
                     "nullable" : false,
+                    "autoIncrement" : true,
                     "name" : "PERSON_ID",
                     "id" : "PERSON_ID",
-                    "ordinalPosition" : 1
+                    "ordinalPosition" : 1,
+                    "enabled" : true
                   },
                   {
                     "databaseType" : "java.lang.String",
@@ -374,7 +380,8 @@
                     "nullable" : false,
                     "name" : "NAME",
                     "id" : "NAME",
-                    "ordinalPosition" : 2
+                    "ordinalPosition" : 2,
+                    "enabled" : true
                   },
                   {
                     "databaseType" : "java.lang.String",
@@ -382,7 +389,8 @@
                     "nullable" : true,
                     "name" : "OCCUPATION",
                     "id" : "OCCUPATION",
-                    "ordinalPosition" : 3
+                    "ordinalPosition" : 3,
+                    "enabled" : true
                   },
                   {
                     "databaseType" : "java.lang.String",
@@ -390,14 +398,15 @@
                     "nullable" : false,
                     "name" : "IMAGE_URL",
                     "id" : "IMAGE_URL",
-                    "ordinalPosition" : 4
+                    "ordinalPosition" : 4,
+                    "enabled" : true
                   }
                 ],
                 "name" : "PEOPLE",
-                "id" : "PEOPLE"
+                "id" : "PEOPLE",
+                "enabled" : true
               },
               {
-                "expanded" : true,
                 "foreignKeys" : [
                   {
                     "expanded" : false,
@@ -414,7 +423,8 @@
                       }
                     ],
                     "name" : "REVIEWS_ibfk_2",
-                    "id" : "REVIEWS_ibfk_2"
+                    "id" : "REVIEWS_ibfk_2",
+                    "enabled" : true
                   },
                   {
                     "expanded" : false,
@@ -431,15 +441,18 @@
                       }
                     ],
                     "name" : "REVIEWS_ibfk_1",
-                    "id" : "REVIEWS_ibfk_1"
+                    "id" : "REVIEWS_ibfk_1",
+                    "enabled" : true
                   }
                 ],
+                "expanded" : true,
                 "primaryKeyColumns" : [
                   {
                     "expanded" : true,
                     "name" : "REVIEW_ID",
                     "id" : "REVIEW_ID",
-                    "ordinalPosition" : 1
+                    "ordinalPosition" : 1,
+                    "enabled" : true
                   }
                 ],
                 "indexes" : [
@@ -456,7 +469,8 @@
                         "ordinalPosition" : 1
                       }
                     ],
-                    "id" : "PRIMARY"
+                    "id" : "PRIMARY",
+                    "enabled" : true
                   },
                   {
                     "expanded" : false,
@@ -471,7 +485,8 @@
                         "ordinalPosition" : 1
                       }
                     ],
-                    "id" : "MOVIE_ID"
+                    "id" : "MOVIE_ID",
+                    "enabled" : true
                   },
                   {
                     "expanded" : false,
@@ -486,19 +501,22 @@
                         "ordinalPosition" : 1
                       }
                     ],
-                    "id" : "USER_ID"
+                    "id" : "USER_ID",
+                    "enabled" : true
                   }
                 ],
                 "isView" : false,
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "expanded" : true,
                     "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
                     "nullable" : false,
+                    "autoIncrement" : true,
                     "name" : "REVIEW_ID",
                     "id" : "REVIEW_ID",
-                    "ordinalPosition" : 1
+                    "ordinalPosition" : 1,
+                    "enabled" : true
                   },
                   {
                     "databaseType" : "java.lang.Integer",
@@ -506,7 +524,8 @@
                     "nullable" : true,
                     "name" : "USER_ID",
                     "id" : "USER_ID",
-                    "ordinalPosition" : 2
+                    "ordinalPosition" : 2,
+                    "enabled" : true
                   },
                   {
                     "databaseType" : "java.lang.Integer",
@@ -514,7 +533,8 @@
                     "nullable" : true,
                     "name" : "MOVIE_ID",
                     "id" : "MOVIE_ID",
-                    "ordinalPosition" : 3
+                    "ordinalPosition" : 3,
+                    "enabled" : true
                   },
                   {
                     "databaseType" : "java.math.BigDecimal",
@@ -522,16 +542,8 @@
                     "nullable" : false,
                     "name" : "RATING",
                     "id" : "RATING",
-                    "ordinalPosition" : 4
-                  },
-                  {
-                    "databaseType" : "java.lang.Boolean",
-                    "expanded" : true,
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
-                    "nullable" : false,
-                    "name" : "IS_LIKE",
-                    "id" : "IS_LIKE",
-                    "ordinalPosition" : 5
+                    "ordinalPosition" : 4,
+                    "enabled" : true
                   },
                   {
                     "databaseType" : "java.lang.String",
@@ -539,11 +551,13 @@
                     "nullable" : true,
                     "name" : "COMMENT",
                     "id" : "COMMENT",
-                    "ordinalPosition" : 6
+                    "ordinalPosition" : 5,
+                    "enabled" : true
                   }
                 ],
                 "name" : "REVIEWS",
-                "id" : "REVIEWS"
+                "id" : "REVIEWS",
+                "enabled" : true
               },
               {
                 "expanded" : true,
@@ -576,9 +590,10 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "expanded" : true,
                     "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
                     "nullable" : false,
+                    "autoIncrement" : true,
                     "name" : "USER_ID",
                     "id" : "USER_ID",
                     "ordinalPosition" : 1
@@ -612,13 +627,14 @@
                 "id" : "USERS"
               }
             ],
+            "expanded" : true,
             "name" : "MOVIES_DATABASE",
             "id" : "MOVIES_DATABASE",
             "enabled" : true
           }
         ],
         "typeName" : "MySQL",
-        "ipAddress" : "3.16.217.141",
+        "ipAddress" : "3.16.82.168",
         "name" : "MOVIES_DATABASE",
         "id" : "MOVIES_DATABASE",
         "enabled" : true,

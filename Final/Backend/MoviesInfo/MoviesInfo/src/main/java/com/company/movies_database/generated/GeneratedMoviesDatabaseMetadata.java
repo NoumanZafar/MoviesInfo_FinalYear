@@ -42,14 +42,14 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
         Stream.of(
             "{",
             "  \"config\" : {",
-            "    \"appId\" : \"659718a2-8317-4e1d-a7c5-054133a60047\",",
+            "    \"appId\" : \"fa04036c-149a-427b-adcb-5e51813e8673\",",
             "    \"companyName\" : \"company\",",
             "    \"dbmses\" : [",
             "      {",
             "        \"enabled\" : true,",
             "        \"expanded\" : true,",
             "        \"id\" : \"MOVIES_DATABASE\",",
-            "        \"ipAddress\" : \"3.145.58.6\",",
+            "        \"ipAddress\" : \"3.16.82.168\",",
             "        \"name\" : \"MOVIES_DATABASE\",",
             "        \"port\" : 3306,",
             "        \"schemas\" : [",
@@ -62,6 +62,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "              {",
             "                \"columns\" : [",
             "                  {",
+            "                    \"autoIncrement\" : true,",
             "                    \"databaseType\" : \"java.lang.Integer\",",
             "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
@@ -139,13 +140,13 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                        \"expanded\" : true,",
             "                        \"id\" : \"MOVIE_ID\",",
             "                        \"name\" : \"MOVIE_ID\",",
-            "                        \"orderType\" : \"ASC\",",
-            "                        \"ordinalPosition\" : 1"
+            "                        \"orderType\" : \"ASC\","
         ).forEachOrdered(sb::append);
     }
     
     private static void initPart1(StringBuilder sb) {
         Stream.of(
+            "                        \"ordinalPosition\" : 1",
             "                      }",
             "                    ],",
             "                    \"name\" : \"MOVIE_ID\",",
@@ -167,6 +168,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "              {",
             "                \"columns\" : [",
             "                  {",
+            "                    \"autoIncrement\" : true,",
             "                    \"databaseType\" : \"java.lang.Integer\",",
             "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
@@ -244,14 +246,14 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  }",
             "                ],",
             "                \"isView\" : false,",
-            "                \"name\" : \"MOVIES\",",
-            "                \"primaryKeyColumns\" : [",
-            "                  {"
+            "                \"name\" : \"MOVIES\","
         ).forEachOrdered(sb::append);
     }
     
     private static void initPart2(StringBuilder sb) {
         Stream.of(
+            "                \"primaryKeyColumns\" : [",
+            "                  {",
             "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"MOVIE_ID\",",
@@ -350,14 +352,14 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  },",
             "                  {",
             "                    \"enabled\" : true,",
-            "                    \"expanded\" : false,",
-            "                    \"id\" : \"PERSON_ID\",",
-            "                    \"indexColumns\" : ["
+            "                    \"expanded\" : false,"
         ).forEachOrdered(sb::append);
     }
     
     private static void initPart3(StringBuilder sb) {
         Stream.of(
+            "                    \"id\" : \"PERSON_ID\",",
+            "                    \"indexColumns\" : [",
             "                      {",
             "                        \"expanded\" : true,",
             "                        \"id\" : \"PERSON_ID\",",
@@ -381,6 +383,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                    \"ordinalPosition\" : 1",
             "                  },",
             "                  {",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"PERSON_ID\",",
             "                    \"name\" : \"PERSON_ID\",",
@@ -391,7 +394,9 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "              {",
             "                \"columns\" : [",
             "                  {",
+            "                    \"autoIncrement\" : true,",
             "                    \"databaseType\" : \"java.lang.Integer\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"PERSON_ID\",",
             "                    \"name\" : \"PERSON_ID\",",
@@ -401,6 +406,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  },",
             "                  {",
             "                    \"databaseType\" : \"java.lang.String\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"NAME\",",
             "                    \"name\" : \"NAME\",",
@@ -409,6 +415,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  },",
             "                  {",
             "                    \"databaseType\" : \"java.lang.String\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"OCCUPATION\",",
             "                    \"name\" : \"OCCUPATION\",",
@@ -417,6 +424,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  },",
             "                  {",
             "                    \"databaseType\" : \"java.lang.String\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"IMAGE_URL\",",
             "                    \"name\" : \"IMAGE_URL\",",
@@ -424,10 +432,12 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                    \"ordinalPosition\" : 4",
             "                  }",
             "                ],",
+            "                \"enabled\" : true,",
             "                \"expanded\" : true,",
             "                \"id\" : \"PEOPLE\",",
             "                \"indexes\" : [",
             "                  {",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : false,",
             "                    \"id\" : \"PRIMARY\",",
             "                    \"indexColumns\" : [",
@@ -447,7 +457,13 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                \"name\" : \"PEOPLE\",",
             "                \"primaryKeyColumns\" : [",
             "                  {",
-            "                    \"expanded\" : true,",
+            "                    \"enabled\" : true,",
+            "                    \"expanded\" : true,"
+        ).forEachOrdered(sb::append);
+    }
+    
+    private static void initPart4(StringBuilder sb) {
+        Stream.of(
             "                    \"id\" : \"PERSON_ID\",",
             "                    \"name\" : \"PERSON_ID\",",
             "                    \"ordinalPosition\" : 1",
@@ -457,13 +473,10 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "              {",
             "                \"columns\" : [",
             "                  {",
+            "                    \"autoIncrement\" : true,",
             "                    \"databaseType\" : \"java.lang.Integer\",",
-            "                    \"expanded\" : true,"
-        ).forEachOrdered(sb::append);
-    }
-    
-    private static void initPart4(StringBuilder sb) {
-        Stream.of(
+            "                    \"enabled\" : true,",
+            "                    \"expanded\" : true,",
             "                    \"id\" : \"REVIEW_ID\",",
             "                    \"name\" : \"REVIEW_ID\",",
             "                    \"nullable\" : false,",
@@ -472,6 +485,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  },",
             "                  {",
             "                    \"databaseType\" : \"java.lang.Integer\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"USER_ID\",",
             "                    \"name\" : \"USER_ID\",",
@@ -480,6 +494,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  },",
             "                  {",
             "                    \"databaseType\" : \"java.lang.Integer\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"MOVIE_ID\",",
             "                    \"name\" : \"MOVIE_ID\",",
@@ -488,6 +503,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                  },",
             "                  {",
             "                    \"databaseType\" : \"java.math.BigDecimal\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"RATING\",",
             "                    \"name\" : \"RATING\",",
@@ -495,26 +511,20 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                    \"ordinalPosition\" : 4",
             "                  },",
             "                  {",
-            "                    \"databaseType\" : \"java.lang.Boolean\",",
-            "                    \"expanded\" : true,",
-            "                    \"id\" : \"IS_LIKE\",",
-            "                    \"name\" : \"IS_LIKE\",",
-            "                    \"nullable\" : false,",
-            "                    \"ordinalPosition\" : 5,",
-            "                    \"typeMapper\" : \"com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper\"",
-            "                  },",
-            "                  {",
             "                    \"databaseType\" : \"java.lang.String\",",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"COMMENT\",",
             "                    \"name\" : \"COMMENT\",",
             "                    \"nullable\" : true,",
-            "                    \"ordinalPosition\" : 6",
+            "                    \"ordinalPosition\" : 5",
             "                  }",
             "                ],",
+            "                \"enabled\" : true,",
             "                \"expanded\" : true,",
             "                \"foreignKeys\" : [",
             "                  {",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : false,",
             "                    \"foreignKeyColumns\" : [",
             "                      {",
@@ -532,6 +542,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                    \"name\" : \"REVIEWS_ibfk_2\"",
             "                  },",
             "                  {",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : false,",
             "                    \"foreignKeyColumns\" : [",
             "                      {",
@@ -552,7 +563,13 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                \"id\" : \"REVIEWS\",",
             "                \"indexes\" : [",
             "                  {",
-            "                    \"expanded\" : false,",
+            "                    \"enabled\" : true,",
+            "                    \"expanded\" : false,"
+        ).forEachOrdered(sb::append);
+    }
+    
+    private static void initPart5(StringBuilder sb) {
+        Stream.of(
             "                    \"id\" : \"PRIMARY\",",
             "                    \"indexColumns\" : [",
             "                      {",
@@ -564,14 +581,10 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                      }",
             "                    ],",
             "                    \"name\" : \"PRIMARY\",",
-            "                    \"unique\" : true"
-        ).forEachOrdered(sb::append);
-    }
-    
-    private static void initPart5(StringBuilder sb) {
-        Stream.of(
+            "                    \"unique\" : true",
             "                  },",
             "                  {",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : false,",
             "                    \"id\" : \"MOVIE_ID\",",
             "                    \"indexColumns\" : [",
@@ -587,6 +600,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                    \"unique\" : false",
             "                  },",
             "                  {",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : false,",
             "                    \"id\" : \"USER_ID\",",
             "                    \"indexColumns\" : [",
@@ -606,6 +620,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                \"name\" : \"REVIEWS\",",
             "                \"primaryKeyColumns\" : [",
             "                  {",
+            "                    \"enabled\" : true,",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"REVIEW_ID\",",
             "                    \"name\" : \"REVIEW_ID\",",
@@ -616,6 +631,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "              {",
             "                \"columns\" : [",
             "                  {",
+            "                    \"autoIncrement\" : true,",
             "                    \"databaseType\" : \"java.lang.Integer\",",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"USER_ID\",",
@@ -654,7 +670,12 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                \"indexes\" : [",
             "                  {",
             "                    \"expanded\" : false,",
-            "                    \"id\" : \"PRIMARY\",",
+            "                    \"id\" : \"PRIMARY\","
+        ).forEachOrdered(sb::append);
+    }
+    
+    private static void initPart6(StringBuilder sb) {
+        Stream.of(
             "                    \"indexColumns\" : [",
             "                      {",
             "                        \"expanded\" : true,",
@@ -670,12 +691,7 @@ public class GeneratedMoviesDatabaseMetadata extends AbstractApplicationMetadata
             "                ],",
             "                \"isView\" : false,",
             "                \"name\" : \"USERS\",",
-            "                \"primaryKeyColumns\" : ["
-        ).forEachOrdered(sb::append);
-    }
-    
-    private static void initPart6(StringBuilder sb) {
-        Stream.of(
+            "                \"primaryKeyColumns\" : [",
             "                  {",
             "                    \"expanded\" : true,",
             "                    \"id\" : \"USER_ID\",",

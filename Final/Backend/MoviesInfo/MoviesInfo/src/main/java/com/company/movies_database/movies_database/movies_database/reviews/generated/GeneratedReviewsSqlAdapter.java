@@ -38,8 +38,7 @@ public abstract class GeneratedReviewsSqlAdapter implements SqlAdapter<Reviews> 
             .setUserId(   getInt(resultSet, 2 + offset))
             .setMovieId(  getInt(resultSet, 3 + offset))
             .setRating(   resultSet.getBigDecimal(4 + offset))
-            .setIsLike(   getBoolean(resultSet, 5 + offset))
-            .setComment(  resultSet.getString(6 + offset))
+            .setComment(  resultSet.getString(5 + offset))
             ;
     }
     

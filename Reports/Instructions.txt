@@ -20,6 +20,7 @@ once its connected to server run the database
 if there is any change to server or database go to src -> main -> json and 
 delete/change ip address at bottom of the page
 speedment.json and run mvn speedment:tool
+mvn speedment:clear to clear all generated code by speedment
 
 
 run it as spring boot application

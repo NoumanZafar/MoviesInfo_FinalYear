@@ -1,0 +1,55 @@
+package ie.tus.athlone.MoviesInfo;
+
+import static org.assertj.core.api.Assertions.tuple;
+
+import java.util.stream.Stream;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.company.movies_database.MoviesDatabaseApplication;
+import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeople;
+import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManager;
+import com.company.movies_database.movies_database.movies_database.movie_people.generated.GeneratedMoviePeople;
+import com.company.movies_database.movies_database.movies_database.movie_people.generated.GeneratedMoviePeopleManager;
+import com.company.movies_database.movies_database.movies_database.people.People;
+import com.company.movies_database.movies_database.movies_database.people.PeopleManager;
+import com.company.movies_database.movies_database.movies_database.people.generated.GeneratedPeople;
+import com.speedment.runtime.field.predicate.SpeedmentPredicate;
+import com.speedment.runtime.join.JoinComponent;
+
+@RestController
+@RequestMapping("/people")
+@CrossOrigin("*") // any port#
+public class ActorsController {
+	private final PeopleManager people;
+	private final MoviePeopleManager moviePeople;
+	private final JoinComponent joinComponent;
+
+	public ActorsController(MoviesDatabaseApplication app) {
+		people = app.getOrThrow(PeopleManager.class);
+		moviePeople = app.getOrThrow(MoviePeopleManager.class);
+		joinComponent = app.getOrThrow(JoinComponent.class);
+	}
+
+	/**
+	 * 
+	 * -- SEARCH THE ACORTS FOR A PARTUCULAR MOVIE 
+	 * SELECT P.* FROM MOVIE_PEOPLE MP
+	 * INNER JOIN PEOPLE P ON MP.PERSON_ID = P.PERSON_ID
+	 * WHERE MP.MOVIE_ID = 101;
+	 */
+	@GetMapping("{id}")
+    public Stream<GeneratedPeople> getMoviePeople(int id) {
+		SpeedmentPredicate<People> pr = People.PERSON_ID.equal(id);
+        return joinComponent.from(GeneratedMoviePeopleManager.IDENTIFIER)
+                .innerJoinOn(GeneratedPeople.PERSON_ID)
+                .equal(GeneratedMoviePeople.PERSON_ID)
+                .where(pr)
+                .build()
+                .stream()
+                .map(tuple -> tuple.get(People.PERSON_ID));
+    }
+}
