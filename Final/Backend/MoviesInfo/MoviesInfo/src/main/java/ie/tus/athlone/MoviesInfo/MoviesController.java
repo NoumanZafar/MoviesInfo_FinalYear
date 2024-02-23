@@ -1,6 +1,7 @@
 package ie.tus.athlone.MoviesInfo;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -49,4 +50,12 @@ public class MoviesController {
 				.collect(Collectors.toList());
 	}
 	
+	@GetMapping("/related/{id}")
+	public String getRelatedMovies(@PathVariable int id){
+        String genre = movies.stream()
+                .filter(movie -> movie.getMovieId() == id)
+                .map(Movies::getGenre)
+                .findFirst().toString();
+        return genre.toString();
+	}
 }
