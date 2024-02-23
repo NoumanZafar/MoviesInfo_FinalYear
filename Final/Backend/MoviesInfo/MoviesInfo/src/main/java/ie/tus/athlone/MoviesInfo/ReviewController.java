@@ -34,6 +34,7 @@ public class ReviewController {
 	//AVERAGE RATING FOR A SELECTED MOVIE
 	//SELECT AVG(RATING) FROM REVIEWS WHERE MOVIE_ID = 101;
 	@GetMapping("{id}")
+	/*
 	public ResponseEntity<Double> getAverageRating(@PathVariable int id) {
 	    // Filter reviews for the given movie ID
 	    List<Reviews> filteredReviews = reviews.stream()
@@ -53,14 +54,16 @@ public class ReviewController {
 	        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	    }
 	}
+	*/
 	
-	/*
-	public double getAverageRating(@PathVariable int id) {
-		return reviews.stream()
+	public List<Map<String, Double>> getAverageRating(@PathVariable int id) {
+		double rating = reviews.stream()
 				.filter(Reviews.MOVIE_ID.equal(id))
 				.mapToDouble(Reviews.RATING.asDouble())
 				.average().getAsDouble();
-	}*/
+		
+		return List.of(Map.of("AvgRating", rating));
+	}
 	
 	//-- ALL THE REVIEWS FOR A MOVIE AND WHO POSTED THE REVIEW
 //	SELECT R.REVIEW_ID,R.COMMENT,U.USERNAME FROM REVIEWS R
@@ -70,10 +73,10 @@ public class ReviewController {
 //	    R.MOVIE_ID = 101;
 	
 	@GetMapping("/movie/{id}")
-	public Map<String, Object> getReviewsWithUsers(List<Reviews> reviews, List<Users> users, int id) {
-        return reviews.stream()
+	public List<Map<String, Object>> getReviewsWithUsers(@PathVariable int id) {
+		/* return reviews.stream()
                 .filter(review -> review.getMovieId().getAsInt() == id)
-                .map((Reviews review) -> { // Explicitly specify type of review
+                .map((review) -> { // Explicitly specify type of review
                     int userId = review.getUserId().getAsInt();
                     Users user = users.stream()
                             .filter(u -> u.getUserId() == userId)
@@ -93,37 +96,9 @@ public class ReviewController {
                             return review;
                         }
                 ));
-    }
+    }*/
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*
-	public List<List<Object>> getPeopleReviews(@PathVariable int id) {
-//	        return reviews.stream()
-//	            .filter(Reviews.MOVIE_ID.equal(id))
-//	            .map(review -> new Object[] {
-//	                review.getReviewId(),
-//	                review.getComment(),
-//	                users.stream()
-//	                    .filter(Users.USER_ID.equal(review.getUserId().getAsInt()))
-//	                    .findAny()
-//	                    .map(Users::getUsername)
-//	                    .orElse(null) // Handle if user is not found
-//	            })
-//	            .collect(Collectors.toList());
-//		
-//		
-//        return reviews.stream()
-//	            .filter(Reviews.MOVIE_ID.equal(id))
-//	            .map(revi -> users.stream().filter(us-> us.getUserId()==revi.getUserId().getAsInt()).collect(Collectors.toList())
-//            		)
-//	            .collect(Collectors.toList());
 		
 		
 		return reviews.stream()
@@ -135,10 +110,13 @@ public class ReviewController {
 	                        .map(Users::getUsername)
 	                        .findFirst()
 	                        .orElse(null); // Handle if user is not found
-	                return List.of(review.getReviewId(), review.getComment(), username);
+	                return Map.of(
+                            "reviewId", review.getReviewId(),
+                            "comment", review.getComment(),
+                            "user", username
+                    );
 	            })
 	            .collect(Collectors.toList());
 
-	    }
-	*/
+	}
 }
