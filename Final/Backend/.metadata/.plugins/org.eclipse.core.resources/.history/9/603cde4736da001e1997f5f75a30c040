@@ -44,7 +44,8 @@ public class MoviesController {
 						toUpperCase().
 						contains(
 								name.
-								toUpperCase()))
+								toUpperCase()
+								))
 				.collect(Collectors.toList());
 	}
 	

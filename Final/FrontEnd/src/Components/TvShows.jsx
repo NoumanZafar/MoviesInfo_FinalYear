@@ -14,7 +14,9 @@ const TvShows = () => {
   const { toggle } = useContext(Container);
   const [moviesData, setMoviesData] = useState([]);
   const [clipData, setClipData] = useState([]);
+  const [relatedPeopleData, setRelatedPeopleData] = useState([]);
   const baseApi = "http://localhost:8080";
+
 
   const movieCall = async () => {
     let url = `${baseApi}/movies/id/${movieId}`;
@@ -35,7 +37,7 @@ const TvShows = () => {
       const response = await axios.get(url, {
         headers: {
           'Access-Control-Allow-Origin': '*'
-      }
+        }
       });
       setClipData(response.data);
     } catch (error) {
@@ -43,25 +45,36 @@ const TvShows = () => {
     }
   };
 
+  const relatedPeopleCall = async () => {
+    let url = `${baseApi}/people/${movieId}`;
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+      setRelatedPeopleData(response.data);
+    } catch (error) {
+      console.error('Error fetching Clips data:', error);
+    }
+  }
+
+
 
 
 
 
   useEffect(() => {
     movieCall();
-  }, []);
-  //console.log(moviesData)
-
-
-  useEffect(() => {
     clipCall();
+    relatedPeopleCall();
   }, []);
-  // console.log(clipData)
-
+  //console.log(relatedPeopleData)
 
   return (
     <Fragment>
       <div >
+
         <div >
           {Array.isArray(moviesData) && moviesData.length > 0 && moviesData.map((movie) => (
             <Fragment key={movie.movieId}>
@@ -86,8 +99,18 @@ const TvShows = () => {
           {Array.isArray(clipData) && clipData.length > 0 && clipData.map((clip) => (
             <Fragment key={clip.clipId}>
               <div>
-                <ReactPlayer url={clip.clipUrl} controls/>
-                <p>{clip.clipUrl}</p>
+                <ReactPlayer url={clip.clipUrl} controls />
+              </div>
+            </Fragment>
+          ))}
+        </div>
+
+        <div >
+          {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && relatedPeopleData.map((relatedPeople) => (
+            <Fragment key={relatedPeople.personId}>
+              <div>
+                <img src={relatedPeople.imageUrl} alt="" />
+                <p>{relatedPeople.name}</p>
               </div>
             </Fragment>
           ))}

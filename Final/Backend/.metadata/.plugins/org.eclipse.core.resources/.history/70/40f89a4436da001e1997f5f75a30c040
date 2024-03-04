@@ -30,8 +30,7 @@ public class MoviesController {
 	//SELECT * FROM MOVIES;
 	@GetMapping("")
 	public List<Movies> getAllMovies() {
-		return movies.stream()
-				.collect(Collectors.toList());
+		return movies.stream().collect(Collectors.toList());
 	}
 
 	//SELECT * FROM MOVIES WHERE NAME = '';
@@ -44,7 +43,8 @@ public class MoviesController {
 						toUpperCase().
 						contains(
 								name.
-								toUpperCase()))
+								toUpperCase()
+								))
 				.collect(Collectors.toList());
 	}
 	

@@ -30,21 +30,13 @@ public class MoviesController {
 	//SELECT * FROM MOVIES;
 	@GetMapping("")
 	public List<Movies> getAllMovies() {
-		return movies.stream()
-				.collect(Collectors.toList());
+		return movies.stream().collect(Collectors.toList());
 	}
 
 	//SELECT * FROM MOVIES WHERE NAME = '';
 	@GetMapping("{name}")
 	public List<Movies> getMovieByID(@PathVariable String name) {
-		return movies.stream()
-				.filter(
-						movie -> movie.
-						getTitle().
-						toUpperCase().
-						contains(
-								name.
-								toUpperCase()))
+		return movies.stream().filter(movie -> movie.getTitle().toUpperCase().contains(name.toUpperCase()))
 				.collect(Collectors.toList());
 	}
 	
