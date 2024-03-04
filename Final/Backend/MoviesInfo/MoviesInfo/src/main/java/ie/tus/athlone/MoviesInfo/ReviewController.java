@@ -35,10 +35,10 @@ public class ReviewController {
 		double rating = reviews.stream()
 				.filter(Reviews.MOVIE_ID.equal(id))
 				.mapToDouble(Reviews.RATING.asDouble())
-				.average().getAsDouble();
+				.average().orElse(0.0);
 		return List.of(Map.of("AvgRating", rating));
 	}
-	
+
 	
 	/*
 	-- ALL THE REVIEWS FOR A MOVIE AND WHO POSTED THE REVIEW

@@ -1249,3 +1249,180 @@
 2024-03-04 14:48:20,171 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-03-04 14:48:20,197 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-03-04 14:48:20,201 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 14:48:31,228 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 14:48:31,238 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 14:48:31,245 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 14:48:36,597 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 14:48:36,606 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 14:48:36,611 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:32:02,976 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:32:03,046 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:32:03,056 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:32:23,399 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:32:23,437 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:32:23,444 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:32:36,026 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:32:36,144 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:32:36,201 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:33:13,160 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:33:13,194 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:33:13,204 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:33:20,183 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:33:20,211 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:33:20,220 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:33:38,569 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:33:38,578 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:33:38,582 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:33:55,342 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:33:55,356 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:33:55,363 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:33:57,643 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:33:57,654 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:33:57,660 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:34:37,371 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:34:37,382 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:34:37,390 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:34:48,428 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:34:48,433 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:34:48,437 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:34:53,520 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:34:53,526 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:34:53,531 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:35:07,787 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:35:07,792 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:35:07,796 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:35:12,080 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:35:12,087 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:35:12,094 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:35:21,736 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:35:21,743 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:35:21,749 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:35:28,840 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:35:28,847 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:35:28,854 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:35:32,196 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:35:32,203 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:35:32,208 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:35:46,278 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:35:46,283 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:35:46,288 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:36:12,666 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:36:12,672 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:36:12,679 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:38:32,961 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:38:32,970 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:38:32,974 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:39:45,922 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:39:45,945 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:39:45,950 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:40:30,388 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:40:30,419 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:40:30,425 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:41:22,716 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:41:22,746 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:41:22,756 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:41:31,153 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:41:31,184 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:41:31,190 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:42:50,719 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:42:50,777 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:42:50,817 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:43:47,211 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:43:47,223 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:43:47,232 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:43:55,043 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:43:55,052 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:43:55,061 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:44:21,699 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:44:21,717 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:44:21,723 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 15:45:04,071 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 15:45:04,083 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 15:45:04,089 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:09:37,277 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:09:37,386 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:09:37,410 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:33:03,207 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:33:03,261 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:33:03,310 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:33:13,146 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:33:13,155 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:33:13,160 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:33:47,739 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:33:47,774 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:33:47,786 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:34:00,273 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:34:00,284 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:34:00,290 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:34:20,893 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:34:20,904 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:34:20,913 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:34:40,279 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:34:40,300 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:34:40,307 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:34:50,764 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:34:50,774 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:34:50,782 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:35:19,981 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:35:19,991 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:35:19,997 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:35:35,883 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:35:35,893 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:35:35,898 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:35:42,064 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:35:42,074 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:35:42,080 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:37:27,043 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:37:27,051 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:37:27,056 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:37:30,886 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:37:30,909 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:37:30,914 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:37:58,094 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:37:58,123 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:37:58,146 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:38:02,772 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:38:02,780 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:38:02,784 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:38:12,279 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:38:12,289 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:38:12,294 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:38:17,531 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:38:17,540 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:38:17,546 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:38:24,537 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:38:24,549 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:38:24,562 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:38:37,753 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:38:37,780 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:38:37,787 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:38:47,710 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:38:47,720 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:38:47,726 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:38:49,889 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:38:49,894 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:38:49,897 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:39:53,609 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:39:53,619 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:39:53,625 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:40:06,866 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:40:06,876 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:40:06,880 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:40:18,507 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:40:18,528 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:40:18,532 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:40:22,067 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:40:22,081 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:40:22,084 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:40:25,794 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:40:25,802 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:40:25,805 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:40:38,865 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:40:38,871 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:40:38,875 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:40:41,922 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:40:41,927 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:40:41,930 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources
+2024-03-04 16:40:44,936 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-04 16:40:44,941 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-04 16:40:44,946 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\nouma\Downloads\BEng Software Eng\Semester 2\Project 4\Final\Backend\MoviesInfo\MoviesInfo\src\test\resources

@@ -15,6 +15,7 @@ const TvShows = () => {
   const [moviesData, setMoviesData] = useState([]);
   const [clipData, setClipData] = useState([]);
   const [relatedPeopleData, setRelatedPeopleData] = useState([]);
+  const [averageRatingData, setAverageRatingData] = useState([]);
   const baseApi = "http://localhost:8080";
 
 
@@ -55,7 +56,22 @@ const TvShows = () => {
       });
       setRelatedPeopleData(response.data);
     } catch (error) {
-      console.error('Error fetching Clips data:', error);
+      console.error('Error fetching People data:', error);
+    }
+  }
+
+  const averageRating = async () => {
+    let url = `${baseApi}/reviews/${movieId}`;
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+      setAverageRatingData(response.data);
+      //console.log(response.data)
+    } catch (error) {
+      console.error('Error fetching Rating data:', error);
     }
   }
 
@@ -68,8 +84,9 @@ const TvShows = () => {
     movieCall();
     clipCall();
     relatedPeopleCall();
+    averageRating();
   }, []);
-  //console.log(relatedPeopleData)
+  //console.log(averageRatingData)
 
   return (
     <Fragment>
@@ -111,6 +128,16 @@ const TvShows = () => {
               <div>
                 <img src={relatedPeople.imageUrl} alt="" />
                 <p>{relatedPeople.name}</p>
+              </div>
+            </Fragment>
+          ))}
+        </div>
+
+        <div >
+          {Array.isArray(averageRatingData) && averageRatingData.length > 0 && averageRatingData.map((average) => (
+            <Fragment key={average.AvgRating}>
+              <div>
+              <p><strong>Average Rating:</strong> {average.AvgRating}</p>
               </div>
             </Fragment>
           ))}
