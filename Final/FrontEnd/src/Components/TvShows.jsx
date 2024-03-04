@@ -9,7 +9,7 @@ const TvShows = () => {
   //getting the movie id from url
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const movieId = params.get('movieId');
+  let initialMovieId = params.get('movieId');
   //STARTED HERE
   const { toggle } = useContext(Container);
   const [moviesData, setMoviesData] = useState([]);
@@ -17,6 +17,7 @@ const TvShows = () => {
   const [relatedPeopleData, setRelatedPeopleData] = useState([]);
   const [averageRatingData, setAverageRatingData] = useState([]);
   const [relatedMoviesData, setRelatedMoviesData] = useState([]);
+  const [movieId, setMovieId] = useState(initialMovieId);
   const baseApi = "http://localhost:8080";
 
 
@@ -89,6 +90,12 @@ const TvShows = () => {
     }
   }
 
+  const onClickPicture = (id) => {
+    console.log("Clicked image ID:", id);
+    setMovieId(id);
+    window.scrollTo(0, 0);
+  };
+
 
 
 
@@ -99,7 +106,7 @@ const TvShows = () => {
     relatedPeopleCall();
     averageRating();
     relatedMovies();
-  }, []);
+  }, [movieId]);
   //console.log(relatedMoviesData)
 
   return (
@@ -135,7 +142,7 @@ const TvShows = () => {
           ))}
         </div>
 
-        
+
         <div >
           {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && relatedPeopleData.map((relatedPeople) => (
             <Fragment key={relatedPeople.personId}>
@@ -157,12 +164,11 @@ const TvShows = () => {
           ))}
         </div>
 
-        
         <div >
           {Array.isArray(relatedMoviesData) && relatedMoviesData.length > 0 && relatedMoviesData.map((related) => (
             <Fragment key={related.movieId}>
               <div>
-                <img src={related.posterUrl} alt="" />
+                <img src={related.posterUrl} alt="" onClick={() => onClickPicture(related.movieId)} />
                 <p>{related.title}</p>
               </div>
             </Fragment>

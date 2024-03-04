@@ -66,7 +66,7 @@ public class MoviesController {
                 .map(Movies.GENRE)
                 .findAny()
                 .orElse("none");
-
+        //This hasn't been used in front end yet.
         return movies.stream()
         		.filter(Movies.GENRE.equal(genre))
         		.collect(Collectors.toList());
