@@ -35,7 +35,7 @@ const Navbar = () => {
                         </NavLink>
                     </div>
                     <div className='input-group'>
-                        <input type="text" placeholder='Search....' onChange={(e)=> setInputValue(e.target.value)} />
+                        <input type="text" placeholder='Search....' onChange={(e) => setInputValue(e.target.value)} />
                         <HiSearch fontSize={21} color='black' id='search' />
                         <div id='Color-switcher' onClick={() => setToggle(!toggle)}>
                             <div id={toggle ? 'Color-switcher-mover' : 'Color-switcher-moved'}>

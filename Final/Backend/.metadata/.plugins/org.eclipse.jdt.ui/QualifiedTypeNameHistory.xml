@@ -31,8 +31,10 @@
     <fullyQualifiedTypeName name="com.company.movies_database.MoviesDatabaseApplication"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.reviews.ReviewsManager"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.users.Users"/>
-    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="jakarta.websocket.server.PathParam"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="ie.tus.athlone.MoviesInfo.ReviewController"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="java.util.OptionalDouble"/>
 </qualifiedTypeNameHistroy>

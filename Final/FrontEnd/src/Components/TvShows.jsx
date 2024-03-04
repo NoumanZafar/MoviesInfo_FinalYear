@@ -12,12 +12,14 @@ const TvShows = () => {
   let initialMovieId = params.get('movieId');
   //STARTED HERE
   const { toggle } = useContext(Container);
+  const [movieId, setMovieId] = useState(initialMovieId);
   const [moviesData, setMoviesData] = useState([]);
   const [clipData, setClipData] = useState([]);
   const [relatedPeopleData, setRelatedPeopleData] = useState([]);
   const [averageRatingData, setAverageRatingData] = useState([]);
   const [relatedMoviesData, setRelatedMoviesData] = useState([]);
-  const [movieId, setMovieId] = useState(initialMovieId);
+  const [reviewsData, setReviewsData] = useState([]);
+
   const baseApi = "http://localhost:8080";
 
 
@@ -86,19 +88,23 @@ const TvShows = () => {
       });
       setRelatedMoviesData(response.data);
     } catch (error) {
-      console.error('Error fetching Rating data:', error);
+      console.error('Error fetching Related movies data:', error);
     }
-  }
-
-  const onClickPicture = (id) => {
-    console.log("Clicked image ID:", id);
-    setMovieId(id);
-    window.scrollTo(0, 0);
   };
 
-
-
-
+  const allReviews = async () => {
+    let url = `${baseApi}/reviews/movie/${movieId}`;
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+      setReviewsData(response.data);
+    } catch (error) {
+      console.error('Error fetching Reviews data:', error);
+    }
+  };
 
   useEffect(() => {
     movieCall();
@@ -106,8 +112,30 @@ const TvShows = () => {
     relatedPeopleCall();
     averageRating();
     relatedMovies();
+    allReviews();
   }, [movieId]);
-  //console.log(relatedMoviesData)
+  //console.log(reviewsData)
+
+  const onClickPicture = (id) => {
+    setMovieId(id);
+    window.scrollTo(0, 0);
+  };
+
+  //start work here
+  const postComment = () => {
+    //(REVIEW_ID, USER_ID, MOVIE_ID, RATING, COMMENT)
+    let comment = document.getElementById("commentField").value;
+    if (comment) {
+      console.log(comment)
+    } else {
+      document.getElementById("commentField").nextElementSibling.innerHTML = "Field Cant't be empty";
+    }
+  };
+
+  const clearSpan = () => {
+    document.getElementById("commentField").nextElementSibling.innerHTML = "";
+  };
+
 
   return (
     <Fragment>
@@ -170,6 +198,20 @@ const TvShows = () => {
               <div>
                 <img src={related.posterUrl} alt="" onClick={() => onClickPicture(related.movieId)} />
                 <p>{related.title}</p>
+              </div>
+            </Fragment>
+          ))}
+        </div>
+
+        <div >
+          <h3>Reviews</h3>
+          {Array.isArray(reviewsData) && reviewsData.length > 0 && reviewsData.map((review) => (
+            <Fragment key={review.reviewId}>
+              <div>
+                <p>{review.user}</p>
+                <p>{review.comment}</p>
+                <input type="text" id='commentField' placeholder="Write your comment....." onInput={clearSpan} /><span></span>
+                <button onClick={postComment}>Post</button>
               </div>
             </Fragment>
           ))}
