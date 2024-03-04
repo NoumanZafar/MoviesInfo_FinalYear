@@ -45,25 +45,4 @@ public class PeopleController {
 				.collect(Collectors.toList());
 	}
 	
-	
-//	List<MoviePeople> moviePeopleList = moviePeople
-//	.stream()
-//	.filter(mp -> mp.getMovieId() == id)
-//	.toList();
-//
-//List<People> peopleList = new ArrayList<>();
-//for (MoviePeople mp : moviePeopleList) {
-//People person = people.stream()
-//		.filter(p -> p.getPersonId() == mp.getPersonId())
-//		.findFirst()
-//		.orElse(null);
-//if (person != null) {
-//	peopleList.add(person);
-//}
-//}
-//return peopleList;
-
-
-
-
 }

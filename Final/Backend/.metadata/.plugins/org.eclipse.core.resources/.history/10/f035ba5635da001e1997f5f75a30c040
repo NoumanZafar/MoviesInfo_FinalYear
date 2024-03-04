@@ -49,10 +49,8 @@ public class MoviesController {
 				.collect(Collectors.toList());
 	}
 	
-	//-- LIST OF RELATED MOVIES
-	//SELECT MOVIE_ID FROM MOVIES WHERE GENRE = (SELECT GENRE FROM MOVIES WHERE MOVIE_ID = 101);
 	@GetMapping("/related/{id}")
-	public List<Movies> getRelatedMovies(@PathVariable int id){
+	public List<String> getRelatedMovies(@PathVariable int id){
         String genre = movies.stream()
                 .filter(movie -> movie.getMovieId() == id)
                 .map(Movies.GENRE)
@@ -61,6 +59,7 @@ public class MoviesController {
         
         return movies.stream()
         		.filter(Movies.GENRE.equal(genre))
+        		.map(Movies.TITLE)
         		.collect(Collectors.toList());
 	}
 }
