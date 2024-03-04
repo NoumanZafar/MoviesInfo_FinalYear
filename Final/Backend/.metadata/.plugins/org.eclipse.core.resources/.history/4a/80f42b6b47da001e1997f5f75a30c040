@@ -65,7 +65,7 @@ public class MoviesController {
                 .filter(movie -> movie.getMovieId() == id)
                 .map(Movies.GENRE)
                 .findAny()
-                .orElse("none");
+                .orElse(null);
         //This hasn't been used in front end yet.
         return movies.stream()
         		.filter(Movies.GENRE.equal(genre))

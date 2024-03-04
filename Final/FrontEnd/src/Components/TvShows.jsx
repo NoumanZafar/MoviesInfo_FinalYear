@@ -16,6 +16,7 @@ const TvShows = () => {
   const [clipData, setClipData] = useState([]);
   const [relatedPeopleData, setRelatedPeopleData] = useState([]);
   const [averageRatingData, setAverageRatingData] = useState([]);
+  const [relatedMoviesData, setRelatedMoviesData] = useState([]);
   const baseApi = "http://localhost:8080";
 
 
@@ -69,12 +70,24 @@ const TvShows = () => {
         }
       });
       setAverageRatingData(response.data);
-      //console.log(response.data)
     } catch (error) {
       console.error('Error fetching Rating data:', error);
     }
   }
 
+  const relatedMovies = async () => {
+    let url = `${baseApi}/movies/related/${movieId}`;
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+      setRelatedMoviesData(response.data);
+    } catch (error) {
+      console.error('Error fetching Rating data:', error);
+    }
+  }
 
 
 
@@ -85,8 +98,9 @@ const TvShows = () => {
     clipCall();
     relatedPeopleCall();
     averageRating();
+    relatedMovies();
   }, []);
-  //console.log(averageRatingData)
+  //console.log(relatedMoviesData)
 
   return (
     <Fragment>
@@ -98,15 +112,36 @@ const TvShows = () => {
               <div>
                 <div>
                   <div>
-                    <img src={movie.posterUrl} alt="" width={500} height={500} />
+                    <img src={movie.posterUrl} alt="" />
                   </div>
                   <div>
                     <h2>{movie.title}</h2>
                     <p><strong>Genre:</strong> {movie.genre}</p>
                     <p><strong>Release Date:</strong> {movie.releaseDate}</p>
                     <p><strong>Description:</strong> {movie.mdescription}</p>
+                    <div >
+                      {Array.isArray(averageRatingData) && averageRatingData.length > 0 && averageRatingData.map((average) => (
+                        <Fragment key={average.AvgRating}>
+                          <div>
+                            <p><strong>Average Rating:</strong> {average.AvgRating}</p>
+                          </div>
+                        </Fragment>
+                      ))}
+                    </div>
                   </div>
                 </div>
+              </div>
+            </Fragment>
+          ))}
+        </div>
+
+        
+        <div >
+          {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && relatedPeopleData.map((relatedPeople) => (
+            <Fragment key={relatedPeople.personId}>
+              <div>
+                <img src={relatedPeople.imageUrl} alt="" />
+                <p>{relatedPeople.name}</p>
               </div>
             </Fragment>
           ))}
@@ -122,22 +157,13 @@ const TvShows = () => {
           ))}
         </div>
 
+        
         <div >
-          {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && relatedPeopleData.map((relatedPeople) => (
-            <Fragment key={relatedPeople.personId}>
+          {Array.isArray(relatedMoviesData) && relatedMoviesData.length > 0 && relatedMoviesData.map((related) => (
+            <Fragment key={related.movieId}>
               <div>
-                <img src={relatedPeople.imageUrl} alt="" />
-                <p>{relatedPeople.name}</p>
-              </div>
-            </Fragment>
-          ))}
-        </div>
-
-        <div >
-          {Array.isArray(averageRatingData) && averageRatingData.length > 0 && averageRatingData.map((average) => (
-            <Fragment key={average.AvgRating}>
-              <div>
-              <p><strong>Average Rating:</strong> {average.AvgRating}</p>
+                <img src={related.posterUrl} alt="" />
+                <p>{related.title}</p>
               </div>
             </Fragment>
           ))}
