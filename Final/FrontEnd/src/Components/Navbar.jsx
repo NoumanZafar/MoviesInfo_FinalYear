@@ -18,16 +18,16 @@ const Navbar = () => {
                 <nav className={toggle ? '' : 'navBarColor'}>
                     <div className='nav-options'>
                         {/**Add routing here with adding this pages can be accessed with button click*/}
-                        <NavLink to="">
+                        <NavLink to="/Movies">
                             <h1 id={toggle ? '' : 'heading'}>WEBSITENAME</h1>
                         </NavLink>
-                        <NavLink to="" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
+                        <NavLink to="/Movies" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
                             <span id={toggle ? 'Movies' : 'MoviesLight'}>Movies</span>
                         </NavLink>
                         <NavLink to="/TvShows" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
                             <span id={toggle ? 'Movies' : 'MoviesLight'}>Tv Shows</span>
                         </NavLink>
-                        <NavLink to="/Trends" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
+                        <NavLink to="" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
                             <span id={toggle ? 'Movies' : 'MoviesLight'}>Trending</span>
                         </NavLink>
                         <NavLink to="/Pricing" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
@@ -47,9 +47,9 @@ const Navbar = () => {
 
                 <Routes>
                     {/**Add routing here with adding this pages can be accessed changing the url manually*/}
-                    <Route path='' element={<Movies />} />
+                    <Route path='/Movies' element={<Movies />} />
                     <Route path='/TvShows' element={<TvShows />} />
-                    <Route path='/Trends' element={<Trends />} />
+                    <Route path='' element={<Trends />} />
                     <Route path='/Pricing' element={<Pricing />} />
                 </Routes>
 

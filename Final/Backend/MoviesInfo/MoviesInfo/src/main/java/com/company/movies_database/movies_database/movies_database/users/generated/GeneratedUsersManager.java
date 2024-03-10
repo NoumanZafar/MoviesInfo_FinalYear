@@ -24,7 +24,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedUsersManager extends Manager<Users> {
     
-    TableIdentifier<Users> IDENTIFIER = TableIdentifier.of("MOVIES_DATABASE", "MOVIES_DATABASE", "USERS");
+    TableIdentifier<Users> IDENTIFIER = TableIdentifier.of("Movies_database", "MOVIES_DATABASE", "USERS");
     List<Field<Users>> FIELDS = unmodifiableList(asList(
         Users.USER_ID,
         Users.USERNAME,

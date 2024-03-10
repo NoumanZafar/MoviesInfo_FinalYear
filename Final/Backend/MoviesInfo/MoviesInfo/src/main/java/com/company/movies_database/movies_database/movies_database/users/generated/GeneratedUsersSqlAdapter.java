@@ -29,7 +29,7 @@ public abstract class GeneratedUsersSqlAdapter implements SqlAdapter<Users> {
     private final TableIdentifier<Users> tableIdentifier;
     
     protected GeneratedUsersSqlAdapter() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "MOVIES_DATABASE", "USERS");
+        this.tableIdentifier = TableIdentifier.of("Movies_database", "MOVIES_DATABASE", "USERS");
     }
     
     protected Users apply(ResultSet resultSet, int offset) throws SQLException {

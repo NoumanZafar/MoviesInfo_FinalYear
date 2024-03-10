@@ -91,7 +91,7 @@ public interface GeneratedReviews {
     
     /**
      * Returns the reviewId of this Reviews. The reviewId field corresponds to
-     * the database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
+     * the database column Movies_database.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
      * 
      * @return the reviewId of this Reviews
      */
@@ -99,7 +99,7 @@ public interface GeneratedReviews {
     
     /**
      * Returns the userId of this Reviews. The userId field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.USER_ID.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.USER_ID.
      * 
      * @return the userId of this Reviews
      */
@@ -107,7 +107,7 @@ public interface GeneratedReviews {
     
     /**
      * Returns the movieId of this Reviews. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
      * 
      * @return the movieId of this Reviews
      */
@@ -115,7 +115,7 @@ public interface GeneratedReviews {
     
     /**
      * Returns the rating of this Reviews. The rating field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.RATING.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.RATING.
      * 
      * @return the rating of this Reviews
      */
@@ -123,7 +123,7 @@ public interface GeneratedReviews {
     
     /**
      * Returns the comment of this Reviews. The comment field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.COMMENT.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.COMMENT.
      * 
      * @return the comment of this Reviews
      */
@@ -131,7 +131,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the reviewId of this Reviews. The reviewId field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
      * 
      * @param reviewId to set of this Reviews
      * @return         this Reviews instance
@@ -140,7 +140,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the userId of this Reviews. The userId field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.USER_ID.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.USER_ID.
      * 
      * @param userId to set of this Reviews
      * @return       this Reviews instance
@@ -149,7 +149,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the movieId of this Reviews. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
      * 
      * @param movieId to set of this Reviews
      * @return        this Reviews instance
@@ -158,7 +158,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the rating of this Reviews. The rating field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.RATING.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.RATING.
      * 
      * @param rating to set of this Reviews
      * @return       this Reviews instance
@@ -167,7 +167,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the comment of this Reviews. The comment field corresponds to the
-     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.COMMENT.
+     * database column Movies_database.MOVIES_DATABASE.REVIEWS.COMMENT.
      * 
      * @param comment to set of this Reviews
      * @return        this Reviews instance
@@ -212,7 +212,7 @@ public interface GeneratedReviews {
         
         @Override
         public String getDbmsId() {
-            return "MOVIES_DATABASE";
+            return "Movies_database";
         }
         
         @Override

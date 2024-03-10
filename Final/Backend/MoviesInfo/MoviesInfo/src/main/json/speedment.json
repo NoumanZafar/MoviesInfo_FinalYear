@@ -3,11 +3,11 @@
     "speedmentVersion" : "Speedment:3.2.10",
     "nameProtected" : false,
     "expanded" : true,
-    "appId" : "94eda25a-cd38-430c-9449-cc6b2dfc6c68",
+    "appId" : "a8fae682-1057-45c4-9078-1e5411e8b9ff",
     "companyName" : "company",
-    "name" : "MOVIES_DATABASE",
+    "name" : "Movies_database",
     "packageLocation" : "src/main/java/",
-    "id" : "MOVIES_DATABASE",
+    "id" : "Movies_database",
     "dbmses" : [
       {
         "expanded" : true,
@@ -23,7 +23,7 @@
                     "expanded" : false,
                     "foreignKeyColumns" : [
                       {
-                        "foreignDatabaseName" : "MOVIES_DATABASE",
+                        "foreignDatabaseName" : "Movies_database",
                         "foreignSchemaName" : "MOVIES_DATABASE",
                         "expanded" : true,
                         "name" : "MOVIE_ID",
@@ -216,7 +216,7 @@
                     "expanded" : false,
                     "foreignKeyColumns" : [
                       {
-                        "foreignDatabaseName" : "MOVIES_DATABASE",
+                        "foreignDatabaseName" : "Movies_database",
                         "foreignSchemaName" : "MOVIES_DATABASE",
                         "expanded" : true,
                         "name" : "MOVIE_ID",
@@ -234,7 +234,7 @@
                     "expanded" : false,
                     "foreignKeyColumns" : [
                       {
-                        "foreignDatabaseName" : "MOVIES_DATABASE",
+                        "foreignDatabaseName" : "Movies_database",
                         "foreignSchemaName" : "MOVIES_DATABASE",
                         "expanded" : true,
                         "name" : "PERSON_ID",
@@ -414,7 +414,7 @@
                     "expanded" : false,
                     "foreignKeyColumns" : [
                       {
-                        "foreignDatabaseName" : "MOVIES_DATABASE",
+                        "foreignDatabaseName" : "Movies_database",
                         "foreignSchemaName" : "MOVIES_DATABASE",
                         "expanded" : true,
                         "name" : "MOVIE_ID",
@@ -432,7 +432,7 @@
                     "expanded" : false,
                     "foreignKeyColumns" : [
                       {
-                        "foreignDatabaseName" : "MOVIES_DATABASE",
+                        "foreignDatabaseName" : "Movies_database",
                         "foreignSchemaName" : "MOVIES_DATABASE",
                         "expanded" : true,
                         "name" : "USER_ID",
@@ -539,12 +539,9 @@
                   },
                   {
                     "databaseType" : "java.math.BigDecimal",
-                    "nameProtected" : true,
                     "expanded" : true,
                     "nullable" : true,
-                    "autoIncrement" : false,
                     "name" : "RATING",
-                    "nullableImplementation" : "OPTIONAL",
                     "id" : "RATING",
                     "ordinalPosition" : 4,
                     "enabled" : true
@@ -570,11 +567,26 @@
                     "expanded" : true,
                     "name" : "USER_ID",
                     "id" : "USER_ID",
-                    "ordinalPosition" : 1,
-                    "enabled" : true
+                    "ordinalPosition" : 1
                   }
                 ],
                 "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "EMAIL",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "EMAIL",
+                        "id" : "EMAIL",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "EMAIL",
+                    "enabled" : true
+                  },
                   {
                     "expanded" : false,
                     "unique" : true,
@@ -588,8 +600,7 @@
                         "ordinalPosition" : 1
                       }
                     ],
-                    "id" : "PRIMARY",
-                    "enabled" : true
+                    "id" : "PRIMARY"
                   }
                 ],
                 "isView" : false,
@@ -645,8 +656,8 @@
         ],
         "typeName" : "MySQL",
         "ipAddress" : "3.12.123.245",
-        "name" : "MOVIES_DATABASE",
-        "id" : "MOVIES_DATABASE",
+        "name" : "Movies_database",
+        "id" : "Movies_database",
         "enabled" : true,
         "username" : "nouman"
       }

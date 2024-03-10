@@ -24,7 +24,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedClipsManager extends Manager<Clips> {
     
-    TableIdentifier<Clips> IDENTIFIER = TableIdentifier.of("MOVIES_DATABASE", "MOVIES_DATABASE", "CLIPS");
+    TableIdentifier<Clips> IDENTIFIER = TableIdentifier.of("Movies_database", "MOVIES_DATABASE", "CLIPS");
     List<Field<Clips>> FIELDS = unmodifiableList(asList(
         Clips.CLIP_ID,
         Clips.MOVIE_ID,

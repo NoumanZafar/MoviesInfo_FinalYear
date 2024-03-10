@@ -2,7 +2,7 @@ package com.company.movies_database;
 
 /**
  * The entry point for the {@link com.speedment.runtime.config.Project} named
- * MOVIES_DATABASE
+ * Movies_database
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  * 
