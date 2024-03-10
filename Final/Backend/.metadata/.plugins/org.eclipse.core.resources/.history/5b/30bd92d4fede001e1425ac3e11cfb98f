@@ -1,0 +1,45 @@
+package ie.tus.athlone.MoviesInfo;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.company.movies_database.MoviesDatabaseApplication;
+import com.company.movies_database.movies_database.movies_database.users.UsersManager;
+
+@RestController
+
+@CrossOrigin("*") // any port#
+public class UserController {
+	private final UsersManager user;
+
+	public UserController(MoviesDatabaseApplication app) {
+		user = app.getOrThrow(UsersManager.class);
+	}
+	
+	//-- LOGIN AUTHORIZATION
+	//SELECT * FROM USERS WHERE EMAIL = 'alice@email.com' AND PASSWORD = 'password123';
+
+    @PostMapping("/auth")
+    public ResponseEntity<String> authenticate(@RequestBody Map<String, String> requestBody) {
+        String email = requestBody.get("email");
+        String password = requestBody.get("password");
+
+        // Perform authentication or any other necessary processing
+        
+        // Return response
+        JSONObject jsonResponse = new JSONObject(); Jsonno
+        jsonResponse.put("message", "Authentication successful");
+        return ResponseEntity.ok(jsonResponse.toString());
+    }
+//	public List<Users> userAuthorization(@RequestBody Users s) {
+//		return user.stream()
+//				.filter(Users.EMAIL.equal(email)
+//						.and(Users.PASSWORD.equal(password)))
+//				.collect(Collectors.toList());
+//	}
+}

@@ -1,0 +1,16 @@
+package ie.tus.athlone.MoviesInfo;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.company.movies_database.movies_database.movies_database.users.UsersManager;
+
+@RestController
+@RequestMapping("/users")
+@CrossOrigin("*") // any port#
+public class UserController {
+	private final UsersManager user;
+	
+	
+}

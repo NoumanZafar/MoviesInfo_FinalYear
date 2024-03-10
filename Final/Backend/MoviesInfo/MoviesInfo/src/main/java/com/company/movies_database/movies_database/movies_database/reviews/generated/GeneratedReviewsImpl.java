@@ -49,8 +49,8 @@ public abstract class GeneratedReviewsImpl implements Reviews {
     }
     
     @Override
-    public BigDecimal getRating() {
-        return rating;
+    public Optional<BigDecimal> getRating() {
+        return Optional.ofNullable(rating);
     }
     
     @Override
@@ -112,7 +112,7 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         sj.add("reviewId = " + Objects.toString(getReviewId()));
         sj.add("userId = "   + Objects.toString(OptionalUtil.unwrap(getUserId())));
         sj.add("movieId = "  + Objects.toString(OptionalUtil.unwrap(getMovieId())));
-        sj.add("rating = "   + Objects.toString(getRating()));
+        sj.add("rating = "   + Objects.toString(OptionalUtil.unwrap(getRating())));
         sj.add("comment = "  + Objects.toString(OptionalUtil.unwrap(getComment())));
         return "ReviewsImpl " + sj.toString();
     }
@@ -136,7 +136,7 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         hash = 31 * hash + Integer.hashCode(getReviewId());
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getUserId()));
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getMovieId()));
-        hash = 31 * hash + Objects.hashCode(getRating());
+        hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getRating()));
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getComment()));
         return hash;
     }

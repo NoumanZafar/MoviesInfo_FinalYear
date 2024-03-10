@@ -72,7 +72,7 @@ public interface GeneratedReviews {
      */
     ComparableField<Reviews, BigDecimal, BigDecimal> RATING = ComparableField.create(
         Identifier.RATING,
-        Reviews::getRating,
+        o -> OptionalUtil.unwrap(o.getRating()),
         Reviews::setRating,
         TypeMapper.identity(),
         false
@@ -119,7 +119,7 @@ public interface GeneratedReviews {
      * 
      * @return the rating of this Reviews
      */
-    BigDecimal getRating();
+    Optional<BigDecimal> getRating();
     
     /**
      * Returns the comment of this Reviews. The comment field corresponds to the

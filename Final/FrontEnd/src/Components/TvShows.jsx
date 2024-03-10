@@ -210,11 +210,11 @@ const TvShows = () => {
               <div>
                 <p>{review.user}</p>
                 <p>{review.comment}</p>
-                <input type="text" id='commentField' placeholder="Write your comment....." onInput={clearSpan} /><span></span>
-                <button onClick={postComment}>Post</button>
               </div>
             </Fragment>
           ))}
+          <input type="text" id='commentField' placeholder="Write your comment....." onInput={clearSpan} /><span></span>
+          <button onClick={postComment}>Post</button>
         </div>
 
       </div>
