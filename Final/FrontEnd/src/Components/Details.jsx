@@ -156,6 +156,7 @@ const Details = () => {
         if (response.status === 200) {
           console.log("Comment Successfully posted")
           document.getElementById("commentField").value = "";
+          alert("Comment Posted.")
           allReviews();
         } else {
           console.error('Comment can\'t be posted');
