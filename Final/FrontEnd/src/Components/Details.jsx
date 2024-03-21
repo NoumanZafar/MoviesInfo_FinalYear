@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Container } from './Navbar';
-import '../Styles/TvShows.css';
+import { useNavigate } from 'react-router-dom';
 
-const TvShows = () => {
+const Details = () => {
   //getting the movie id from url
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -19,6 +19,7 @@ const TvShows = () => {
   const [averageRatingData, setAverageRatingData] = useState([]);
   const [relatedMoviesData, setRelatedMoviesData] = useState([]);
   const [reviewsData, setReviewsData] = useState([]);
+  const navigate = useNavigate();
 
   const baseApi = "http://localhost:8080";
 
@@ -118,6 +119,7 @@ const TvShows = () => {
 
   const onClickPicture = (id) => {
     setMovieId(id);
+    navigate(`/Details?movieId=${id}`);
     window.scrollTo(0, 0);
   };
 
@@ -222,4 +224,4 @@ const TvShows = () => {
   );
 }
 
-export default TvShows;
+export default Details;

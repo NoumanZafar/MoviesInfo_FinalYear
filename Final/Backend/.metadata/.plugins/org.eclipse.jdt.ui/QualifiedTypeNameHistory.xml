@@ -15,7 +15,6 @@
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.reviews.Reviews"/>
     <fullyQualifiedTypeName name="jakarta.annotation.PreDestroy"/>
     <fullyQualifiedTypeName name="com.company.movies_database.MoviesDatabaseApplicationBuilder"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="ie.tus.athlone.MoviesInfo.ClipsController"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.clips.ClipsManager"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.people.PeopleManager"/>
@@ -34,7 +33,13 @@
     <fullyQualifiedTypeName name="jakarta.websocket.server.PathParam"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="ie.tus.athlone.MoviesInfo.ReviewController"/>
-    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="java.util.OptionalDouble"/>
+    <fullyQualifiedTypeName name="ie.tus.athlone.MoviesInfo.UserController"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.users.UsersManager"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.users.UsersImpl"/>
 </qualifiedTypeNameHistroy>
