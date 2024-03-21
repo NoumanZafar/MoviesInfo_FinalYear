@@ -13,7 +13,7 @@ const Login = () => {
   const handleUserAuthentication = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(baseApi + '/auth', { email, password });
+      const response = await axios.post(baseApi + '/auth', { email, password });     
       if (response.status === 200) {
         setIsAuthorized(true);
         setError('');
@@ -45,7 +45,8 @@ const Login = () => {
 
   useEffect(() => {
     console.log('Authentication status:', isAuthorized);
-    sessionStorage.setItem('isAuthorized', JSON.stringify(isAuthorized));
+    localStorage.setItem('isAuthorized', JSON.stringify(isAuthorized));
+    localStorage.setItem('email',JSON.stringify(email));
   }, [isAuthorized]);
 
   return (

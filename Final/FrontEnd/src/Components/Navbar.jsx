@@ -11,8 +11,8 @@ const Navbar = () => {
     const [inputValue, setInputValue] = useState('')
 
     const onClickLogout = () => {
-        console.log("clicked")
-        sessionStorage.setItem('isAuthorized', JSON.stringify(false));
+        localStorage.setItem('isAuthorized', JSON.stringify(false));
+        localStorage.setItem('email', JSON.stringify(""));
         window.location.reload();
     }
 

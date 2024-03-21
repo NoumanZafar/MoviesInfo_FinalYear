@@ -19,8 +19,10 @@ const Details = () => {
   const [averageRatingData, setAverageRatingData] = useState([]);
   const [relatedMoviesData, setRelatedMoviesData] = useState([]);
   const [reviewsData, setReviewsData] = useState([]);
+  const [authorizedUserData, setAuthorizedUserData] = useState([]);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
-
+  const email = JSON.parse(localStorage.getItem('email'));
   const baseApi = "http://localhost:8080";
 
 
@@ -107,6 +109,20 @@ const Details = () => {
     }
   };
 
+  const authorizedUser = async () => {
+    let url = `${baseApi}/${email}`;
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+      setAuthorizedUserData(response.data);
+    } catch (error) {
+      console.error('Error fetching Reviews data:', error);
+    }
+  };
+
   useEffect(() => {
     movieCall();
     clipCall();
@@ -114,8 +130,12 @@ const Details = () => {
     averageRating();
     relatedMovies();
     allReviews();
+    authorizedUser();
   }, [movieId]);
-  //console.log(reviewsData)
+
+
+  //console.log(authorizedUserData.length > 0 ? authorizedUserData[0].email : 'Email not available yet');
+
 
   const onClickPicture = (id) => {
     setMovieId(id);
@@ -124,15 +144,31 @@ const Details = () => {
   };
 
   //start work here
-  const postComment = () => {
-    //(REVIEW_ID, USER_ID, MOVIE_ID, RATING, COMMENT)
+  //multiple comments by same user but only one time rating
+  const postComment = async (e) => {
+    e.preventDefault();
+    let userId = authorizedUserData.length > 0 ? authorizedUserData[0].userId : '';
     let comment = document.getElementById("commentField").value;
+    const rating = 0;
     if (comment) {
-      console.log(comment)
+      try {
+        const response = await axios.post(`${baseApi}/reviews/comment`, { userId, movieId, rating, comment });
+        if (response.status === 200) {
+          console.log("Comment Successfully posted")
+          document.getElementById("commentField").value = "";
+          allReviews();
+        } else {
+          console.error('Comment can\'t be posted');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
     } else {
-      document.getElementById("commentField").nextElementSibling.innerHTML = "Field Cant't be empty";
+      document.getElementById("commentField").nextElementSibling.innerHTML = "Field Can't be empty";
     }
   };
+  
+
 
   const clearSpan = () => {
     document.getElementById("commentField").nextElementSibling.innerHTML = "";

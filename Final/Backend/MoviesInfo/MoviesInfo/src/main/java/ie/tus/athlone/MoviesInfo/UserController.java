@@ -9,11 +9,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.movies_database.MoviesDatabaseApplication;
+import com.company.movies_database.movies_database.movies_database.movies.Movies;
 import com.company.movies_database.movies_database.movies_database.users.Users;
 import com.company.movies_database.movies_database.movies_database.users.UsersImpl;
 import com.company.movies_database.movies_database.movies_database.users.UsersManager;
@@ -108,6 +110,7 @@ public class UserController {
 		}
 	}
 
+// INSERT INTO USERS VALUES (NULL, USERNAME, EMAIL, PASSWORD);
 	private boolean registerUser(String username, String email, String password) {
 		try {
 			user.persist(new UsersImpl()
@@ -119,5 +122,14 @@ public class UserController {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	//SELECT * FROM USERS WHERE EMAIL = '';
+	@GetMapping("/{email}")
+	public List<Users> getUserWithEmail(@PathVariable String email) {
+		return user
+				.stream()
+				.filter(user -> user.getEmail().equalsIgnoreCase(email))
+				.collect(Collectors.toList());
 	}
 }
