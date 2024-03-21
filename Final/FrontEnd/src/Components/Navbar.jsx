@@ -4,7 +4,6 @@ import { HiSearch } from 'react-icons/hi'
 import '../Styles/Navbar.css'
 import Movies from './Movies'
 import Details from './Details'
-import Login from './Login'
 
 export const Container = React.createContext()
 const Navbar = () => {
@@ -27,33 +26,9 @@ const Navbar = () => {
                             <h1 id={toggle ? '' : 'heading'}>WEBSITENAME</h1>
                         </NavLink>
 
-                        {/** <NavLink to="" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
-                            <span id={toggle ? 'Movies' : 'MoviesLight'}>Movies</span>
-                        </NavLink>*/}
-
-
-                        {/** <NavLink to="/TvShows" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
-                            <span id={toggle ? 'Movies' : 'MoviesLight'}>Tv Shows</span>
-                        </NavLink>*/}
-
-
-                        {/**<NavLink to="/Trends" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
-                            <span id={toggle ? 'Movies' : 'MoviesLight'}>Trending</span>
-                        </NavLink> */}
-
-                        {/** 
-                       * 
-                       * <NavLink to="/Pricing" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
-                            <span id={toggle ? 'Movies' : 'MoviesLight'}>Pricing</span>
-                        </NavLink>
-                      */}
-
-
                         <NavLink style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
                             <span id={toggle ? 'Movies' : 'MoviesLight'} onClick={() => onClickLogout()}>Logout</span>
                         </NavLink>
-
-
                     </div>
                     <div className='input-group'>
                         <input type="text" placeholder='Search....' onChange={(e) => setInputValue(e.target.value)} />
@@ -69,15 +44,7 @@ const Navbar = () => {
                 <Routes>
                     {/**Add routing here with adding this pages can be accessed changing the url manually*/}
                     <Route path='' element={<Movies />} />
-                    {/** <Route path='/TvShows' element={<TvShows />} />*/}
                     <Route path='/Details' element={<Details />} />
-
-
-
-                    {/**<Route path='/Trends' element={<Trends />} /> */}
-
-                    {/** <Route path='/Trends' element={<Trends />} />  */}
-                    {/**<Route path='/Pricing' element={<Pricing />}  */}
                 </Routes>
 
             </Fragment>
