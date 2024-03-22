@@ -132,12 +132,11 @@ const Details = () => {
           'Access-Control-Allow-Origin': '*'
         }
       });
-      let rating = response.data.rating;
-      console.log(rating)
+      let rating = response.data[0].rating;
       const star = document.getElementById('star' + rating)
       star.checked = true;
     } catch (error) {
-      console.error('Error fetching Reviews data:', error);
+      //console.error('Error fetching Rating data:', error);
     }
   };
 
