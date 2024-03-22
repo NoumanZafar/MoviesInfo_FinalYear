@@ -1,6 +1,5 @@
 package ie.tus.athlone.MoviesInfo;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +22,6 @@ import com.company.movies_database.movies_database.movies_database.reviews.Revie
 import com.company.movies_database.movies_database.movies_database.reviews.ReviewsImpl;
 import com.company.movies_database.movies_database.movies_database.reviews.ReviewsManager;
 import com.company.movies_database.movies_database.movies_database.users.Users;
-import com.company.movies_database.movies_database.movies_database.users.UsersImpl;
 import com.company.movies_database.movies_database.movies_database.users.UsersManager;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,6 +41,7 @@ public class ReviewController {
 	}
 	
 	//AVERAGE RATING FOR A SELECTED MOVIE
+	//SHOULD BE IN RATING CONTROLLER BUT WORKS FINE.
 	//SELECT AVG(RATING) FROM RATING WHERE MOVIE_ID = 101;
 	@GetMapping("{id}")
 	public List<Map<String, Double>> getAverageRating(@PathVariable int id) {

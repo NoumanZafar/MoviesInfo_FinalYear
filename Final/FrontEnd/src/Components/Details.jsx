@@ -123,6 +123,25 @@ const Details = () => {
     }
   };
 
+  const getRating = async () => {
+    let userId = authorizedUserData.length > 0 ? authorizedUserData[0].userId : '';
+    let url = `${baseApi}/${userId}/${movieId}`;
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+      let rating = response.data.rating;
+      console.log(rating)
+      const star = document.getElementById('star' + rating)
+      star.checked = true;
+    } catch (error) {
+      console.error('Error fetching Reviews data:', error);
+    }
+  };
+
+
   useEffect(() => {
     movieCall();
     clipCall();
@@ -133,8 +152,10 @@ const Details = () => {
     authorizedUser();
   }, [movieId]);
 
-
-  //console.log(authorizedUserData);
+  useEffect(() => {
+    getRating();
+  },[authorizedUserData, movieId])
+  //console.log(ratingData);
 
 
   const onClickPicture = (id) => {
@@ -173,6 +194,7 @@ const Details = () => {
   };
 
   const handleRatingChange = (e) => {
+    //selectedValue will be used to store it in the sql server
     const selectedValue = e.target.value;
     console.log("Selected value:", selectedValue);
   };

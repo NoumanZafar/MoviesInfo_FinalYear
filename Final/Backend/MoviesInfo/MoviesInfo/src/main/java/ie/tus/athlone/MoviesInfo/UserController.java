@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.movies_database.MoviesDatabaseApplication;
-import com.company.movies_database.movies_database.movies_database.movies.Movies;
 import com.company.movies_database.movies_database.movies_database.users.Users;
 import com.company.movies_database.movies_database.movies_database.users.UsersImpl;
 import com.company.movies_database.movies_database.movies_database.users.UsersManager;

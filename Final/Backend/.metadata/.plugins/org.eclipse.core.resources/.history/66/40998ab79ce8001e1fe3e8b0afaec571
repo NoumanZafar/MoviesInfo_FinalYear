@@ -1,0 +1,66 @@
+package ie.tus.athlone.MoviesInfo;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.company.movies_database.MoviesDatabaseApplication;
+import com.company.movies_database.movies_database.movies_database.rating.Rating;
+import com.company.movies_database.movies_database.movies_database.rating.RatingManager;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+@RestController
+@RequestMapping("/rating")
+@CrossOrigin("*") // any port#
+public class RatingController {
+	private final RatingManager rating;
+	private int userId, movieId = 0;
+
+	public RatingController(MoviesDatabaseApplication app) {
+		rating = app.getOrThrow(RatingManager.class);
+	}
+	
+	
+	@PostMapping("/data")
+	public boolean getData(@RequestBody Map<String, String> requestBody) {
+		userId = Integer.parseInt(requestBody.get("userId"));
+		movieId = Integer.parseInt(requestBody.get("movieId"));
+		if(userId > 0 && movieId > 0) {
+			
+		}
+	}
+	
+	
+	//-- GET THE RATING OF A MOVIE GIVEN BY A SPECIFIC USER
+	//SELECT * FROM RATING WHERE USER_ID = 1 AND MOVIE_ID = 101;
+	@GetMapping("")
+	public List<Rating> getRating(int userId, int movieId){
+		return rating.stream()
+				.filter(id -> id.getUserId() == userId)
+				.filter(id -> id.getMovieId() == movieId)
+				.collect(Collectors.toList());
+	}
+
+	
+	
+
+	// SELECT AVG(RATING) FROM RATING WHERE MOVIE_ID = 101;
+//	@GetMapping("{id}")
+//	public List<Map<String, Double>> getAverageRating(@PathVariable int id) {
+//		double ratin = rating.stream().filter(Rating.MOVIE_ID.equal(id)).mapToDouble(Rating.RATING.asDouble()).average()
+//				.orElse(0.0);
+//		return List.of(Map.of("AvgRating", ratin));
+//	}
+}
