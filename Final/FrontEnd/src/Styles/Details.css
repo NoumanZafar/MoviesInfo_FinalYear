@@ -1,0 +1,37 @@
+.stars {
+    display: inline-block;
+    /* Display stars inline */
+    font-size: 25px;
+    /* Set font size for stars */
+}
+
+.stars input {
+    display: none;
+    /* Hide the radio buttons */
+}
+
+.stars label {
+    float: right;
+    /* Align labels to the right */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    color: #ccc;
+    /* Default star color */
+}
+
+.stars label:before {
+    content: '\2605';
+    /* Unicode character for star */
+}
+
+.stars input:checked~label,
+.stars input:checked~label:before {
+    color: #ffc107;
+    /* Change color of stars when selected */
+}
+
+.stars input:checked~label.half::before {
+    content: '☆';
+    position: relative;
+    color: #FFD700;
+}

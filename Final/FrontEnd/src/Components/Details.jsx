@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Container } from './Navbar';
 import { useNavigate } from 'react-router-dom';
+import '../Styles/Details.css';
 
 const Details = () => {
   //getting the movie id from url
@@ -167,10 +168,13 @@ const Details = () => {
     }
   };
 
-
-
   const clearSpan = () => {
     document.getElementById("commentField").nextElementSibling.innerHTML = "";
+  };
+
+  const handleRatingChange = (e) => {
+    const selectedValue = e.target.value;
+    console.log("Selected value:", selectedValue);
   };
 
 
@@ -199,6 +203,29 @@ const Details = () => {
                           </div>
                         </Fragment>
                       ))}
+                    </div>
+
+                    <div className='stars'>
+                      <input type="radio" name="rating" id="star5" value="5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star5"></label>
+                      <input type="radio" name="rating" id="star4.5" value="4.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star4.5" className='half'></label>
+                      <input type="radio" name="rating" id="star4" value="4" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star4"></label>
+                      <input type="radio" name="rating" id="star3.5" value="3.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star3.5" className='half'></label>
+                      <input type="radio" name="rating" id="star3" value="3" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star3"></label>
+                      <input type="radio" name="rating" id="star2.5" value="2.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star2.5" className='half'></label>
+                      <input type="radio" name="rating" id="star2" value="2" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star2"></label>
+                      <input type="radio" name="rating" id="star1.5" value="1.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star1.5" className='half'></label>
+                      <input type="radio" name="rating" id="star1" value="1" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star1"></label>
+                      <input type="radio" name="rating" id="star0.5" value="0.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star0.5" className='half'></label>
                     </div>
 
                   </div>

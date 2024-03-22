@@ -764,7 +764,7 @@
           }
         ],
         "typeName" : "MySQL",
-        "ipAddress" : "3.139.69.78",
+        "ipAddress" : "18.119.158.164",
         "name" : "MOVIES_DATABASE",
         "id" : "MOVIES_DATABASE",
         "enabled" : true,
