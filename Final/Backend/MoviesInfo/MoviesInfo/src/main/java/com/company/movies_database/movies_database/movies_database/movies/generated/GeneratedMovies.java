@@ -5,12 +5,10 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
-import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.StringField;
 import com.speedment.runtime.typemapper.TypeMapper;
 
-import java.sql.Date;
 import java.util.Optional;
 
 /**
@@ -52,7 +50,7 @@ public interface GeneratedMovies {
      * This Field corresponds to the {@link Movies} field that can be obtained
      * using the {@link Movies#getReleaseDate()} method.
      */
-    ComparableField<Movies, Date, Date> RELEASE_DATE = ComparableField.create(
+    StringField<Movies, String> RELEASE_DATE = StringField.create(
         Identifier.RELEASE_DATE,
         o -> OptionalUtil.unwrap(o.getReleaseDate()),
         Movies::setReleaseDate,
@@ -95,7 +93,7 @@ public interface GeneratedMovies {
     
     /**
      * Returns the movieId of this Movies. The movieId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.MOVIES.MOVIE_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.MOVIE_ID.
      * 
      * @return the movieId of this Movies
      */
@@ -103,7 +101,7 @@ public interface GeneratedMovies {
     
     /**
      * Returns the title of this Movies. The title field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.MOVIES.TITLE.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.TITLE.
      * 
      * @return the title of this Movies
      */
@@ -112,15 +110,15 @@ public interface GeneratedMovies {
     /**
      * Returns the releaseDate of this Movies. The releaseDate field corresponds
      * to the database column
-     * Movies_database.MOVIES_DATABASE.MOVIES.RELEASE_DATE.
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.RELEASE_DATE.
      * 
      * @return the releaseDate of this Movies
      */
-    Optional<Date> getReleaseDate();
+    Optional<String> getReleaseDate();
     
     /**
      * Returns the genre of this Movies. The genre field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.MOVIES.GENRE.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.GENRE.
      * 
      * @return the genre of this Movies
      */
@@ -128,7 +126,7 @@ public interface GeneratedMovies {
     
     /**
      * Returns the posterUrl of this Movies. The posterUrl field corresponds to
-     * the database column Movies_database.MOVIES_DATABASE.MOVIES.POSTER_URL.
+     * the database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.POSTER_URL.
      * 
      * @return the posterUrl of this Movies
      */
@@ -137,7 +135,7 @@ public interface GeneratedMovies {
     /**
      * Returns the mDescription of this Movies. The mDescription field
      * corresponds to the database column
-     * Movies_database.MOVIES_DATABASE.MOVIES.M_DESCRIPTION.
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.M_DESCRIPTION.
      * 
      * @return the mDescription of this Movies
      */
@@ -145,7 +143,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the movieId of this Movies. The movieId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.MOVIES.MOVIE_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.MOVIE_ID.
      * 
      * @param movieId to set of this Movies
      * @return        this Movies instance
@@ -154,7 +152,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the title of this Movies. The title field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.MOVIES.TITLE.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.TITLE.
      * 
      * @param title to set of this Movies
      * @return      this Movies instance
@@ -163,16 +161,16 @@ public interface GeneratedMovies {
     
     /**
      * Sets the releaseDate of this Movies. The releaseDate field corresponds to
-     * the database column Movies_database.MOVIES_DATABASE.MOVIES.RELEASE_DATE.
+     * the database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.RELEASE_DATE.
      * 
      * @param releaseDate to set of this Movies
      * @return            this Movies instance
      */
-    Movies setReleaseDate(Date releaseDate);
+    Movies setReleaseDate(String releaseDate);
     
     /**
      * Sets the genre of this Movies. The genre field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.MOVIES.GENRE.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.GENRE.
      * 
      * @param genre to set of this Movies
      * @return      this Movies instance
@@ -181,7 +179,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the posterUrl of this Movies. The posterUrl field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.MOVIES.POSTER_URL.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.POSTER_URL.
      * 
      * @param posterUrl to set of this Movies
      * @return          this Movies instance
@@ -191,7 +189,7 @@ public interface GeneratedMovies {
     /**
      * Sets the mDescription of this Movies. The mDescription field corresponds
      * to the database column
-     * Movies_database.MOVIES_DATABASE.MOVIES.M_DESCRIPTION.
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIES.M_DESCRIPTION.
      * 
      * @param mDescription to set of this Movies
      * @return             this Movies instance
@@ -219,7 +217,7 @@ public interface GeneratedMovies {
         
         @Override
         public String getDbmsId() {
-            return "Movies_database";
+            return "MOVIES_DATABASE";
         }
         
         @Override

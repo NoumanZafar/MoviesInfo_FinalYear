@@ -20,7 +20,6 @@ const Details = () => {
   const [relatedMoviesData, setRelatedMoviesData] = useState([]);
   const [reviewsData, setReviewsData] = useState([]);
   const [authorizedUserData, setAuthorizedUserData] = useState([]);
-  const [error, setError] = useState('');
   const navigate = useNavigate();
   const email = JSON.parse(localStorage.getItem('email'));
   const baseApi = "http://localhost:8080";
@@ -134,7 +133,7 @@ const Details = () => {
   }, [movieId]);
 
 
-  //console.log(authorizedUserData.length > 0 ? authorizedUserData[0].email : 'Email not available yet');
+  //console.log(authorizedUserData);
 
 
   const onClickPicture = (id) => {
@@ -143,16 +142,15 @@ const Details = () => {
     window.scrollTo(0, 0);
   };
 
-  //start work here
-  //multiple comments by same user but only one time rating
+
+  //multiple comments by same user
   const postComment = async (e) => {
     e.preventDefault();
     let userId = authorizedUserData.length > 0 ? authorizedUserData[0].userId : '';
     let comment = document.getElementById("commentField").value;
-    const rating = 0;
     if (comment) {
       try {
-        const response = await axios.post(`${baseApi}/reviews/comment`, { userId, movieId, rating, comment });
+        const response = await axios.post(`${baseApi}/reviews/comment`, { userId, movieId, comment });
         if (response.status === 200) {
           console.log("Comment Successfully posted")
           document.getElementById("commentField").value = "";
@@ -168,7 +166,7 @@ const Details = () => {
       document.getElementById("commentField").nextElementSibling.innerHTML = "Field Can't be empty";
     }
   };
-  
+
 
 
   const clearSpan = () => {
@@ -202,6 +200,7 @@ const Details = () => {
                         </Fragment>
                       ))}
                     </div>
+
                   </div>
                 </div>
               </div>

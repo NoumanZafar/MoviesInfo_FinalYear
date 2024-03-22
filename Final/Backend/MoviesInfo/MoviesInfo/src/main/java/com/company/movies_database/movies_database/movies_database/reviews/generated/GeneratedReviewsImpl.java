@@ -7,7 +7,6 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.manager.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.OptionalInt;
@@ -28,7 +27,6 @@ public abstract class GeneratedReviewsImpl implements Reviews {
     private int reviewId;
     private Integer userId;
     private Integer movieId;
-    private BigDecimal rating;
     private String comment;
     
     protected GeneratedReviewsImpl() {}
@@ -46,11 +44,6 @@ public abstract class GeneratedReviewsImpl implements Reviews {
     @Override
     public OptionalInt getMovieId() {
         return OptionalUtil.ofNullable(movieId);
-    }
-    
-    @Override
-    public Optional<BigDecimal> getRating() {
-        return Optional.ofNullable(rating);
     }
     
     @Override
@@ -73,12 +66,6 @@ public abstract class GeneratedReviewsImpl implements Reviews {
     @Override
     public Reviews setMovieId(Integer movieId) {
         this.movieId = movieId;
-        return this;
-    }
-    
-    @Override
-    public Reviews setRating(BigDecimal rating) {
-        this.rating = rating;
         return this;
     }
     
@@ -112,7 +99,6 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         sj.add("reviewId = " + Objects.toString(getReviewId()));
         sj.add("userId = "   + Objects.toString(OptionalUtil.unwrap(getUserId())));
         sj.add("movieId = "  + Objects.toString(OptionalUtil.unwrap(getMovieId())));
-        sj.add("rating = "   + Objects.toString(OptionalUtil.unwrap(getRating())));
         sj.add("comment = "  + Objects.toString(OptionalUtil.unwrap(getComment())));
         return "ReviewsImpl " + sj.toString();
     }
@@ -125,7 +111,6 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         if (this.getReviewId() != thatReviews.getReviewId()) { return false; }
         if (!Objects.equals(this.getUserId(), thatReviews.getUserId())) { return false; }
         if (!Objects.equals(this.getMovieId(), thatReviews.getMovieId())) { return false; }
-        if (!Objects.equals(this.getRating(), thatReviews.getRating())) { return false; }
         if (!Objects.equals(this.getComment(), thatReviews.getComment())) { return false; }
         return true;
     }
@@ -136,7 +121,6 @@ public abstract class GeneratedReviewsImpl implements Reviews {
         hash = 31 * hash + Integer.hashCode(getReviewId());
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getUserId()));
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getMovieId()));
-        hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getRating()));
         hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getComment()));
         return hash;
     }

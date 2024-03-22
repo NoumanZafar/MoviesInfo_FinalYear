@@ -4,7 +4,6 @@ import com.company.movies_database.movies_database.movies_database.movies.Movies
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
 
-import java.sql.Date;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.StringJoiner;
@@ -23,7 +22,7 @@ public abstract class GeneratedMoviesImpl implements Movies {
     
     private int movieId;
     private String title;
-    private Date releaseDate;
+    private String releaseDate;
     private String genre;
     private String posterUrl;
     private String mDescription;
@@ -41,7 +40,7 @@ public abstract class GeneratedMoviesImpl implements Movies {
     }
     
     @Override
-    public Optional<Date> getReleaseDate() {
+    public Optional<String> getReleaseDate() {
         return Optional.ofNullable(releaseDate);
     }
     
@@ -73,7 +72,7 @@ public abstract class GeneratedMoviesImpl implements Movies {
     }
     
     @Override
-    public Movies setReleaseDate(Date releaseDate) {
+    public Movies setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
         return this;
     }

@@ -71,7 +71,7 @@ public interface GeneratedPeople {
     
     /**
      * Returns the personId of this People. The personId field corresponds to
-     * the database column Movies_database.MOVIES_DATABASE.PEOPLE.PERSON_ID.
+     * the database column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.PERSON_ID.
      * 
      * @return the personId of this People
      */
@@ -79,7 +79,7 @@ public interface GeneratedPeople {
     
     /**
      * Returns the name of this People. The name field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.PEOPLE.NAME.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.NAME.
      * 
      * @return the name of this People
      */
@@ -87,7 +87,7 @@ public interface GeneratedPeople {
     
     /**
      * Returns the occupation of this People. The occupation field corresponds
-     * to the database column Movies_database.MOVIES_DATABASE.PEOPLE.OCCUPATION.
+     * to the database column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.OCCUPATION.
      * 
      * @return the occupation of this People
      */
@@ -95,7 +95,7 @@ public interface GeneratedPeople {
     
     /**
      * Returns the imageUrl of this People. The imageUrl field corresponds to
-     * the database column Movies_database.MOVIES_DATABASE.PEOPLE.IMAGE_URL.
+     * the database column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.IMAGE_URL.
      * 
      * @return the imageUrl of this People
      */
@@ -103,7 +103,7 @@ public interface GeneratedPeople {
     
     /**
      * Sets the personId of this People. The personId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.PEOPLE.PERSON_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.PERSON_ID.
      * 
      * @param personId to set of this People
      * @return         this People instance
@@ -112,7 +112,7 @@ public interface GeneratedPeople {
     
     /**
      * Sets the name of this People. The name field corresponds to the database
-     * column Movies_database.MOVIES_DATABASE.PEOPLE.NAME.
+     * column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.NAME.
      * 
      * @param name to set of this People
      * @return     this People instance
@@ -121,7 +121,7 @@ public interface GeneratedPeople {
     
     /**
      * Sets the occupation of this People. The occupation field corresponds to
-     * the database column Movies_database.MOVIES_DATABASE.PEOPLE.OCCUPATION.
+     * the database column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.OCCUPATION.
      * 
      * @param occupation to set of this People
      * @return           this People instance
@@ -130,7 +130,7 @@ public interface GeneratedPeople {
     
     /**
      * Sets the imageUrl of this People. The imageUrl field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.PEOPLE.IMAGE_URL.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.PEOPLE.IMAGE_URL.
      * 
      * @param imageUrl to set of this People
      * @return         this People instance
@@ -156,7 +156,7 @@ public interface GeneratedPeople {
         
         @Override
         public String getDbmsId() {
-            return "Movies_database";
+            return "MOVIES_DATABASE";
         }
         
         @Override

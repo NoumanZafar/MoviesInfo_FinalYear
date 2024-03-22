@@ -29,14 +29,14 @@ public abstract class GeneratedMoviesSqlAdapter implements SqlAdapter<Movies> {
     private final TableIdentifier<Movies> tableIdentifier;
     
     protected GeneratedMoviesSqlAdapter() {
-        this.tableIdentifier = TableIdentifier.of("Movies_database", "MOVIES_DATABASE", "MOVIES");
+        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "MOVIES_DATABASE", "MOVIES");
     }
     
     protected Movies apply(ResultSet resultSet, int offset) throws SQLException {
         return createEntity()
             .setMovieId(      getInt(resultSet, 1 + offset))
             .setTitle(        resultSet.getString(2 + offset))
-            .setReleaseDate(  resultSet.getDate(3 + offset))
+            .setReleaseDate(  resultSet.getString(3 + offset))
             .setGenre(        resultSet.getString(4 + offset))
             .setPosterUrl(    resultSet.getString(5 + offset))
             .setMDescription( resultSet.getString(6 + offset))

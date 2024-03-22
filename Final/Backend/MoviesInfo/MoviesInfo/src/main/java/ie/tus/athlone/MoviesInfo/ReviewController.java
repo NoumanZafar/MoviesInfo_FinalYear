@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.movies_database.MoviesDatabaseApplication;
+import com.company.movies_database.movies_database.movies_database.rating.Rating;
+import com.company.movies_database.movies_database.movies_database.rating.RatingManager;
 import com.company.movies_database.movies_database.movies_database.reviews.Reviews;
 import com.company.movies_database.movies_database.movies_database.reviews.ReviewsImpl;
 import com.company.movies_database.movies_database.movies_database.reviews.ReviewsManager;
@@ -32,21 +34,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ReviewController {
 	private final ReviewsManager reviews;
 	private final UsersManager users;
+	private final RatingManager rating;
 	
 	public ReviewController(MoviesDatabaseApplication app) {
 		reviews = app.getOrThrow(ReviewsManager.class);
 		users = app.getOrThrow(UsersManager.class);
+		rating = app.getOrThrow(RatingManager.class);
 	}
 	
 	//AVERAGE RATING FOR A SELECTED MOVIE
-	//SELECT AVG(RATING) FROM REVIEWS WHERE MOVIE_ID = 101;
+	//SELECT AVG(RATING) FROM RATING WHERE MOVIE_ID = 101;
 	@GetMapping("{id}")
 	public List<Map<String, Double>> getAverageRating(@PathVariable int id) {
-		double rating = reviews.stream()
-				.filter(Reviews.MOVIE_ID.equal(id))
-				.mapToDouble(Reviews.RATING.asDouble())
+		double ratin = rating.stream()
+				.filter(Rating.MOVIE_ID.equal(id))
+				.mapToDouble(Rating.RATING.asDouble())
 				.average().orElse(0.0);
-		return List.of(Map.of("AvgRating", rating));
+		return List.of(Map.of("AvgRating", ratin));
 	}
 
 	
@@ -83,17 +87,15 @@ public class ReviewController {
 	public ResponseEntity<String> registration(@RequestBody Map<String, String> requestBody) {
 		int userId = Integer.parseInt(requestBody.get("userId"));
 		int movieId = Integer.parseInt(requestBody.get("movieId"));
-		BigDecimal rating = new BigDecimal(requestBody.get("rating"));
 		String comment = requestBody.get("comment");
 
-		boolean isPosted = insertComment(userId, movieId, rating, comment);
+		boolean isPosted = insertComment(userId, movieId, comment);
 
 		// Return response
 		ObjectMapper mapper = new ObjectMapper();
 		Map<String, String> jsonResponse = new HashMap<>();
 		if (isPosted) {
 			jsonResponse.put("message", "Posted successful");
-			System.out.println("Success");
 			try {
 				String responseJson = mapper.writeValueAsString(jsonResponse);
 				return ResponseEntity.ok(responseJson);
@@ -118,12 +120,11 @@ public class ReviewController {
 		VALUES
 		(3001, 1, 101, 4.5, 'Mind-bending plot!');
 	 */
-	private boolean insertComment(int userId, int movieId, BigDecimal rating, String comment) {
+	private boolean insertComment(int userId, int movieId, String comment) {
 		try {
 			reviews.persist(new ReviewsImpl()
 					.setUserId(userId)
 					.setMovieId(movieId)
-					.setRating(rating)
 					.setComment(comment));
 			return true;
 		} catch (Exception e) {

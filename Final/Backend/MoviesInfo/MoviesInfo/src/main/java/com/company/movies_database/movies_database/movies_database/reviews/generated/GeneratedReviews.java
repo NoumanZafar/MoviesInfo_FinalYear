@@ -8,13 +8,11 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.manager.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
-import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.ComparableForeignKeyField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.StringField;
 import com.speedment.runtime.typemapper.TypeMapper;
 
-import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.OptionalInt;
 
@@ -68,17 +66,6 @@ public interface GeneratedReviews {
     );
     /**
      * This Field corresponds to the {@link Reviews} field that can be obtained
-     * using the {@link Reviews#getRating()} method.
-     */
-    ComparableField<Reviews, BigDecimal, BigDecimal> RATING = ComparableField.create(
-        Identifier.RATING,
-        o -> OptionalUtil.unwrap(o.getRating()),
-        Reviews::setRating,
-        TypeMapper.identity(),
-        false
-    );
-    /**
-     * This Field corresponds to the {@link Reviews} field that can be obtained
      * using the {@link Reviews#getComment()} method.
      */
     StringField<Reviews, String> COMMENT = StringField.create(
@@ -91,7 +78,7 @@ public interface GeneratedReviews {
     
     /**
      * Returns the reviewId of this Reviews. The reviewId field corresponds to
-     * the database column Movies_database.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
+     * the database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
      * 
      * @return the reviewId of this Reviews
      */
@@ -99,7 +86,7 @@ public interface GeneratedReviews {
     
     /**
      * Returns the userId of this Reviews. The userId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.USER_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.USER_ID.
      * 
      * @return the userId of this Reviews
      */
@@ -107,23 +94,15 @@ public interface GeneratedReviews {
     
     /**
      * Returns the movieId of this Reviews. The movieId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
      * 
      * @return the movieId of this Reviews
      */
     OptionalInt getMovieId();
     
     /**
-     * Returns the rating of this Reviews. The rating field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.RATING.
-     * 
-     * @return the rating of this Reviews
-     */
-    Optional<BigDecimal> getRating();
-    
-    /**
      * Returns the comment of this Reviews. The comment field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.COMMENT.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.COMMENT.
      * 
      * @return the comment of this Reviews
      */
@@ -131,7 +110,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the reviewId of this Reviews. The reviewId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.REVIEW_ID.
      * 
      * @param reviewId to set of this Reviews
      * @return         this Reviews instance
@@ -140,7 +119,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the userId of this Reviews. The userId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.USER_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.USER_ID.
      * 
      * @param userId to set of this Reviews
      * @return       this Reviews instance
@@ -149,7 +128,7 @@ public interface GeneratedReviews {
     
     /**
      * Sets the movieId of this Reviews. The movieId field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.MOVIE_ID.
      * 
      * @param movieId to set of this Reviews
      * @return        this Reviews instance
@@ -157,17 +136,8 @@ public interface GeneratedReviews {
     Reviews setMovieId(Integer movieId);
     
     /**
-     * Sets the rating of this Reviews. The rating field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.RATING.
-     * 
-     * @param rating to set of this Reviews
-     * @return       this Reviews instance
-     */
-    Reviews setRating(BigDecimal rating);
-    
-    /**
      * Sets the comment of this Reviews. The comment field corresponds to the
-     * database column Movies_database.MOVIES_DATABASE.REVIEWS.COMMENT.
+     * database column MOVIES_DATABASE.MOVIES_DATABASE.REVIEWS.COMMENT.
      * 
      * @param comment to set of this Reviews
      * @return        this Reviews instance
@@ -197,7 +167,6 @@ public interface GeneratedReviews {
         REVIEW_ID ("REVIEW_ID"),
         USER_ID   ("USER_ID"),
         MOVIE_ID  ("MOVIE_ID"),
-        RATING    ("RATING"),
         COMMENT   ("COMMENT");
         
         private final String columnId;
@@ -212,7 +181,7 @@ public interface GeneratedReviews {
         
         @Override
         public String getDbmsId() {
-            return "Movies_database";
+            return "MOVIES_DATABASE";
         }
         
         @Override

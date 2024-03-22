@@ -29,7 +29,7 @@ public abstract class GeneratedReviewsSqlAdapter implements SqlAdapter<Reviews> 
     private final TableIdentifier<Reviews> tableIdentifier;
     
     protected GeneratedReviewsSqlAdapter() {
-        this.tableIdentifier = TableIdentifier.of("Movies_database", "MOVIES_DATABASE", "REVIEWS");
+        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "MOVIES_DATABASE", "REVIEWS");
     }
     
     protected Reviews apply(ResultSet resultSet, int offset) throws SQLException {
@@ -37,8 +37,7 @@ public abstract class GeneratedReviewsSqlAdapter implements SqlAdapter<Reviews> 
             .setReviewId( getInt(resultSet, 1 + offset))
             .setUserId(   getInt(resultSet, 2 + offset))
             .setMovieId(  getInt(resultSet, 3 + offset))
-            .setRating(   resultSet.getBigDecimal(4 + offset))
-            .setComment(  resultSet.getString(5 + offset))
+            .setComment(  resultSet.getString(4 + offset))
             ;
     }
     

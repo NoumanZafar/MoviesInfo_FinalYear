@@ -51,7 +51,7 @@ public interface GeneratedMoviePeople {
     /**
      * Returns the movieId of this MoviePeople. The movieId field corresponds to
      * the database column
-     * Movies_database.MOVIES_DATABASE.MOVIE_PEOPLE.MOVIE_ID.
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIE_PEOPLE.MOVIE_ID.
      * 
      * @return the movieId of this MoviePeople
      */
@@ -60,7 +60,7 @@ public interface GeneratedMoviePeople {
     /**
      * Returns the personId of this MoviePeople. The personId field corresponds
      * to the database column
-     * Movies_database.MOVIES_DATABASE.MOVIE_PEOPLE.PERSON_ID.
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIE_PEOPLE.PERSON_ID.
      * 
      * @return the personId of this MoviePeople
      */
@@ -69,7 +69,7 @@ public interface GeneratedMoviePeople {
     /**
      * Sets the movieId of this MoviePeople. The movieId field corresponds to
      * the database column
-     * Movies_database.MOVIES_DATABASE.MOVIE_PEOPLE.MOVIE_ID.
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIE_PEOPLE.MOVIE_ID.
      * 
      * @param movieId to set of this MoviePeople
      * @return        this MoviePeople instance
@@ -79,7 +79,7 @@ public interface GeneratedMoviePeople {
     /**
      * Sets the personId of this MoviePeople. The personId field corresponds to
      * the database column
-     * Movies_database.MOVIES_DATABASE.MOVIE_PEOPLE.PERSON_ID.
+     * MOVIES_DATABASE.MOVIES_DATABASE.MOVIE_PEOPLE.PERSON_ID.
      * 
      * @param personId to set of this MoviePeople
      * @return         this MoviePeople instance
@@ -121,7 +121,7 @@ public interface GeneratedMoviePeople {
         
         @Override
         public String getDbmsId() {
-            return "Movies_database";
+            return "MOVIES_DATABASE";
         }
         
         @Override
