@@ -135,27 +135,9 @@ const Details = () => {
       let rating = response.data[0].rating;
       const star = document.getElementById('star' + rating)
       star.checked = true;
-    } catch (error) {
-      //console.error('Error fetching Rating data:', error);
-    }
+      document.getElementById("rat").innerHTML = "My Rating: " + rating;
+    } catch (error) { }
   };
-
-
-  useEffect(() => {
-    movieCall();
-    clipCall();
-    relatedPeopleCall();
-    averageRating();
-    relatedMovies();
-    allReviews();
-    authorizedUser();
-  }, [movieId]);
-
-  useEffect(() => {
-    getRating();
-  },[authorizedUserData, movieId])
-  //console.log(ratingData);
-
 
   const onClickPicture = (id) => {
     setMovieId(id);
@@ -192,12 +174,38 @@ const Details = () => {
     document.getElementById("commentField").nextElementSibling.innerHTML = "";
   };
 
-  const handleRatingChange = (e) => {
-    //selectedValue will be used to store it in the sql server
-    const selectedValue = e.target.value;
-    console.log("Selected value:", selectedValue);
+  const handleRatingChange = async (e) => {
+    //rating will be used to store it in the sql server
+    let rating = e.target.value;
+    let userId = authorizedUserData.length > 0 ? authorizedUserData[0].userId : '';
+    try {
+      const response = await axios.post(`${baseApi}/rating/insert`, { userId, movieId, rating });
+      if (response.status === 200) {
+        alert("You rated a Movie.")
+        averageRating();
+        getRating();
+      } else {
+        console.error('Rating can\'t be posted');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
+  useEffect(() => {
+    movieCall();
+    clipCall();
+    relatedPeopleCall();
+    averageRating();
+    relatedMovies();
+    allReviews();
+    authorizedUser();
+  }, [movieId]);
+
+  useEffect(() => {
+    getRating();
+  }, [authorizedUserData, movieId])
+  //console.log(ratingData);
 
   return (
     <Fragment>
@@ -249,6 +257,7 @@ const Details = () => {
                       <label htmlFor="star0.5" className='half'></label>
                     </div>
 
+                    <p id='rat'></p>
                   </div>
                 </div>
               </div>
