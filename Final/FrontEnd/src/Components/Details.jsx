@@ -257,7 +257,7 @@ const Details = () => {
                       <label htmlFor="star0.5" className='half'></label>
                     </div>
 
-                    <p id='rat'></p>
+                    <p id='rat'>My Rating: 0</p>
                   </div>
                 </div>
               </div>
