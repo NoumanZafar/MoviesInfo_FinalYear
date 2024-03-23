@@ -29,8 +29,10 @@ public class PeopleController {
 
 	/**
 	 * 
-	 * -- SEARCH THE ACORTS FOR A PARTUCULAR MOVIE SELECT P.* FROM MOVIE_PEOPLE MP
-	 * INNER JOIN PEOPLE P ON MP.PERSON_ID = P.PERSON_ID WHERE MP.MOVIE_ID = 101;
+	 * -- SEARCH THE ACORTS FOR A PARTUCULAR MOVIE 
+	 * SELECT P.* FROM MOVIE_PEOPLE MP
+	 * INNER JOIN PEOPLE P ON MP.PERSON_ID = P.PERSON_ID 
+	 * WHERE MP.MOVIE_ID = 101;
 	 */
 	@GetMapping("{id}")
 	public List<People> getMoviePeople(@PathVariable int id) {

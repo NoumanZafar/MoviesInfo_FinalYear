@@ -1,6 +1,5 @@
 package ie.tus.athlone.MoviesInfo;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,8 +22,6 @@ import com.company.movies_database.movies_database.movies_database.reviews.Revie
 import com.company.movies_database.movies_database.movies_database.reviews.ReviewsManager;
 import com.company.movies_database.movies_database.movies_database.users.Users;
 import com.company.movies_database.movies_database.movies_database.users.UsersManager;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/reviews")
@@ -89,29 +86,10 @@ public class ReviewController {
 		String comment = requestBody.get("comment");
 
 		boolean isPosted = insertComment(userId, movieId, comment);
-
-		// Return response
-		ObjectMapper mapper = new ObjectMapper();
-		Map<String, String> jsonResponse = new HashMap<>();
-		if (isPosted) {
-			jsonResponse.put("message", "Posted successful");
-			try {
-				String responseJson = mapper.writeValueAsString(jsonResponse);
-				return ResponseEntity.ok(responseJson);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace(); // Handle exception properly
-				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
-			}
-		} else {
-			jsonResponse.put("message", "Comment Failed");
-			try {
-				String responseJson = mapper.writeValueAsString(jsonResponse);
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseJson);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace(); // Handle exception properly
-				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
-			}
-		}
+		if (isPosted) 
+			return ResponseEntity.ok("Inserted...");
+		else 
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
 	}
 
 	/**
@@ -131,5 +109,4 @@ public class ReviewController {
 			return false;
 		}
 	}
-	
 }
