@@ -86,11 +86,10 @@ public class ReviewController {
 		String comment = requestBody.get("comment");
 
 		boolean isPosted = insertComment(userId, movieId, comment);
-		if (isPosted) {
-			return ResponseEntity.ok("Posted successful");
-		} else {
+		if (isPosted) 
+			return ResponseEntity.ok("Inserted...");
+		else 
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
-		}
 	}
 
 	/**
@@ -110,5 +109,4 @@ public class ReviewController {
 			return false;
 		}
 	}
-	
 }

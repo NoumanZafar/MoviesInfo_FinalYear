@@ -22,8 +22,8 @@ const Details = () => {
   const [reviewsData, setReviewsData] = useState([]);
   const [authorizedUserData, setAuthorizedUserData] = useState([]);
   const navigate = useNavigate();
-  const email = JSON.parse(localStorage.getItem('email'));
   const baseApi = "http://localhost:8080";
+  let email = '';
 
 
   const movieCall = async () => {
@@ -147,8 +147,7 @@ const Details = () => {
 
 
   //multiple comments by same user
-  const postComment = async (e) => {
-    e.preventDefault();
+  const postComment = async () => {
     let userId = authorizedUserData.length > 0 ? authorizedUserData[0].userId : '';
     let comment = document.getElementById("commentField").value;
     if (comment) {
@@ -193,6 +192,7 @@ const Details = () => {
   };
 
   useEffect(() => {
+    email = JSON.parse(localStorage.getItem('email'));
     movieCall();
     clipCall();
     relatedPeopleCall();
@@ -203,6 +203,7 @@ const Details = () => {
   }, [movieId]);
 
   useEffect(() => {
+    email = JSON.parse(localStorage.getItem('email'));
     getRating();
   }, [authorizedUserData, movieId])
   //console.log(ratingData);

@@ -34,6 +34,7 @@ const Login = () => {
             if (response.status === 200) {
                 alert("Registration successful");
                 setError('');
+                document.getElementById('regForm').reset();
             } else {
                 console.error('Registration failed');
             }
@@ -70,7 +71,7 @@ const Login = () => {
                         </form>
                     </div>
                     <div>
-                        <form onSubmit={handleUserRegistration}>
+                        <form onSubmit={handleUserRegistration} id='regForm'>
                             <label>Username:</label>
                             <input type="text" onChange={(e) => setUsername(e.target.value)} required />
                             <br />

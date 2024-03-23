@@ -91,6 +91,7 @@ public class RatingController {
 				.filter(Rating.USER_ID.equal(userId))
 				.filter(Rating.MOVIE_ID.equal(movieId))
 				.collect(Collectors.toList());
+
 		if (r.isEmpty())
 			return false;
 		else

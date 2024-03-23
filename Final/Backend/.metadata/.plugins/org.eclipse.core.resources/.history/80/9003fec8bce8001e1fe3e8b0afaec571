@@ -1,5 +1,6 @@
 package ie.tus.athlone.MoviesInfo;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -22,6 +23,8 @@ import com.company.movies_database.movies_database.movies_database.reviews.Revie
 import com.company.movies_database.movies_database.movies_database.reviews.ReviewsManager;
 import com.company.movies_database.movies_database.movies_database.users.Users;
 import com.company.movies_database.movies_database.movies_database.users.UsersManager;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/reviews")
