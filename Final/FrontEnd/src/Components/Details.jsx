@@ -156,7 +156,6 @@ const Details = () => {
       try {
         const response = await axios.post(`${baseApi}/reviews/comment`, { userId, movieId, comment });
         if (response.status === 200) {
-          console.log("Comment Successfully posted")
           document.getElementById("commentField").value = "";
           alert("Comment Posted.")
           allReviews();

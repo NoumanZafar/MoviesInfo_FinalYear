@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import Navbar from '../Components/Navbar';
+import '../Styles/Login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -58,7 +59,7 @@ const Login = () => {
                 </div>
             ) : (
                 <Fragment>
-                    <div>
+                    <div className="login-container">
                         <form onSubmit={handleUserAuthentication}>
                             <label>Email:</label>
                             <input type="email" onChange={(e) => setEmail(e.target.value)} required />
@@ -70,7 +71,7 @@ const Login = () => {
                             {error && <p>{error}</p>}
                         </form>
                     </div>
-                    <div>
+                    <div className="login-container registration-form">
                         <form onSubmit={handleUserRegistration} id='regForm'>
                             <label>Username:</label>
                             <input type="text" onChange={(e) => setUsername(e.target.value)} required />
