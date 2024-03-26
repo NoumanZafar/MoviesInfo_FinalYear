@@ -72,7 +72,8 @@ CREATE TABLE MOVIE_PEOPLE (
 INSERT INTO USERS (USER_ID, USERNAME, EMAIL, PASSWORD)
 VALUES
     (1, 'Alice', 'alice@email.com', 'password123'),
-    (2, 'Bob', 'bob@email.com', 'secret456')
+    (2, 'Bob', 'bob@email.com', 'secret456'),
+    (3, 'nouman', 'nouman@email.com', 'nouman1')
 ;
 
 
@@ -139,17 +140,151 @@ VALUES
     (2003, 101, 'https://www.youtube.com/watch?v=v8yrZSkKxTA'),
     (2004, 101, 'https://www.youtube.com/watch?v=i9zjvUywVG8&pp=ygUKaW5jZXB0aW9uIA%3D%3D'),
 
-
     (2005, 102, 'https://www.youtube.com/watch?v=EXeTwQWrcwY&pp=ygUQdGhlIGRhcmsga25pZ2h0IA%3D%3D'),
     (2006, 102, 'https://www.youtube.com/watch?v=jane6C4rIwc&pp=ygUQdGhlIGRhcmsga25pZ2h0IA%3D%3D'),
     (2007, 102, 'https://www.youtube.com/watch?v=vetKTtM7YyU&pp=ygUQdGhlIGRhcmsga25pZ2h0IA%3D%3D'),
     (2008, 102, 'https://www.youtube.com/watch?v=TQfATDZY5Y4&pp=ygUQdGhlIGRhcmsga25pZ2h0IA%3D%3D'),
 
-
     (2009, 103, 'https://www.youtube.com/watch?v=PLl99DlL6b4&pp=ygUUc2hhd3NoYW5rIHJlZGVtcHRpb24%3D'),
     (2010, 103, 'https://www.youtube.com/watch?v=njJ41irPjTc&pp=ygUUc2hhd3NoYW5rIHJlZGVtcHRpb24%3D'),
     (2011, 103, 'https://www.youtube.com/watch?v=ABpeLNCuE3w&pp=ygUUc2hhd3NoYW5rIHJlZGVtcHRpb24%3D'),
-    (2012, 103, 'https://www.youtube.com/watch?v=Uw2evtnTm2c&pp=ygUUc2hhd3NoYW5rIHJlZGVtcHRpb24%3D')
+    (2012, 103, 'https://www.youtube.com/watch?v=Uw2evtnTm2c&pp=ygUUc2hhd3NoYW5rIHJlZGVtcHRpb24%3D'),
+
+    (2013, 104, 'https://www.youtube.com/watch?v=Y6YBKdmOlM8&pp=ygUMUHVscCBGaWN0aW9u'),
+    (2014, 104, 'https://www.youtube.com/watch?v=s7EdQ4FqbhY&pp=ygUMUHVscCBGaWN0aW9u'),
+    (2015, 104, 'https://www.youtube.com/watch?v=QYVc4v1gfgg&pp=ygUMUHVscCBGaWN0aW9u'),
+    (2016, 104, 'https://www.youtube.com/watch?v=mvy4YH9--Vw&pp=ygUMUHVscCBGaWN0aW9u'),
+
+    (2017, 105, 'https://www.youtube.com/watch?v=bLvqoHBptjg&pp=ygUNRm9ycmVzdCBHdW1wIA%3D%3D'),
+    (2018, 105, 'https://www.youtube.com/watch?v=bSMxl1V8FSg&pp=ygUNRm9ycmVzdCBHdW1wIA%3D%3D'),
+    (2019, 105, 'https://www.youtube.com/watch?v=ONH-pxBMJu4&pp=ygUNRm9ycmVzdCBHdW1wIA%3D%3D'),
+    (2020, 105, 'https://www.youtube.com/watch?v=ITGEGE9v0d0&pp=ygUNRm9ycmVzdCBHdW1wIA%3D%3D'),
+
+    (2021, 106, 'https://www.youtube.com/watch?v=H-0RHqDWcJE&pp=ygUKVGhlIE1hdHJpeA%3D%3D'),
+    (2022, 106, 'https://www.youtube.com/watch?v=vKQi3bBA1y8&pp=ygUKVGhlIE1hdHJpeA%3D%3D'),
+    (2023, 106, 'https://www.youtube.com/watch?v=zE7PKRjrid4&pp=ygUKVGhlIE1hdHJpeA%3D%3D'),
+    (2024, 106, 'https://www.youtube.com/watch?v=8DajVKAkL50&pp=ygUKVGhlIE1hdHJpeA%3D%3D'),
+
+    (2025, 107, 'https://www.youtube.com/watch?v=qtRKdVHc-cE&pp=ygUSZmlnaHQgY2x1YiB0cmFpbGVy'),
+    (2026, 107, 'https://www.youtube.com/watch?v=SUXWAEX2jlg&pp=ygUSZmlnaHQgY2x1YiB0cmFpbGVy'),
+
+    (2027, 108, 'https://www.youtube.com/watch?v=P5ieIbInFpg&pp=ygURZ2xhZGlhdG9yIHRyYWlsZXI%3D'),
+    (2028, 108, 'https://www.youtube.com/watch?v=TcYIqlBihW4&pp=ygURZ2xhZGlhdG9yIHRyYWlsZXI%3D'),
+
+    (2029, 109, 'https://www.youtube.com/watch?v=V75dMMIW2B4&pp=ygUxVGhlIExvcmQgb2YgdGhlIFJpbmdzOiBUaGUgRmVsbG93c2hpcCBvZiB0aGUgUmluZw%3D%3D'),
+    (2030, 109, 'https://www.youtube.com/watch?v=_nZdmwHrcnw&pp=ygUxVGhlIExvcmQgb2YgdGhlIFJpbmdzOiBUaGUgRmVsbG93c2hpcCBvZiB0aGUgUmluZw%3D%3D'),
+
+    (2031, 110, 'https://www.youtube.com/watch?v=GibiNy4d4gc&pp=ygUNVGhlIExpb24gS2luZw%3D%3D'),
+    (2032, 110, 'https://www.youtube.com/watch?v=kaOIxll4LCA&pp=ygUNVGhlIExpb24gS2luZw%3D%3D'),
+
+    (2033, 111, 'https://www.youtube.com/watch?v=KnrRy6kSFF0&pp=ygUUSW5nbG91cmlvdXMgQmFzdGVyZHM%3D'),
+    (2034, 111, 'https://www.youtube.com/watch?v=coS2CdNd7Io&pp=ygUUSW5nbG91cmlvdXMgQmFzdGVyZHM%3D'),
+
+    (2035, 112, 'https://www.youtube.com/watch?v=eZHsmb4ezEk&pp=ygUNVGhlIEdvZGZhdGhlcg%3D%3D'),
+    (2036, 112, 'https://www.youtube.com/watch?v=8Pf8BkFLBRw&pp=ygUNVGhlIEdvZGZhdGhlcg%3D%3D'),
+
+    (2037, 113, 'https://www.youtube.com/watch?v=9O1Iy9od7-A&pp=ygUWVGhlIEdvZGZhdGhlcjogUGFydCBJSQ%3D%3D'),
+    (2038, 113, 'https://www.youtube.com/watch?v=wPmTp9up26w&pp=ygUWVGhlIEdvZGZhdGhlcjogUGFydCBJSQ%3D%3D'),
+
+    (2039, 114, 'https://www.youtube.com/watch?v=GokKUqLcvD8&pp=ygUVVGhlIERhcmsgS25pZ2h0IFJpc2Vz'),
+    (2040, 114, 'https://www.youtube.com/watch?v=rurhk1hadp8&pp=ygUVVGhlIERhcmsgS25pZ2h0IFJpc2Vz'),
+
+    (2041, 115, 'https://www.youtube.com/watch?v=zSWdZVtXT7E&pp=ygUMSW50ZXJzdGVsbGFy'),
+    (2042, 115, 'https://www.youtube.com/watch?v=s_M1t0HE-Kk&pp=ygUMSW50ZXJzdGVsbGFy'),
+
+    (2043, 116, 'https://www.youtube.com/watch?v=RLtaA9fFNXU&pp=ygUMVGhlIFByZXN0aWdl'),
+    (2044, 116, 'https://www.youtube.com/watch?v=phusjuBT8mw&pp=ygUMVGhlIFByZXN0aWdl'),
+
+    (2045, 117, 'https://www.youtube.com/watch?v=6iB21hsprAQ&pp=ygUYdGhlIHNpbGVuY2Ugb2YgdGhlIGxhbWJz'),
+    (2046, 117, 'https://www.youtube.com/watch?v=W6Mm8Sbe__o&pp=ygUYdGhlIHNpbGVuY2Ugb2YgdGhlIGxhbWJz'),
+
+    (2047, 118, 'https://www.youtube.com/watch?v=KuYtXbzJYck&pp=ygUMVGhlIERlcGFydGVk'),
+    (2048, 118, 'https://www.youtube.com/watch?v=iojhqm0JTW4&pp=ygUMVGhlIERlcGFydGVk'),
+
+    (2049, 119, 'https://www.youtube.com/watch?v=Ki4haFrqSrw&pp=ygUOVGhlIEdyZWVuIE1pbGU%3D'),
+    (2050, 119, 'https://www.youtube.com/watch?v=CmxArNBJHFQ&pp=ygUOVGhlIEdyZWVuIE1pbGU%3D'),
+
+    (2051, 120, 'https://www.youtube.com/watch?v=r5X-hFf6Bwo&pp=ygUtVGhlIExvcmQgb2YgdGhlIFJpbmdzOiBUaGUgUmV0dXJuIG9mIHRoZSBLaW5n'),
+    (2052, 120, 'https://www.youtube.com/watch?v=7lwJOxN_gXc&pp=ygUtVGhlIExvcmQgb2YgdGhlIFJpbmdzOiBUaGUgUmV0dXJuIG9mIHRoZSBLaW5n'),
+
+    (2053, 121, 'https://www.youtube.com/watch?v=LbfMDwc4azU&pp=ygUlVGhlIExvcmQgb2YgdGhlIFJpbmdzOiBUaGUgVHdvIFRvd2Vycw%3D%3D'),
+    (2054, 121, 'https://www.youtube.com/watch?v=EApCLbgAE5E&pp=ygUlVGhlIExvcmQgb2YgdGhlIFJpbmdzOiBUaGUgVHdvIFRvd2Vycw%3D%3D'),
+
+    (2055, 122, 'https://www.youtube.com/watch?v=UUkG37KSWf0&pp=ygUXVGhlIEdvZGZhdGhlcjogUGFydCBJSUk%3D'),
+    (2056, 122, 'https://www.youtube.com/watch?v=vc57b1iLhdI&pp=ygUXVGhlIEdvZGZhdGhlcjogUGFydCBJSUk%3D'),
+
+    (2057, 123, 'https://www.youtube.com/watch?v=a2Tf4uF4MyI&pp=ygUKR29vZGZlbGxhcw%3D%3D'),
+    (2058, 123, 'https://www.youtube.com/watch?v=IDYKslnO0r0&pp=ygUKR29vZGZlbGxhcw%3D%3D'),
+
+    (2059, 124, 'https://www.youtube.com/watch?v=hImAmM5-Fpg&pp=ygUFU2U3ZW4%3D'),
+    (2060, 124, 'https://www.youtube.com/watch?v=1giVzxyoclE&pp=ygUFU2U3ZW4%3D'),
+
+    (2061, 125, 'https://www.youtube.com/watch?v=nuZfrw8m2G4&pp=ygUMRWFzdCBJcyBFYXN0'),
+    (2062, 125, 'https://www.youtube.com/watch?v=zg-zwt-XMFE&pp=ygUMRWFzdCBJcyBFYXN0'),
+
+    (2063, 126, 'https://www.youtube.com/watch?v=3-ZP95NF_Wk&pp=ygUPVGhlIFNpeHRoIFNlbnNl'),
+    (2064, 126, 'https://www.youtube.com/watch?v=ezvOeIKMCzw&pp=ygUPVGhlIFNpeHRoIFNlbnNl'),
+
+    (2065, 127, 'https://www.youtube.com/watch?v=oiXdPolca5w&pp=ygUSVGhlIFVzdWFsIFN1c3BlY3Rz'),
+    (2066, 127, 'https://www.youtube.com/watch?v=XYXXhn9fMYs&pp=ygUSVGhlIFVzdWFsIFN1c3BlY3Rz'),
+
+    (2067, 128, 'https://www.youtube.com/watch?v=aNQqoExfQsg&pp=ygUWTGVvbjogVGhlIFByb2Zlc3Npb25hbA%3D%3D'),
+    (2068, 128, 'https://www.youtube.com/watch?v=aNB8EUOZkEc&pp=ygUWTGVvbjogVGhlIFByb2Zlc3Npb25hbA%3D%3D'),
+
+    (2069, 129, 'https://www.youtube.com/watch?v=XfQYHqsiN5g&pp=ygUSQW1lcmljYW4gSGlzdG9yeSBY'),
+    (2070, 129, 'https://www.youtube.com/watch?v=NFOMzXQWecI&pp=ygUSQW1lcmljYW4gSGlzdG9yeSBY'),
+
+    (2071, 130, 'https://www.youtube.com/watch?v=lT4jmjkagao&pp=ygUTU2F2aW5nIFByaXZhdGUgUnlhbg%3D%3D'),
+    (2072, 130, 'https://www.youtube.com/watch?v=S1Qj_AVu2pA&pp=ygUTU2F2aW5nIFByaXZhdGUgUnlhbg%3D%3D'),
+
+    (2073, 131, 'https://www.youtube.com/watch?v=5PSNL1qE6VY&pp=ygUOYXZhdGFyIHRyYWlsZXI%3D'),
+    (2074, 131, 'https://www.youtube.com/watch?v=CM79GTEm2ps&pp=ygUOYXZhdGFyIHRyYWlsZXI%3D'),
+
+    (2075, 132, 'https://www.youtube.com/watch?v=eOrNdBpGMv8&pp=ygUMVGhlIEF2ZW5nZXJz'),
+    (2076, 132, 'https://www.youtube.com/watch?v=udKE1ksKWDE&pp=ygUMVGhlIEF2ZW5nZXJz'),
+
+    (2077, 133, 'https://www.youtube.com/watch?v=E8WaFvwtphY&pp=ygUNSnVyYXNzaWMgUGFyaw%3D%3D'),
+    (2078, 133, 'https://www.youtube.com/watch?v=lvBmrMEd254&pp=ygUNSnVyYXNzaWMgUGFyaw%3D%3D'),
+
+    (2079, 134, 'https://www.youtube.com/watch?v=x2oF9bO9mMY&pp=ygUHVGl0YW5pYw%3D%3D'),
+    (2080, 134, 'https://www.youtube.com/watch?v=bYOn3-PhA9c&pp=ygUHVGl0YW5pYw%3D%3D'),
+
+    (2081, 135, 'https://www.youtube.com/watch?v=lB95KLmpLR4&pp=ygUSVGhlIFNvY2lhbCBOZXR3b3Jr'),
+    (2082, 135, 'https://www.youtube.com/watch?v=tjMGuJMIgwM&pp=ygUSVGhlIFNvY2lhbCBOZXR3b3Jr'),
+
+    (2083, 136, 'https://www.youtube.com/watch?v=u9S41Kplsbs&pp=ygUESmF3cw%3D%3D'),
+    (2084, 136, 'https://www.youtube.com/watch?v=2I91DJZKRxs&pp=ygUESmF3cw%3D%3D'),
+
+    (2085, 137, 'https://www.youtube.com/watch?v=DSx8Jobx-Gs&pp=ygUaRS5ULiB0aGUgRXh0cmEtVGVycmVzdHJpYWw%3D'),
+    (2086, 137, 'https://www.youtube.com/watch?v=0xWMqsZOYWg&pp=ygUaRS5ULiB0aGUgRXh0cmEtVGVycmVzdHJpYWw%3D'),
+
+    (2087, 138, 'https://www.youtube.com/watch?v=T_WSXXPQYeY&pp=ygUSQmFjayB0byB0aGUgRnV0dXJl'),
+    (2088, 138, 'https://www.youtube.com/watch?v=FWG3Dfss3Jc&pp=ygUSQmFjayB0byB0aGUgRnV0dXJl'),
+
+    (2089, 139, 'https://www.youtube.com/watch?v=hEJnMQG9ev8&pp=ygUSTWFkIE1heDogRnVyeSBSb2Fk'),
+    (2090, 139, 'https://www.youtube.com/watch?v=UtjGTrVwRr4&pp=ygUSTWFkIE1heDogRnVyeSBSb2Fk'),
+
+    (2091, 140, 'https://www.youtube.com/watch?v=XFYWazblaUA&pp=ygUSVGhlIFNoYXBlIG9mIFdhdGVy'),
+
+    (2092, 141, 'https://www.youtube.com/watch?v=0pdqf4P9MB8&pp=ygUKTGEgTGEgTGFuZA%3D%3D'),
+
+    (2093, 142, 'https://www.youtube.com/watch?v=xjDjIWPwcPU&pp=ygUNQmxhY2sgUGFudGhlcg%3D%3D'),
+
+    (2094, 143, 'https://www.youtube.com/watch?v=DzfpyUB60YY&pp=ygUHR2V0IE91dA%3D%3D'),
+
+    (2095, 144, 'https://www.youtube.com/watch?v=LoebZZ8K5N0&pp=ygUMVGhlIFJldmVuYW50'),
+
+    (2096, 145, 'https://www.youtube.com/watch?v=iszwuX1AK6A&pp=ygUXVGhlIFdvbGYgb2YgV2FsbCBTdHJlZXQ%3D'),
+
+    (2097, 146, 'https://www.youtube.com/watch?v=OiTiKOy59o4&pp=ygUHR3Jhdml0eQ%3D%3D'),
+
+    (2098, 147, 'https://www.youtube.com/watch?v=ej3ioOneTy8&pp=ygULVGhlIE1hcnRpYW4%3D'),
+
+    (2099, 148, 'https://www.youtube.com/watch?v=9NJj12tJzqc&pp=ygURbW9vbmxpZ2h0IHRyYWlsZXI%3D'),
+
+    (3000, 149, 'https://www.youtube.com/watch?v=uJfLoE6hanc&pp=ygUHQmlyZG1hbg%3D%3D'),
+
+    (3001, 150, 'https://www.youtube.com/watch?v=0fUCuvNlOCg&pp=ygUQRGphbmdvIFVuY2hhaW5lZA%3D%3D')
 ;
 
 
@@ -163,10 +298,10 @@ VALUES
 INSERT INTO RATING (USER_ID, MOVIE_ID, RATING)
 VALUES
     (1, 101, 5.0),
-    (2, 102, 4.0),
+    (2, 101, 4.0),
     (2, 103, 3.0),
     (1, 104, 2.0),
-    (1, 105, 1.0),
+    (2, 105, 1.0),
     (2, 106, 5.0),
     (1, 107, 4.5)
 ;
@@ -233,7 +368,71 @@ VALUES
     (103,5022),
     (103,5023),
     (103,5024),
-    (103,5014)
+    (103,5014),
+
+    (104,5017),
+    (104,5018),
+    (105,5019),
+    (105,5020),
+    (106,5021),
+    (106,5022),
+    (107,5023),
+    (107,5024),
+    (108,5014),
+
+    (109,5001),
+    (109,5002),
+    (110,5003),
+    (111,5004),
+    (112,5005),
+    (112,5006),
+    (113,5007),
+    (113,5008),
+    (114,5009),
+
+    (115,5010),
+    (116,5011),
+    (117,5018),
+    (118,5013),
+    (119,5014),
+    (120,5015),
+    (121,5016),
+    (122,5001),
+    (123,5007),
+
+    (124,5021),
+    (125,5022),
+    (126,5023),
+    (127,5024),
+    (128,5014),
+
+    (129,5001),
+    (130,5002),
+    (131,5003),
+    (131,5004),
+    (132,5005),
+    (132,5006),
+    (133,5007),
+    (133,5008),
+    (135,5009),
+
+    (136,5010),
+    (137,5011),
+    (117,5012),
+    (138,5013),
+    (139,5014),
+    (140,5015),
+    (141,5016),
+    (142,5001),
+    (143,5007),
+
+    (144,5013),
+    (145,5014),
+    (146,5015),
+    (147,5016),
+    (148,5001),
+    (149,5007),
+    (150,5015)
 ;
 
 
@@ -279,3 +478,7 @@ SELECT * FROM USERS WHERE EMAIL = '';
 
 -- GET THE RATING OF A MOVIE GIVEN BY A SPECIFIC USER
 SELECT RATING FROM RATING WHERE USER_ID = 1 AND MOVIE_ID = 101;
+
+-- CLICK ON ACTOR PHOTO AND DISPLAY ALL MOVIES RELATED TO HIM/HER
+SELECT * FROM MOVIES WHERE MOVIE_ID IN (
+SELECT MOVIE_ID FROM MOVIE_PEOPLE WHERE PERSON_ID = '5001');

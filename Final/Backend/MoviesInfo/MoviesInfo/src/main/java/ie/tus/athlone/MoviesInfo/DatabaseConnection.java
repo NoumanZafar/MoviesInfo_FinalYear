@@ -12,10 +12,12 @@ public class DatabaseConnection {
 	@Bean
 	public MoviesDatabaseApplication setup() {
 		return new MoviesDatabaseApplicationBuilder()
-				.withIpAddress("3.137.159.127") // change every time when server IP changes
+				.withIpAddress("127.0.0.1") // change every time when server IP changes
 				.withPort(3306)
-				.withUsername("nouman")
-				.withPassword("Nouman3255!")
+				.withUsername("root")
+				.withPassword("root")
+//				.withUsername("nouman")
+//				.withPassword("Nouman3255!")
 				.build();
 	}
 	

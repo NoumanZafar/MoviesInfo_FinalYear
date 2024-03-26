@@ -39,15 +39,15 @@ public abstract class GeneratedMoviesDatabaseApplicationBuilder extends Abstract
     protected GeneratedMoviesDatabaseApplicationBuilder() {
         super(MoviesDatabaseApplicationImpl.class, GeneratedMoviesDatabaseMetadata.class);
         withManager(ClipsManagerImpl.class);
-        withManager(MoviesManagerImpl.class);
         withManager(MoviePeopleManagerImpl.class);
+        withManager(MoviesManagerImpl.class);
         withManager(PeopleManagerImpl.class);
         withManager(RatingManagerImpl.class);
         withManager(ReviewsManagerImpl.class);
         withManager(UsersManagerImpl.class);
         withComponent(ClipsSqlAdapter.class);
-        withComponent(MoviesSqlAdapter.class);
         withComponent(MoviePeopleSqlAdapter.class);
+        withComponent(MoviesSqlAdapter.class);
         withComponent(PeopleSqlAdapter.class);
         withComponent(RatingSqlAdapter.class);
         withComponent(ReviewsSqlAdapter.class);

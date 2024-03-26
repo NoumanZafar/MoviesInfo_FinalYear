@@ -3,7 +3,7 @@ package com.company.movies_database.movies_database.movies_database.users;
 import com.company.movies_database.movies_database.movies_database.users.generated.GeneratedUsers;
 
 /**
- * The main interface for entities of the {@code USERS}-table in the database.
+ * The main interface for entities of the {@code users}-table in the database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  * 

@@ -28,7 +28,7 @@ implements GeneratedMoviesManager {
     private final TableIdentifier<Movies> tableIdentifier;
     
     protected GeneratedMoviesManagerImpl() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "MOVIES_DATABASE", "MOVIES");
+        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "movies_database", "movies");
     }
     
     @Override

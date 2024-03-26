@@ -119,24 +119,26 @@ const Details = () => {
       });
       setAuthorizedUserData(response.data);
     } catch (error) {
-      console.error('Error fetching Reviews data:', error);
+      console.error('Error fetching Authorized data:', error);
     }
   };
 
   const getRating = async () => {
     let userId = authorizedUserData.length > 0 ? authorizedUserData[0].userId : '';
     let url = `${baseApi}/${userId}/${movieId}`;
-    try {
-      const response = await axios.get(url, {
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }
-      });
-      let rating = response.data[0].rating;
-      const star = document.getElementById('star' + rating)
-      star.checked = true;
-      document.getElementById("rat").innerHTML = "My Rating: " + rating;
-    } catch (error) { }
+    if (userId) {
+      try {
+        const response = await axios.get(url, {
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        });
+        let rating = response.data[0].rating;
+        const star = document.getElementById('star' + rating)
+        star.checked = true;
+        document.getElementById("rat").innerHTML = "My Rating: " + rating;
+      } catch (error) { }
+    }
   };
 
   const onClickPicture = (id) => {
@@ -177,17 +179,19 @@ const Details = () => {
     //rating will be used to store it in the sql server
     let rating = e.target.value;
     let userId = authorizedUserData.length > 0 ? authorizedUserData[0].userId : '';
-    try {
-      const response = await axios.post(`${baseApi}/rating/insert`, { userId, movieId, rating });
-      if (response.status === 200) {
-        alert("You rated a Movie.")
-        averageRating();
-        getRating();
-      } else {
-        console.error('Rating can\'t be posted');
+    if (userId) {
+      try {
+        const response = await axios.post(`${baseApi}/rating/insert`, { userId, movieId, rating });
+        if (response.status === 200) {
+          alert("You rated a Movie.")
+          averageRating();
+          getRating();
+        } else {
+          console.error('Rating can\'t be posted');
+        }
+      } catch (error) {
+        console.error('Error:', error);
       }
-    } catch (error) {
-      console.error('Error:', error);
     }
   };
 
@@ -207,6 +211,10 @@ const Details = () => {
     getRating();
   }, [authorizedUserData, movieId])
   //console.log(ratingData);
+
+  const onClickActorImage = (personId) => {
+    navigate(`/?person=${personId}`);
+  }
 
   return (
     <Fragment>
@@ -271,7 +279,7 @@ const Details = () => {
           {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && relatedPeopleData.map((relatedPeople) => (
             <Fragment key={relatedPeople.personId}>
               <div>
-                <img src={relatedPeople.imageUrl} alt="" />
+                <img src={relatedPeople.imageUrl} alt="" onClick={() => onClickActorImage(relatedPeople.personId)} />
                 <p>{relatedPeople.name}</p>
               </div>
             </Fragment>

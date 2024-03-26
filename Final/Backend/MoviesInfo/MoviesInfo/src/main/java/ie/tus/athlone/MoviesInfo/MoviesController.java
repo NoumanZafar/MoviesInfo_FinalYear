@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.movies_database.MoviesDatabaseApplication;
+import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeople;
+import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManager;
 import com.company.movies_database.movies_database.movies_database.movies.Movies;
 import com.company.movies_database.movies_database.movies_database.movies.MoviesManager;
 
@@ -20,11 +22,13 @@ import com.company.movies_database.movies_database.movies_database.movies.Movies
 public class MoviesController {
 	// table name
 	private final MoviesManager movies;
+	private final MoviePeopleManager moviePeople;
 
 	// Constructor
 	public MoviesController(MoviesDatabaseApplication app) {
 		// initialize the table from database app
 		movies = app.getOrThrow(MoviesManager.class);
+		moviePeople = app.getOrThrow(MoviePeopleManager.class);
 	}
 
 	//SELECT * FROM MOVIES;
@@ -60,7 +64,7 @@ public class MoviesController {
 	//-- LIST OF RELATED MOVIES
 	//SELECT MOVIE_ID FROM MOVIES WHERE GENRE = (SELECT GENRE FROM MOVIES WHERE MOVIE_ID = 101);
 	@GetMapping("/related/{id}")
-	public List<Movies> getRelatedMovies(@PathVariable int id){
+	public List<Movies> getRelatedMovies(@PathVariable int id) {
         String genre = movies.stream()
                 .filter(movie -> movie.getMovieId() == id)
                 .map(Movies.GENRE)
@@ -70,5 +74,17 @@ public class MoviesController {
         return movies.stream()
         		.filter(Movies.GENRE.equal(genre))
         		.collect(Collectors.toList());
+	}
+	
+	//-- CLICK ON ACTOR PHOTO AND DISPLAY ALL MOVIES RELATED TO HIM/HER
+	//SELECT * FROM MOVIES WHERE MOVIE_ID IN (
+	//SELECT MOVIE_ID FROM MOVIE_PEOPLE WHERE PERSON_ID = '5001');
+	@GetMapping("/person/{id}")
+	public List<Movies> getRelatedMoviesToActors(@PathVariable int id) {
+		return moviePeople.stream()
+				.filter(MoviePeople.PERSON_ID.equal(id))
+				.flatMap(mp -> movies.stream()
+						.filter(Movies.MOVIE_ID.equal(mp.getMovieId())))
+				.collect(Collectors.toList());
 	}
 }

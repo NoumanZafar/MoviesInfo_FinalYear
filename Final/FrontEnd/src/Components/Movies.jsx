@@ -1,4 +1,5 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Container } from './Navbar';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
@@ -9,6 +10,11 @@ const Movies = () => {
   const [moviesData, setMoviesData] = useState([]);
   const baseApi = "http://localhost:8080";
   const navigate = useNavigate(); // Initialize useNavigate
+  // get peron id here from details page.
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  let person = params.get('person');
+
 
   const movieCall = async () => {
     let url;
@@ -26,13 +32,34 @@ const Movies = () => {
     }
   };
 
+  // movies related to specific person
+  const movieCallByRelatedPeople = async () => {
+    let url = `${baseApi}/movies/person/${person}`;
+    if (person) {
+      try {
+        const response = await axios.get(url, {
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        });
+        setMoviesData(response.data);
+      } catch (error) {
+        console.error('Error fetching Movies data:', error);
+      }
+    }
+  };
+
   useEffect(() => {
     movieCall();
+    movieCallByRelatedPeople();
   }, [inputValue]);
 
+  useEffect(() => {
+    movieCallByRelatedPeople();
+  }, [moviesData]);
+
   const onClickPicture = (movieId) => {
-    console.log("Clicked image ID:", movieId);
-    // Navigate to TvShows page with the movieId as a url query parameter
+    // Navigate to Details page with the movieId as a url query parameter
     navigate(`/Details?movieId=${movieId}`);
   };
 
