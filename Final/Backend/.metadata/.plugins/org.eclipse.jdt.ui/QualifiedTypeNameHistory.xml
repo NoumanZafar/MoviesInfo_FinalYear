@@ -20,18 +20,15 @@
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.people.PeopleManager"/>
     <fullyQualifiedTypeName name="com.speedment.runtime.join.Join"/>
     <fullyQualifiedTypeName name="java.util.stream.Stream"/>
-    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManager"/>
     <fullyQualifiedTypeName name="com.speedment.runtime.field.predicate.SpeedmentPredicate"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.people.People"/>
     <fullyQualifiedTypeName name="com.speedment.runtime.join.JoinComponent"/>
-    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.movie_people.MoviePeople"/>
     <fullyQualifiedTypeName name="com.company.movies_database.generated.GeneratedMoviesDatabaseApplicationBuilder"/>
     <fullyQualifiedTypeName name="ie.tus.athlone.MoviesInfo.ActorsController"/>
     <fullyQualifiedTypeName name="com.company.movies_database.MoviesDatabaseApplication"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.reviews.ReviewsManager"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.users.Users"/>
     <fullyQualifiedTypeName name="jakarta.websocket.server.PathParam"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="ie.tus.athlone.MoviesInfo.ReviewController"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="java.util.OptionalDouble"/>
@@ -44,6 +41,9 @@
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.reviews.ReviewsImpl"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.rating.RatingManager"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.rating.Rating"/>
-    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.rating.RatingImpl"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.movie_people.MoviePeople"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManager"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
 </qualifiedTypeNameHistroy>

@@ -215,6 +215,8 @@ const Details = () => {
     navigate(`/?person=${personId}`);
   }
 
+ // light/dark theme 
+// className={toggle ? 'mainBgColor' : 'secondaryBgColor'}
   return (
     <Fragment>
       <div >
