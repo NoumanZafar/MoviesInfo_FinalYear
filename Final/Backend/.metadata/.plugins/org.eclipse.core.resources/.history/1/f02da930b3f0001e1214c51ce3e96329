@@ -42,6 +42,7 @@ public class ClipsController {
 	public ResponseEntity<String> registration(@RequestBody Map<String, String> requestBody) {
 		int movieId = Integer.parseInt(requestBody.get("selectedMovieId"));
 		String clipURL = requestBody.get("clipURL");
+		System.out.println(movieId+" "+clipURL);
 		boolean isClipAdded = addClips(movieId, clipURL);
 		if (isClipAdded) 
 			return ResponseEntity.ok("Clip Added Successfully.");

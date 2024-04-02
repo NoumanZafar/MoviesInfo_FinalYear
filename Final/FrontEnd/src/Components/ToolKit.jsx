@@ -32,8 +32,11 @@ const ToolKit = () => {
         try {
             const response = await axios.post(baseApi + '/movies/addMovie', { title, releaseDate, genre, posterURL, description });
             if (response.status === 200) {
-                console.log('Movie Added.');
+                alert('Movie Added.');
+                document.getElementById('addMovieForm').reset();
+                movieDataCall();
             } else {
+                alert('Adding Movie Data failed.');
                 console.error('Adding Movie Data failed.');
             }
         } catch (error) {
@@ -46,8 +49,10 @@ const ToolKit = () => {
         try {
             const response = await axios.post(baseApi + '/clips/addClips', { selectedMovieId, clipURL });
             if (response.status === 200) {
-                console.log('Clip Added.');
+                alert('Clip Added.');
+                document.getElementById('addClipForm').reset();
             } else {
+                alert('Adding Clip failed.');
                 console.error('Adding Clip failed.');
             }
         } catch (error) {
@@ -65,7 +70,7 @@ const ToolKit = () => {
             <div>
                 <div>
                     <h1>Add Movie</h1>
-                    <form onSubmit={addMovie}>
+                    <form onSubmit={addMovie} id='addMovieForm'>
                         <label>Title:</label>
                         <input type="text" onChange={(e) => setTitle(e.target.value)} required />
                         <br />
@@ -86,7 +91,7 @@ const ToolKit = () => {
                 </div>
                 <div>
                     <h1>Add Clips</h1>
-                    <form onSubmit={addClip}>
+                    <form onSubmit={addClip} id='addClipForm'>
                         <label>Movie:</label>
                         <select onChange={(e) => setSelectedMovieId(e.target.value)}>
                             <option value="">Select a movie</option>

@@ -46,4 +46,8 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManager"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.movies.MoviesImpl"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.clips.ClipsImpl"/>
 </qualifiedTypeNameHistroy>
