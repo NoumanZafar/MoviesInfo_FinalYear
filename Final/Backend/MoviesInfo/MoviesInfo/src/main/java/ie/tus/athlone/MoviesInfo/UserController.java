@@ -66,7 +66,7 @@ public class UserController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
 	}
 
-// INSERT INTO USERS VALUES (NULL, USERNAME, EMAIL, PASSWORD);
+	// INSERT INTO USERS VALUES (NULL, USERNAME, EMAIL, PASSWORD);
 	private boolean registerUser(String username, String email, String password) {
 		try {
 			user.persist(new UsersImpl()

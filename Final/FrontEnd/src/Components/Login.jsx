@@ -62,10 +62,10 @@ const Login = () => {
                     <div>
                         <form onSubmit={handleUserAuthentication}>
                             <label>Email:</label>
-                            <input type="email" onChange={(e) => setEmail(e.target.value)} required />
+                            <input placeholder='Email....' type="email" onChange={(e) => setEmail(e.target.value)} required />
                             <br />
                             <label>Password:</label>
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} required />
+                            <input placeholder='Password....' type="password" onChange={(e) => setPassword(e.target.value)} required />
                             <br />
                             <button type="submit">Login</button>
                             {error && <p>{error}</p>}
@@ -74,13 +74,13 @@ const Login = () => {
                     <div>
                         <form onSubmit={handleUserRegistration} id ='regForm'>
                             <label>Username:</label>
-                            <input type="text" onChange={(e) => setUsername(e.target.value)} required />
+                            <input placeholder='Username....' type="text" onChange={(e) => setUsername(e.target.value)} required />
                             <br />
                             <label>Email:</label>
-                            <input type="email" onChange={(e) => setEmail(e.target.value)} required />
+                            <input placeholder='Email....' type="email" onChange={(e) => setEmail(e.target.value)} required />
                             <br />
                             <label>Password:</label>
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} required />
+                            <input placeholder='Password....' type="password" onChange={(e) => setPassword(e.target.value)} required />
                             <br />
                             <button type="submit">Register</button>
                             {error && <p>{error}</p>}

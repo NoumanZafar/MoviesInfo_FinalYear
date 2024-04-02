@@ -4,6 +4,7 @@ import { HiSearch } from 'react-icons/hi'
 import '../Styles/Navbar.css'
 import Movies from './Movies'
 import Details from './Details'
+import ToolKit from './ToolKit';
 
 export const Container = React.createContext()
 const Navbar = () => {
@@ -26,6 +27,10 @@ const Navbar = () => {
                             <h1 id={toggle ? '' : 'heading'}>WEBSITENAME</h1>
                         </NavLink>
 
+                        <NavLink to="/ToolKit" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
+                            <span id={toggle ? 'Movies' : 'MoviesLight'}>ToolKit</span>
+                        </NavLink>
+
                         <NavLink style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>
                             <span id={toggle ? 'Movies' : 'MoviesLight'} onClick={() => onClickLogout()}>Logout</span>
                         </NavLink>
@@ -45,6 +50,7 @@ const Navbar = () => {
                     {/**Add routing here with adding this pages can be accessed changing the url manually*/}
                     <Route path='' element={<Movies />} />
                     <Route path='/Details' element={<Details />} />
+                    <Route path='/ToolKit' element={<ToolKit />} />
                 </Routes>
 
             </Fragment>

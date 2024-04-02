@@ -215,8 +215,8 @@ const Details = () => {
     navigate(`/?person=${personId}`);
   }
 
- // light/dark theme 
-// className={toggle ? 'mainBgColor' : 'secondaryBgColor'}
+  // light/dark theme 
+  // className={toggle ? 'mainBgColor' : 'secondaryBgColor'}
   return (
     <Fragment>
       <div >
@@ -300,10 +300,12 @@ const Details = () => {
         <div >
           {Array.isArray(relatedMoviesData) && relatedMoviesData.length > 0 && relatedMoviesData.map((related) => (
             <Fragment key={related.movieId}>
-              <div>
-                <img src={related.posterUrl} alt="" onClick={() => onClickPicture(related.movieId)} />
-                <p>{related.title}</p>
-              </div>
+              {related.movieId != movieId && (
+                <div>
+                  <img src={related.posterUrl} alt="" onClick={() => onClickPicture(related.movieId)} />
+                  <p>{related.title}</p>
+                </div>
+              )}
             </Fragment>
           ))}
         </div>

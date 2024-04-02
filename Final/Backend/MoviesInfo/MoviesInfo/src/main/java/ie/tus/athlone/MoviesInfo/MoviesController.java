@@ -1,11 +1,17 @@
 package ie.tus.athlone.MoviesInfo;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +19,7 @@ import com.company.movies_database.MoviesDatabaseApplication;
 import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeople;
 import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManager;
 import com.company.movies_database.movies_database.movies_database.movies.Movies;
+import com.company.movies_database.movies_database.movies_database.movies.MoviesImpl;
 import com.company.movies_database.movies_database.movies_database.movies.MoviesManager;
 
 
@@ -86,5 +93,49 @@ public class MoviesController {
 				.flatMap(mp -> movies.stream()
 						.filter(Movies.MOVIE_ID.equal(mp.getMovieId())))
 				.collect(Collectors.toList());
+	}
+	
+	@PostMapping("/addMovie")
+	public ResponseEntity<String> registration(@RequestBody Map<String, String> requestBody) {
+		String title = requestBody.get("title");
+		String releaseDate = requestBody.get("releaseDate");
+		String genre = requestBody.get("genre");
+		String posterURL = requestBody.get("posterURL");
+		String description = requestBody.get("description");
+		boolean isMovieAdded = addMovie(title, releaseDate, genre, posterURL, description);
+		if (isMovieAdded) 
+			return ResponseEntity.ok("Movie Added Successfully.");
+		else 
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
+	}
+
+	// INSERT INTO MOVIES VALUES...
+	private boolean addMovie(String title, String releaseDate, String genre, String posterURL, String description) {
+		try {
+			movies.persist(new MoviesImpl()
+					.setTitle(title)
+					.setReleaseDate(releaseDate)
+					.setGenre(genre)
+					.setPosterUrl(posterURL)
+					.setMDescription(description));
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	
+	// SELECT TITLE FROM MOVIES;
+	@GetMapping("/title")
+	public  List<Map<String, Object>> getAllMoviesTitle() {
+		return movies.stream()
+	            .map(movie -> {
+	                Map<String, Object> movieMap = new HashMap<>();
+	                movieMap.put("id", movie.getMovieId());
+	                movieMap.put("title", movie.getTitle());
+	                return movieMap;
+	            })
+	            .collect(Collectors.toList());
 	}
 }
