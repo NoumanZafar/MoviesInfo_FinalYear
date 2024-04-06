@@ -50,4 +50,6 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.clips.ClipsImpl"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.people.PeopleImpl"/>
+    <fullyQualifiedTypeName name="com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleImpl"/>
 </qualifiedTypeNameHistroy>

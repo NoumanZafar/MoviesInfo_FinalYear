@@ -107,7 +107,7 @@ public class PeopleController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
 	}
 
-	// INSERT INTO MMOVIE_PEOPLE VALUES...
+	// INSERT INTO MOVIE_PEOPLE VALUES...
 	private boolean addMoviePeople(int selectedMovieId, int selectedPersonId) {
 		try {
 			moviePeople.persist(new MoviePeopleImpl()

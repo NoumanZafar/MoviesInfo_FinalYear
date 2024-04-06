@@ -1,5 +1,6 @@
 package ie.tus.athlone.MoviesInfo;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -16,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.company.movies_database.MoviesDatabaseApplication;
 import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeople;
+import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleImpl;
 import com.company.movies_database.movies_database.movies_database.movie_people.MoviePeopleManager;
-import com.company.movies_database.movies_database.movies_database.movies.MoviesImpl;
 import com.company.movies_database.movies_database.movies_database.people.People;
 import com.company.movies_database.movies_database.movies_database.people.PeopleImpl;
 import com.company.movies_database.movies_database.movies_database.people.PeopleManager;
@@ -54,33 +55,64 @@ public class PeopleController {
 				.collect(Collectors.toList());
 	}
 	
-	@PostMapping("/addMovie")
-	public ResponseEntity<String> registration(@RequestBody Map<String, String> requestBody) {
-		String title = requestBody.get("title");
-		String releaseDate = requestBody.get("releaseDate");
-		String genre = requestBody.get("genre");
-		String posterURL = requestBody.get("posterURL");
-		String description = requestBody.get("description");
-		boolean isMovieAdded = addMovie(title, releaseDate, genre, posterURL, description);
-		if (isMovieAdded) 
-			return ResponseEntity.ok("Movie Added Successfully.");
+	@PostMapping("/addPeople")
+	public ResponseEntity<String> addPeopleData(@RequestBody Map<String, String> requestBody) {
+		String personName = requestBody.get("personName");
+		String ocupation = requestBody.get("ocupation");
+		String imageURL = requestBody.get("imageURL");
+
+		boolean isPersonAdded = addPeople(personName, ocupation, imageURL);
+		if (isPersonAdded) 
+			return ResponseEntity.ok("Person Added Successfully.");
 		else 
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
 	}
 
 	// INSERT INTO PEOPLE VALUES...
-	private boolean addMovie(String personName, String ocupation, String imageURL) {
+	private boolean addPeople(String personName, String ocupation, String imageURL) {
 		try {
 			people.persist(new PeopleImpl()
 					.setName(personName)
-					.setOccupation(ocupation))
-			
-			movies.persist(new MoviesImpl()
-					.setTitle(title)
-					.setReleaseDate(releaseDate)
-					.setGenre(genre)
-					.setPosterUrl(posterURL)
-					.setMDescription(description));
+					.setOccupation(ocupation)
+					.setImageUrl(imageURL));
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	// SELECT TITLE FROM PEOPLE;
+	@GetMapping("/name")
+	public  List<Map<String, Object>> getAllPeopleName() {
+		return people.stream()
+				.map(person -> {
+					 Map<String, Object> peopleMap = new HashMap<>();
+					 peopleMap.put("personId", person.getPersonId());
+					 peopleMap.put("name", person.getName());
+					 return peopleMap;
+				})
+				.collect(Collectors.toList());
+	}
+	
+	@PostMapping("/addMoviePeople")
+	public ResponseEntity<String> addMoviePeopleData(@RequestBody Map<String, String> requestBody) {
+		int movieId = Integer.parseInt(requestBody.get("selectedMovieId"));
+		int personId = Integer.parseInt( requestBody.get("selectedPersonId"));
+
+		boolean isMoviePersonAdded = addMoviePeople(movieId, personId);
+		if (isMoviePersonAdded) 
+			return ResponseEntity.ok("Movie Person Added Successfully.");
+		else 
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred");
+	}
+
+	// INSERT INTO MMOVIE_PEOPLE VALUES...
+	private boolean addMoviePeople(int selectedMovieId, int selectedPersonId) {
+		try {
+			moviePeople.persist(new MoviePeopleImpl()
+					.setMovieId(selectedMovieId)
+					.setPersonId(selectedPersonId));
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
