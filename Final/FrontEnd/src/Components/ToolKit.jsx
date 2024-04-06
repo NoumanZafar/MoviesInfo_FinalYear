@@ -11,6 +11,11 @@ const ToolKit = () => {
     const [titleData, setTitleData] = useState([]);
     const [selectedMovieId, setSelectedMovieId] = useState('');
     const [clipURL, setClipURL] = useState('');
+    const [personName, setPersonName] = useState('');
+    const [ocupation, setOcupation] = useState('');
+    const [imageURL, setImageURL] = useState('');
+    const [nameData, setNameData] = useState([]);
+    const [selectedPersonId, setSelectedPersonId] = useState('');
 
 
     const movieDataCall = async () => {
@@ -27,6 +32,20 @@ const ToolKit = () => {
         }
     };
 
+    const peopleDataCall = async () => {
+        let url = `${baseApi}/people/name`;
+        try {
+            const response = await axios.get(url, {
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            });
+            setNameData(response.data);
+        } catch (error) {
+            console.error('Error fetching People data:', error);
+        }
+    };
+
     const addMovie = async (e) => {
         e.preventDefault();
         try {
@@ -37,7 +56,6 @@ const ToolKit = () => {
                 movieDataCall();
             } else {
                 alert('Adding Movie Data failed.');
-                console.error('Adding Movie Data failed.');
             }
         } catch (error) {
             console.error('Error:', error);
@@ -46,11 +64,15 @@ const ToolKit = () => {
 
     const addClip = async (e) => {
         e.preventDefault();
+        if (!selectedMovieId) {
+            alert('Please select a movie.');
+            return;
+        }
         try {
             const response = await axios.post(baseApi + '/clips/addClips', { selectedMovieId, clipURL });
             if (response.status === 200) {
                 alert('Clip Added.');
-                document.getElementById('addClipForm').reset();
+                document.getElementById('addControlsForm').reset();
             } else {
                 alert('Adding Clip failed.');
                 console.error('Adding Clip failed.');
@@ -60,8 +82,50 @@ const ToolKit = () => {
         }
     };
 
+    const addPerson = async (e) => {
+        e.preventDefault();
+        if (!selectedMovieId) {
+            alert('Please select a movie.');
+            return;
+        }
+
+        if (!selectedPersonId) {
+            alert('Please select a Person.');
+            return;
+        }
+
+        try {
+            const response = await axios.post(baseApi + '/people/addMoviePeople', { selectedMovieId, selectedPersonId });
+            if (response.status === 200) {
+                alert('Person Added.');
+                document.getElementById('addControlsForm').reset();
+            } else {
+                alert('Relating Person failed.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    const addPeople = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post(baseApi + '/people/addPeople', { personName, ocupation, imageURL });
+            if (response.status === 200) {
+                alert('Person Added.');
+                document.getElementById('addPeopleForm').reset();
+                peopleDataCall();
+            } else {
+                alert('Adding People Data failed.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
     useEffect(() => {
         movieDataCall();
+        peopleDataCall();
     }, []);
 
 
@@ -89,21 +153,54 @@ const ToolKit = () => {
                         <button type="submit">Add Movie</button>
                     </form>
                 </div>
+
                 <div>
-                    <h1>Add Clips</h1>
-                    <form onSubmit={addClip} id='addClipForm'>
-                        <label>Movie:</label>
-                        <select onChange={(e) => setSelectedMovieId(e.target.value)}>
-                            <option value="">Select a movie</option>
-                            {Array.isArray(titleData) && titleData.length > 0 && titleData.map((movie) => (
-                                <option key={movie.title} value={movie.id}>{movie.title}</option>
-                            ))}
-                        </select>
+                    <h1>Add People</h1>
+                    <form onSubmit={addPeople} id='addPeopleForm'>
+                        <label>Name:</label>
+                        <input type="text" onChange={(e) => setPersonName(e.target.value)} required />
                         <br />
-                        <label>Clip URL:</label>
-                        <input type="text" onChange={(e) => setClipURL(e.target.value)} required />
+                        <label>Ocupation:</label>
+                        <input type="text" onChange={(e) => setOcupation(e.target.value)} required />
                         <br />
-                        <button type="submit">Add Clip</button>
+                        <label>Image URL:</label>
+                        <input type="text" onChange={(e) => setImageURL(e.target.value)} required />
+                        <br />
+                        <button type="submit">Add People</button>
+                    </form>
+                </div>
+
+                <div>
+                    <h1>Controls</h1>
+                    <form id='addControlsForm'>
+                        <div>
+                            <label>Movie:</label>
+                            <select onChange={(e) => setSelectedMovieId(e.target.value)}>
+                                <option value="">Select a movie</option>
+                                {Array.isArray(titleData) && titleData.length > 0 && titleData.map((movie) => (
+                                    <option key={movie.title} value={movie.id}>{movie.title}</option>
+                                ))}
+                            </select>
+                        </div>
+
+                        <div>
+                            <h3>Clips</h3>
+                            <label>Clip URL:</label>
+                            <input type="text" onChange={(e) => setClipURL(e.target.value)} required />
+                            <button type="submit" onClick={addClip}>Add Clip</button>
+                        </div>
+
+                        <div>
+                            <h3>People</h3>
+                            <label>Person:</label>
+                            <select onChange={(e) => setSelectedPersonId(e.target.value)}>
+                                <option value="">Select a Person</option>
+                                {Array.isArray(nameData) && nameData.length > 0 && nameData.map((person) => (
+                                    <option key={person.name} value={person.personId}>{person.name}</option>
+                                ))}
+                            </select>
+                            <button type="submit" onClick={addPerson}>Add Person</button>
+                        </div>
                     </form>
                 </div>
             </div>

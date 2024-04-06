@@ -39,7 +39,7 @@ public class ClipsController {
 	}
 	
 	@PostMapping("/addClips")
-	public ResponseEntity<String> registration(@RequestBody Map<String, String> requestBody) {
+	public ResponseEntity<String> addClipData(@RequestBody Map<String, String> requestBody) {
 		int movieId = Integer.parseInt(requestBody.get("selectedMovieId"));
 		String clipURL = requestBody.get("clipURL");
 		boolean isClipAdded = addClips(movieId, clipURL);

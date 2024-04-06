@@ -96,7 +96,7 @@ public class MoviesController {
 	}
 	
 	@PostMapping("/addMovie")
-	public ResponseEntity<String> registration(@RequestBody Map<String, String> requestBody) {
+	public ResponseEntity<String> addMovieData(@RequestBody Map<String, String> requestBody) {
 		String title = requestBody.get("title");
 		String releaseDate = requestBody.get("releaseDate");
 		String genre = requestBody.get("genre");
