@@ -19,6 +19,7 @@ const Movies = () => {
   const movieCall = async () => {
     let url;
     if (inputValue) {
+      navigate("/");
       url = `${baseApi}/movies/${inputValue}`;
     } else {
       url = `${baseApi}/movies`;
@@ -66,14 +67,18 @@ const Movies = () => {
     <Fragment>
       <div className={toggle ? 'mainBgColor' : 'secondaryBgColor'}>
         <div className='movies-container'>
-          {Array.isArray(moviesData) && moviesData.length > 0 && moviesData.map((movie) => (
-            <Fragment key={movie.movieId}>
-              <div id='container'>
-                <img src={movie.posterUrl} alt="" onClick={() => onClickPicture(movie.movieId)} />
-                <h3 id={movie.title.length > 28 ? 'smaller-Text' : ''} className={toggle ? 'titleColorDark' : ''}>{movie.title}</h3>
-              </div>
-            </Fragment>
-          ))}
+          {Array.isArray(moviesData) && moviesData.length > 0 ? (
+            moviesData.map((movie) => (
+              <Fragment key={movie.movieId}>
+                <div id='container'>
+                  <img src={movie.posterUrl} alt="" onClick={() => onClickPicture(movie.movieId)} />
+                  <h3 id={movie.title.length > 28 ? 'smaller-Text' : ''} className={toggle ? 'titleColorDark' : ''}>{movie.title}</h3>
+                </div>
+              </Fragment>
+            ))
+          ) : (
+            <p>No movies found</p>
+          )}
         </div>
       </div>
     </Fragment>
