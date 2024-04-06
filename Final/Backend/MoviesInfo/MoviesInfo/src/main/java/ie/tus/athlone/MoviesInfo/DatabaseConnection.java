@@ -26,6 +26,4 @@ public class DatabaseConnection {
 		return new Jackson2ObjectMapperBuilder()
 				.indentOutput(true);
 	}
-	
-	
 }

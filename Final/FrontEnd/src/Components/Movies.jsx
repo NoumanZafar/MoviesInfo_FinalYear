@@ -51,7 +51,6 @@ const Movies = () => {
 
   useEffect(() => {
     movieCall();
-    movieCallByRelatedPeople();
   }, [inputValue]);
 
   useEffect(() => {

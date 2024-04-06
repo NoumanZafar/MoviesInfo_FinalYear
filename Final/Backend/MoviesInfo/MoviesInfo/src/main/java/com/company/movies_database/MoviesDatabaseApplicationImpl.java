@@ -4,7 +4,7 @@ import com.company.movies_database.generated.GeneratedMoviesDatabaseApplicationI
 
 /**
  * The default {@link com.speedment.runtime.core.Speedment} implementation class
- * for the {@link com.speedment.runtime.config.Project} named MOVIES_DATABASE.
+ * for the {@link com.speedment.runtime.config.Project} named movies_database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  * 

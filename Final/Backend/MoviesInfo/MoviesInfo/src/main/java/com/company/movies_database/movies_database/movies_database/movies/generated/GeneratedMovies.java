@@ -93,7 +93,7 @@ public interface GeneratedMovies {
     
     /**
      * Returns the movieId of this Movies. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.movies.MOVIE_ID.
+     * database column movies_database.movies_database.movies.MOVIE_ID.
      * 
      * @return the movieId of this Movies
      */
@@ -101,7 +101,7 @@ public interface GeneratedMovies {
     
     /**
      * Returns the title of this Movies. The title field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.movies.TITLE.
+     * database column movies_database.movies_database.movies.TITLE.
      * 
      * @return the title of this Movies
      */
@@ -110,7 +110,7 @@ public interface GeneratedMovies {
     /**
      * Returns the releaseDate of this Movies. The releaseDate field corresponds
      * to the database column
-     * MOVIES_DATABASE.movies_database.movies.RELEASE_DATE.
+     * movies_database.movies_database.movies.RELEASE_DATE.
      * 
      * @return the releaseDate of this Movies
      */
@@ -118,7 +118,7 @@ public interface GeneratedMovies {
     
     /**
      * Returns the genre of this Movies. The genre field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.movies.GENRE.
+     * database column movies_database.movies_database.movies.GENRE.
      * 
      * @return the genre of this Movies
      */
@@ -126,7 +126,7 @@ public interface GeneratedMovies {
     
     /**
      * Returns the posterUrl of this Movies. The posterUrl field corresponds to
-     * the database column MOVIES_DATABASE.movies_database.movies.POSTER_URL.
+     * the database column movies_database.movies_database.movies.POSTER_URL.
      * 
      * @return the posterUrl of this Movies
      */
@@ -135,7 +135,7 @@ public interface GeneratedMovies {
     /**
      * Returns the mDescription of this Movies. The mDescription field
      * corresponds to the database column
-     * MOVIES_DATABASE.movies_database.movies.M_DESCRIPTION.
+     * movies_database.movies_database.movies.M_DESCRIPTION.
      * 
      * @return the mDescription of this Movies
      */
@@ -143,7 +143,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the movieId of this Movies. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.movies.MOVIE_ID.
+     * database column movies_database.movies_database.movies.MOVIE_ID.
      * 
      * @param movieId to set of this Movies
      * @return        this Movies instance
@@ -152,7 +152,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the title of this Movies. The title field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.movies.TITLE.
+     * database column movies_database.movies_database.movies.TITLE.
      * 
      * @param title to set of this Movies
      * @return      this Movies instance
@@ -161,7 +161,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the releaseDate of this Movies. The releaseDate field corresponds to
-     * the database column MOVIES_DATABASE.movies_database.movies.RELEASE_DATE.
+     * the database column movies_database.movies_database.movies.RELEASE_DATE.
      * 
      * @param releaseDate to set of this Movies
      * @return            this Movies instance
@@ -170,7 +170,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the genre of this Movies. The genre field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.movies.GENRE.
+     * database column movies_database.movies_database.movies.GENRE.
      * 
      * @param genre to set of this Movies
      * @return      this Movies instance
@@ -179,7 +179,7 @@ public interface GeneratedMovies {
     
     /**
      * Sets the posterUrl of this Movies. The posterUrl field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.movies.POSTER_URL.
+     * database column movies_database.movies_database.movies.POSTER_URL.
      * 
      * @param posterUrl to set of this Movies
      * @return          this Movies instance
@@ -189,7 +189,7 @@ public interface GeneratedMovies {
     /**
      * Sets the mDescription of this Movies. The mDescription field corresponds
      * to the database column
-     * MOVIES_DATABASE.movies_database.movies.M_DESCRIPTION.
+     * movies_database.movies_database.movies.M_DESCRIPTION.
      * 
      * @param mDescription to set of this Movies
      * @return             this Movies instance
@@ -217,7 +217,7 @@ public interface GeneratedMovies {
         
         @Override
         public String getDbmsId() {
-            return "MOVIES_DATABASE";
+            return "movies_database";
         }
         
         @Override

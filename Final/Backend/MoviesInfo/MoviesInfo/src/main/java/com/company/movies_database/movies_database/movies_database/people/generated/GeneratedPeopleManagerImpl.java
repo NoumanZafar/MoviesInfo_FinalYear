@@ -28,7 +28,7 @@ implements GeneratedPeopleManager {
     private final TableIdentifier<People> tableIdentifier;
     
     protected GeneratedPeopleManagerImpl() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "movies_database", "people");
+        this.tableIdentifier = TableIdentifier.of("movies_database", "movies_database", "people");
     }
     
     @Override

@@ -28,7 +28,7 @@ implements GeneratedClipsManager {
     private final TableIdentifier<Clips> tableIdentifier;
     
     protected GeneratedClipsManagerImpl() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "movies_database", "clips");
+        this.tableIdentifier = TableIdentifier.of("movies_database", "movies_database", "clips");
     }
     
     @Override

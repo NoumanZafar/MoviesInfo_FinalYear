@@ -68,7 +68,7 @@ public interface GeneratedUsers {
     
     /**
      * Returns the userId of this Users. The userId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.users.USER_ID.
+     * database column movies_database.movies_database.users.USER_ID.
      * 
      * @return the userId of this Users
      */
@@ -76,7 +76,7 @@ public interface GeneratedUsers {
     
     /**
      * Returns the username of this Users. The username field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.users.USERNAME.
+     * database column movies_database.movies_database.users.USERNAME.
      * 
      * @return the username of this Users
      */
@@ -84,7 +84,7 @@ public interface GeneratedUsers {
     
     /**
      * Returns the email of this Users. The email field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.users.EMAIL.
+     * database column movies_database.movies_database.users.EMAIL.
      * 
      * @return the email of this Users
      */
@@ -92,7 +92,7 @@ public interface GeneratedUsers {
     
     /**
      * Returns the password of this Users. The password field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.users.PASSWORD.
+     * database column movies_database.movies_database.users.PASSWORD.
      * 
      * @return the password of this Users
      */
@@ -100,7 +100,7 @@ public interface GeneratedUsers {
     
     /**
      * Sets the userId of this Users. The userId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.users.USER_ID.
+     * database column movies_database.movies_database.users.USER_ID.
      * 
      * @param userId to set of this Users
      * @return       this Users instance
@@ -109,7 +109,7 @@ public interface GeneratedUsers {
     
     /**
      * Sets the username of this Users. The username field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.users.USERNAME.
+     * database column movies_database.movies_database.users.USERNAME.
      * 
      * @param username to set of this Users
      * @return         this Users instance
@@ -118,7 +118,7 @@ public interface GeneratedUsers {
     
     /**
      * Sets the email of this Users. The email field corresponds to the database
-     * column MOVIES_DATABASE.movies_database.users.EMAIL.
+     * column movies_database.movies_database.users.EMAIL.
      * 
      * @param email to set of this Users
      * @return      this Users instance
@@ -127,7 +127,7 @@ public interface GeneratedUsers {
     
     /**
      * Sets the password of this Users. The password field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.users.PASSWORD.
+     * database column movies_database.movies_database.users.PASSWORD.
      * 
      * @param password to set of this Users
      * @return         this Users instance
@@ -153,7 +153,7 @@ public interface GeneratedUsers {
         
         @Override
         public String getDbmsId() {
-            return "MOVIES_DATABASE";
+            return "movies_database";
         }
         
         @Override

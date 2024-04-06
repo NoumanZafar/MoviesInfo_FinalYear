@@ -65,7 +65,7 @@ public interface GeneratedClips {
     
     /**
      * Returns the clipId of this Clips. The clipId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.clips.CLIP_ID.
+     * database column movies_database.movies_database.clips.CLIP_ID.
      * 
      * @return the clipId of this Clips
      */
@@ -73,7 +73,7 @@ public interface GeneratedClips {
     
     /**
      * Returns the movieId of this Clips. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.clips.MOVIE_ID.
+     * database column movies_database.movies_database.clips.MOVIE_ID.
      * 
      * @return the movieId of this Clips
      */
@@ -81,7 +81,7 @@ public interface GeneratedClips {
     
     /**
      * Returns the clipUrl of this Clips. The clipUrl field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.clips.CLIP_URL.
+     * database column movies_database.movies_database.clips.CLIP_URL.
      * 
      * @return the clipUrl of this Clips
      */
@@ -89,7 +89,7 @@ public interface GeneratedClips {
     
     /**
      * Sets the clipId of this Clips. The clipId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.clips.CLIP_ID.
+     * database column movies_database.movies_database.clips.CLIP_ID.
      * 
      * @param clipId to set of this Clips
      * @return       this Clips instance
@@ -98,7 +98,7 @@ public interface GeneratedClips {
     
     /**
      * Sets the movieId of this Clips. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.clips.MOVIE_ID.
+     * database column movies_database.movies_database.clips.MOVIE_ID.
      * 
      * @param movieId to set of this Clips
      * @return        this Clips instance
@@ -107,7 +107,7 @@ public interface GeneratedClips {
     
     /**
      * Sets the clipUrl of this Clips. The clipUrl field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.clips.CLIP_URL.
+     * database column movies_database.movies_database.clips.CLIP_URL.
      * 
      * @param clipUrl to set of this Clips
      * @return        this Clips instance
@@ -141,7 +141,7 @@ public interface GeneratedClips {
         
         @Override
         public String getDbmsId() {
-            return "MOVIES_DATABASE";
+            return "movies_database";
         }
         
         @Override

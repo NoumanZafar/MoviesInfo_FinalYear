@@ -29,7 +29,7 @@ public abstract class GeneratedClipsSqlAdapter implements SqlAdapter<Clips> {
     private final TableIdentifier<Clips> tableIdentifier;
     
     protected GeneratedClipsSqlAdapter() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "movies_database", "clips");
+        this.tableIdentifier = TableIdentifier.of("movies_database", "movies_database", "clips");
     }
     
     protected Clips apply(ResultSet resultSet, int offset) throws SQLException {

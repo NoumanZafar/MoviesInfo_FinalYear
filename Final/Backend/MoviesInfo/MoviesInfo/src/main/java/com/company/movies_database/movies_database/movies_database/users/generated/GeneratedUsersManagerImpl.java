@@ -28,7 +28,7 @@ implements GeneratedUsersManager {
     private final TableIdentifier<Users> tableIdentifier;
     
     protected GeneratedUsersManagerImpl() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "movies_database", "users");
+        this.tableIdentifier = TableIdentifier.of("movies_database", "movies_database", "users");
     }
     
     @Override

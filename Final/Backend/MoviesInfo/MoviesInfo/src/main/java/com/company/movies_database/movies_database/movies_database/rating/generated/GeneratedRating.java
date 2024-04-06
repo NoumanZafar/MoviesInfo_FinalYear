@@ -66,7 +66,7 @@ public interface GeneratedRating {
     
     /**
      * Returns the userId of this Rating. The userId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.rating.USER_ID.
+     * database column movies_database.movies_database.rating.USER_ID.
      * 
      * @return the userId of this Rating
      */
@@ -74,7 +74,7 @@ public interface GeneratedRating {
     
     /**
      * Returns the movieId of this Rating. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.rating.MOVIE_ID.
+     * database column movies_database.movies_database.rating.MOVIE_ID.
      * 
      * @return the movieId of this Rating
      */
@@ -82,7 +82,7 @@ public interface GeneratedRating {
     
     /**
      * Returns the rating of this Rating. The rating field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.rating.RATING.
+     * database column movies_database.movies_database.rating.RATING.
      * 
      * @return the rating of this Rating
      */
@@ -90,7 +90,7 @@ public interface GeneratedRating {
     
     /**
      * Sets the userId of this Rating. The userId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.rating.USER_ID.
+     * database column movies_database.movies_database.rating.USER_ID.
      * 
      * @param userId to set of this Rating
      * @return       this Rating instance
@@ -99,7 +99,7 @@ public interface GeneratedRating {
     
     /**
      * Sets the movieId of this Rating. The movieId field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.rating.MOVIE_ID.
+     * database column movies_database.movies_database.rating.MOVIE_ID.
      * 
      * @param movieId to set of this Rating
      * @return        this Rating instance
@@ -108,7 +108,7 @@ public interface GeneratedRating {
     
     /**
      * Sets the rating of this Rating. The rating field corresponds to the
-     * database column MOVIES_DATABASE.movies_database.rating.RATING.
+     * database column movies_database.movies_database.rating.RATING.
      * 
      * @param rating to set of this Rating
      * @return       this Rating instance
@@ -151,7 +151,7 @@ public interface GeneratedRating {
         
         @Override
         public String getDbmsId() {
-            return "MOVIES_DATABASE";
+            return "movies_database";
         }
         
         @Override

@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 /**
  * The default {@link com.speedment.common.injector.InjectorProxy}
  * implementation class for the {@link com.speedment.runtime.config.Project}
- * named MOVIES_DATABASE.
+ * named movies_database.
  * <p>
  * An InjectorProxy is used to reduce the required number of {@code exports} in
  * the module-info.java file for a Speedment project
@@ -35,7 +35,7 @@ public final class MoviesDatabaseInjectorProxy implements InjectorProxy {
     }
     
     @Override
-    public <T> T newInstance(Constructor<T> constructor, Object... args) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+    public <T> T newInstance(Constructor<T> constructor, Object... args) throws InvocationTargetException, InstantiationException, IllegalAccessException {
         return constructor.newInstance(args);
     }
     
@@ -43,7 +43,7 @@ public final class MoviesDatabaseInjectorProxy implements InjectorProxy {
     public Object invoke(
             Method method,
             Object obj,
-            Object... args) throws IllegalAccessException, InvocationTargetException, IllegalArgumentException {
+            Object... args) throws InvocationTargetException, IllegalArgumentException, IllegalAccessException {
         return method.invoke(obj, args);
     }
 }

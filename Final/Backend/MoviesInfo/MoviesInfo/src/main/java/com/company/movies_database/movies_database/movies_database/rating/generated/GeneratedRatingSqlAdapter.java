@@ -29,7 +29,7 @@ public abstract class GeneratedRatingSqlAdapter implements SqlAdapter<Rating> {
     private final TableIdentifier<Rating> tableIdentifier;
     
     protected GeneratedRatingSqlAdapter() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "movies_database", "rating");
+        this.tableIdentifier = TableIdentifier.of("movies_database", "movies_database", "rating");
     }
     
     protected Rating apply(ResultSet resultSet, int offset) throws SQLException {

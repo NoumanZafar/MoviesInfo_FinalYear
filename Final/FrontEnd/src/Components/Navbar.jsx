@@ -24,7 +24,7 @@ const Navbar = () => {
                     <div className='nav-options'>
                         {/**Add routing here with adding this pages can be accessed with button click*/}
                         <NavLink to="">
-                            <h1 id={toggle ? '' : 'heading'}>WEBSITENAME</h1>
+                            <h1 id={toggle ? '' : 'heading'}>REVIEWS.IE</h1>
                         </NavLink>
 
                         <NavLink to="/ToolKit" style={({ isActive }) => { return { color: isActive ? '#fff' : '#EE9B00' } }}>

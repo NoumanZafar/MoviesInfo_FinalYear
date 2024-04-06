@@ -28,7 +28,7 @@ implements GeneratedReviewsManager {
     private final TableIdentifier<Reviews> tableIdentifier;
     
     protected GeneratedReviewsManagerImpl() {
-        this.tableIdentifier = TableIdentifier.of("MOVIES_DATABASE", "movies_database", "reviews");
+        this.tableIdentifier = TableIdentifier.of("movies_database", "movies_database", "reviews");
     }
     
     @Override
