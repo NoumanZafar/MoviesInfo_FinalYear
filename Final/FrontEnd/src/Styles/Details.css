@@ -27,3 +27,38 @@
     position: relative;
     color: #FFD700;
 }
+
+/* Started here */
+
+.generalDetails {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieContainer {
+    display: flex;
+    align-items: flex-start;
+    /* Align items to the start of the cross axis */
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.poster img {
+    width: 100%;
+    /* Ensure the image fills its container */
+    max-width: 350px;
+    /* Limit the image width to 300px */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+
+.otherDetails {
+    flex: 1;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+  }
+  
