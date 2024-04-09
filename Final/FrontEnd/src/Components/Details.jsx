@@ -196,23 +196,6 @@ const Details = () => {
     }
   };
 
-  useEffect(() => {
-    email = JSON.parse(localStorage.getItem('email'));
-    movieCall();
-    clipCall();
-    relatedPeopleCall();
-    averageRating();
-    relatedMovies();
-    allReviews();
-    authorizedUser();
-  }, [movieId]);
-
-  useEffect(() => {
-    email = JSON.parse(localStorage.getItem('email'));
-    getRating();
-  }, [authorizedUserData, movieId])
-  //console.log(ratingData);
-
   const onClickActorImage = (personId) => {
     navigate(`/?person=${personId}`);
   }
@@ -230,6 +213,22 @@ const Details = () => {
       behavior: 'smooth'
     });
   }
+
+  useEffect(() => {
+    email = JSON.parse(localStorage.getItem('email'));
+    movieCall();
+    clipCall();
+    relatedPeopleCall();
+    averageRating();
+    relatedMovies();
+    allReviews();
+    authorizedUser();
+  }, [movieId]);
+
+  useEffect(() => {
+    email = JSON.parse(localStorage.getItem('email'));
+    getRating();
+  }, [authorizedUserData, movieId])
 
   // light/dark theme 
   // className={toggle ? 'mainBgColor' : 'secondaryBgColor'}
@@ -288,19 +287,24 @@ const Details = () => {
           ))}
         </div>
 
-
-        <div className="relatedPeopleSlider">
-          <button onClick={slideLeft}>&#60;</button>
-          <div className="relatedPeopleSliderContainer" ref={sliderRef}>
-            {Array.isArray(relatedPeopleData) && relatedPeopleData.map((relatedPeople) => (
-              <div key={relatedPeople.personId} className="relatedPeopleItem" onClick={() => onClickActorImage(relatedPeople.personId)}>
-                <img src={relatedPeople.imageUrl} alt="" />
-                <p>{relatedPeople.name}</p>
+        {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && (
+          <div>
+            <h2>Related People</h2>
+            <div className="relatedPeopleSlider">
+              <button onClick={slideLeft}>&#60;</button>
+              <div className="relatedPeopleSliderContainer" ref={sliderRef}>
+                {relatedPeopleData.map((relatedPeople) => (
+                  <div key={relatedPeople.personId} className="relatedPeopleItem" onClick={() => onClickActorImage(relatedPeople.personId)}>
+                    <img src={relatedPeople.imageUrl} alt="" />
+                    <p>{relatedPeople.name}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              <button onClick={slideRight}>&#62;</button>
+            </div>
           </div>
-          <button onClick={slideRight}>&#62;</button>
-        </div>
+        )}
+
 
         <div >
           {Array.isArray(clipData) && clipData.length > 0 && clipData.map((clip) => (
