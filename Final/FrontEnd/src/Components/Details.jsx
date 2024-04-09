@@ -136,7 +136,7 @@ const Details = () => {
         let rating = response.data[0].rating;
         const star = document.getElementById('star' + rating)
         star.checked = true;
-        document.getElementById("rat").innerHTML = "My Rating: " + rating;
+        document.getElementById("rat").innerHTML = "Your Rating: " + rating + "/5";
       } catch (error) { }
     }
   };
@@ -223,17 +223,14 @@ const Details = () => {
         <div className='generalDetails'>
           {Array.isArray(moviesData) && moviesData.length > 0 && moviesData.map((movie) => (
             <Fragment key={movie.movieId}>
-
               <div className='movieContainer'>
                 <div className='poster'>
                   <img src={movie.posterUrl} alt="" />
                 </div>
-
                 <div className='otherDetails'>
                   <h1 className='title'>{movie.title}</h1>
                   <p className='genre'><strong>Genre:</strong> {movie.genre}</p>
                   <p className='releaseDate'><strong>Release Date:</strong> {movie.releaseDate}</p>
-                  <p className='description'><strong>Description:</strong> {movie.mdescription}</p>
                   <div className='overAllRating'>
                     {Array.isArray(averageRatingData) && averageRatingData.length > 0 && averageRatingData.map((average) => (
                       <Fragment key={average.AvgRating}>
@@ -243,31 +240,32 @@ const Details = () => {
                       </Fragment>
                     ))}
                   </div>
-
-                  <div className='stars'>
-                    <input type="radio" name="rating" id="star5" value="5" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star5"></label>
-                    <input type="radio" name="rating" id="star4.5" value="4.5" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star4.5" className='half'></label>
-                    <input type="radio" name="rating" id="star4" value="4" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star4"></label>
-                    <input type="radio" name="rating" id="star3.5" value="3.5" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star3.5" className='half'></label>
-                    <input type="radio" name="rating" id="star3" value="3" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star3"></label>
-                    <input type="radio" name="rating" id="star2.5" value="2.5" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star2.5" className='half'></label>
-                    <input type="radio" name="rating" id="star2" value="2" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star2"></label>
-                    <input type="radio" name="rating" id="star1.5" value="1.5" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star1.5" className='half'></label>
-                    <input type="radio" name="rating" id="star1" value="1" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star1"></label>
-                    <input type="radio" name="rating" id="star0.5" value="0.5" onChange={(e) => handleRatingChange(e)} />
-                    <label htmlFor="star0.5" className='half'></label>
+                  <p className='description'><strong>Description:</strong> {movie.mdescription}</p>
+                  <div className='ratingDetails'>
+                    <h1 id='rat'>Your Rating: 0</h1>
+                    <div className='stars'>
+                      <input type="radio" name="rating" id="star5" value="5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star5"></label>
+                      <input type="radio" name="rating" id="star4.5" value="4.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star4.5" className='half'></label>
+                      <input type="radio" name="rating" id="star4" value="4" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star4"></label>
+                      <input type="radio" name="rating" id="star3.5" value="3.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star3.5" className='half'></label>
+                      <input type="radio" name="rating" id="star3" value="3" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star3"></label>
+                      <input type="radio" name="rating" id="star2.5" value="2.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star2.5" className='half'></label>
+                      <input type="radio" name="rating" id="star2" value="2" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star2"></label>
+                      <input type="radio" name="rating" id="star1.5" value="1.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star1.5" className='half'></label>
+                      <input type="radio" name="rating" id="star1" value="1" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star1"></label>
+                      <input type="radio" name="rating" id="star0.5" value="0.5" onChange={(e) => handleRatingChange(e)} />
+                      <label htmlFor="star0.5" className='half'></label>
+                    </div>
                   </div>
-
-                  <p id='rat'>My Rating: 0</p>
                 </div>
               </div>
             </Fragment>
@@ -275,7 +273,7 @@ const Details = () => {
         </div>
 
 
-        <div >
+        <div className='relatedPeople'>
           {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && relatedPeopleData.map((relatedPeople) => (
             <Fragment key={relatedPeople.personId}>
               <div>
