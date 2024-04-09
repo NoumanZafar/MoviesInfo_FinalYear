@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
@@ -24,6 +24,8 @@ const Details = () => {
   const navigate = useNavigate();
   const baseApi = "http://localhost:8080";
   let email = '';
+  //slider here
+  const sliderRef = useRef(null);
 
 
   const movieCall = async () => {
@@ -215,6 +217,20 @@ const Details = () => {
     navigate(`/?person=${personId}`);
   }
 
+  const slideLeft = () => {
+    sliderRef.current.scrollBy({
+      left: -250,
+      behavior: 'smooth'
+    });
+  }
+
+  const slideRight = () => {
+    sliderRef.current.scrollBy({
+      left: 250,
+      behavior: 'smooth'
+    });
+  }
+
   // light/dark theme 
   // className={toggle ? 'mainBgColor' : 'secondaryBgColor'}
   return (
@@ -273,15 +289,17 @@ const Details = () => {
         </div>
 
 
-        <div className='relatedPeople'>
-          {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && relatedPeopleData.map((relatedPeople) => (
-            <Fragment key={relatedPeople.personId}>
-              <div>
-                <img src={relatedPeople.imageUrl} alt="" onClick={() => onClickActorImage(relatedPeople.personId)} />
+        <div className="relatedPeopleSlider">
+          <button onClick={slideLeft}>&#60;</button>
+          <div className="relatedPeopleSliderContainer" ref={sliderRef}>
+            {Array.isArray(relatedPeopleData) && relatedPeopleData.map((relatedPeople) => (
+              <div key={relatedPeople.personId} className="relatedPeopleItem" onClick={() => onClickActorImage(relatedPeople.personId)}>
+                <img src={relatedPeople.imageUrl} alt="" />
                 <p>{relatedPeople.name}</p>
               </div>
-            </Fragment>
-          ))}
+            ))}
+          </div>
+          <button onClick={slideRight}>&#62;</button>
         </div>
 
         <div >

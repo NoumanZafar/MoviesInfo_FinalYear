@@ -100,3 +100,41 @@
     position: relative;
     color: #FFD700;
 }
+
+
+/*slider for related actors*/
+.relatedPeopleSlider {
+    display: flex;
+    align-items: center;
+  }
+  
+  .relatedPeopleSlider button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 0 10px;
+  }
+  
+  .relatedPeopleSliderContainer {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .relatedPeopleSliderContainer::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+  
+  .relatedPeopleItem {
+    flex: 0 0 auto;
+    padding: 0 10px;
+    text-align: center;
+  }
+  
+  .relatedPeopleItem img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
