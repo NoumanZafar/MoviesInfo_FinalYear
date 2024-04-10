@@ -173,12 +173,12 @@ const Details = () => {
         console.error('Error:', error);
       }
     } else {
-      document.getElementById("commentField").nextElementSibling.innerHTML = "Field Can't be empty";
+      document.getElementById("commentPostButton").nextElementSibling.innerHTML = "Can't be empty";
     }
   };
 
   const clearSpan = () => {
-    document.getElementById("commentField").nextElementSibling.innerHTML = "";
+    document.getElementById("commentPostButton").nextElementSibling.innerHTML = "";
   };
 
   const handleRatingChange = async (e) => {
@@ -381,18 +381,21 @@ const Details = () => {
 
 
 
-        <div >
-          <h2>Reviews</h2>
-          {Array.isArray(reviewsData) && reviewsData.length > 0 && reviewsData.map((review) => (
-            <Fragment key={review.reviewId}>
-              <div>
-                <p>{review.user}</p>
-                <p>{review.comment}</p>
-              </div>
-            </Fragment>
-          ))}
-          <input type="text" id='commentField' placeholder="Write your comment....." onInput={clearSpan} /><span></span>
-          <button onClick={postComment}>Post</button>
+        <div class="comments-container">
+          <h2>Comments</h2>
+          <div>
+            {Array.isArray(reviewsData) && reviewsData.length > 0 && reviewsData.map((review) => (
+              <Fragment key={review.reviewId}>
+                <div className='comment-content'>
+                  <p className='userr'>{review.user}</p>
+                  <p className='comment'>{review.comment}</p>
+                </div>
+              </Fragment>
+            ))}
+            <textarea type="text" id='commentField' placeholder="Write your comment....." onInput={clearSpan} />
+            <button onClick={postComment} id='commentPostButton'>Post</button>
+            <span className="error-message"></span>
+          </div>
         </div>
 
       </div>
