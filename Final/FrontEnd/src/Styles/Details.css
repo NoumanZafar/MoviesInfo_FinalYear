@@ -105,11 +105,15 @@
 
 
 /*slider for related actors*/
+.relatedMoviesSlider,
+.clipsSlider,
 .relatedPeopleSlider {
     display: flex;
     align-items: center;
 }
 
+.relatedMoviesSlider button,
+.clipsSlider button,
 .relatedPeopleSlider button {
     background: none;
     border: none;
@@ -118,39 +122,65 @@
     padding: 0 10px;
 }
 
+.relatedMoviesSlider button:hover,
+.clipsSlider button:hover,
+.relatedPeopleSlider button:hover {
+    color: red;
+}
+
+.relatedMoviesSliderContainer,
+.clipsSliderContainer,
 .relatedPeopleSliderContainer {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
 }
 
+.relatedMoviesSliderContainer::-webkit-scrollbar,
+.clipsSliderContainer::-webkit-scrollbar,
 .relatedPeopleSliderContainer::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar */
+    width: 0;
+    height: 0;
 }
 
+.relatedMoviesSliderContainer,
+.clipsSliderContainer,
+.relatedPeopleSliderContainer {
+    overflow: hidden;
+    /* Prevent scrolling */
+}
+
+.relatedMoviesItem,
+.clipsItem,
 .relatedPeopleItem {
     flex: 0 0 auto;
     padding: 0 10px;
     text-align: center;
 }
 
+.relatedMoviesItem img,
 .relatedPeopleItem img {
     width: 200px;
     height: 300px;
     object-fit: cover;
 }
 
+.relatedMoviesItem img:hover,
 .relatedPeopleItem img:hover {
     transform: scale(1.05);
 }
 
+.relatedMoviesItem img,
+.relatedMoviesItem p,
 .relatedPeopleItem p,
 .relatedPeopleItem img {
     cursor: pointer;
     transition: .7s;
 }
 
-/*clips*/
-
-  
+.relatedPeopleHeading,
+.clipsHeading,
+.relatedMoviesHeading {
+    margin-top: 50px;
+}

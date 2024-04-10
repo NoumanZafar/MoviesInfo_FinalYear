@@ -25,7 +25,12 @@ const Details = () => {
   const baseApi = "http://localhost:8080";
   let email = '';
   //slider here
-  const sliderRef = useRef(null);
+  const relatedPeopleSliderRef = useRef(null);
+  const clipsSliderRef = useRef(null);
+  const relatedMoviesSliderRef = useRef(null);
+  const [isScrollingRequiredRelatedPeople, setIsScrollingRequiredRelatedPeople] = useState(false);
+  const [isScrollingRequiredClips, setIsScrollingRequiredClips] = useState(false);
+  const [isScrollingRequiredRelatedMovies, setIsScrollingRequiredRelatedMovies] = useState(false);
 
 
   const movieCall = async () => {
@@ -200,19 +205,35 @@ const Details = () => {
     navigate(`/?person=${personId}`);
   }
 
-  const slideLeft = () => {
-    sliderRef.current.scrollBy({
+  const slideLeft = (ref) => {
+    ref.current.scrollBy({
       left: -250,
       behavior: 'smooth'
     });
   }
 
-  const slideRight = () => {
-    sliderRef.current.scrollBy({
+  const slideRight = (ref) => {
+    ref.current.scrollBy({
       left: 250,
       behavior: 'smooth'
     });
   }
+
+  const isScrollingRequired = (sliderRef) => {
+    return sliderRef.current && sliderRef.current.scrollWidth > sliderRef.current.clientWidth;
+  };
+
+  useEffect(() => {
+    setIsScrollingRequiredRelatedPeople(isScrollingRequired(relatedPeopleSliderRef));
+  }, [relatedPeopleData]);
+
+  useEffect(() => {
+    setIsScrollingRequiredClips(isScrollingRequired(clipsSliderRef));
+  }, [clipData]);
+
+  useEffect(() => {
+    setIsScrollingRequiredRelatedMovies(isScrollingRequired(relatedMoviesSliderRef));
+  }, [relatedMoviesData]);
 
   useEffect(() => {
     email = JSON.parse(localStorage.getItem('email'));
@@ -287,12 +308,15 @@ const Details = () => {
           ))}
         </div>
 
+
         {Array.isArray(relatedPeopleData) && relatedPeopleData.length > 0 && (
           <div>
-            <h2>Related People</h2>
+            <h2 className='relatedPeopleHeading'>Related People</h2>
             <div className="relatedPeopleSlider">
-              <button onClick={slideLeft}>&#60;</button>
-              <div className="relatedPeopleSliderContainer" ref={sliderRef}>
+              {isScrollingRequiredRelatedPeople && (
+                <button onClick={() => slideLeft(relatedPeopleSliderRef)}>&#60;</button>
+              )}
+              <div className="relatedPeopleSliderContainer" ref={relatedPeopleSliderRef}>
                 {relatedPeopleData.map((relatedPeople) => (
                   <div key={relatedPeople.personId} className="relatedPeopleItem" onClick={() => onClickActorImage(relatedPeople.personId)}>
                     <img src={relatedPeople.imageUrl} alt="" />
@@ -300,37 +324,65 @@ const Details = () => {
                   </div>
                 ))}
               </div>
-              <button onClick={slideRight}>&#62;</button>
+              {isScrollingRequiredRelatedPeople && (
+                <button onClick={() => slideRight(relatedPeopleSliderRef)}>&#62;</button>
+              )}
             </div>
           </div>
         )}
 
 
-        <div >
-          {Array.isArray(clipData) && clipData.length > 0 && clipData.map((clip) => (
-            <Fragment key={clip.clipId}>
-              <div>
-                <ReactPlayer url={clip.clipUrl} controls />
-              </div>
-            </Fragment>
-          ))}
-        </div>
 
-        <div >
-          {Array.isArray(relatedMoviesData) && relatedMoviesData.length > 0 && relatedMoviesData.map((related) => (
-            <Fragment key={related.movieId}>
-              {related.movieId != movieId && (
-                <div>
-                  <img src={related.posterUrl} alt="" onClick={() => onClickPicture(related.movieId)} />
-                  <p>{related.title}</p>
-                </div>
+
+        {Array.isArray(clipData) && clipData.length > 0 && (
+          <div>
+            <h2 className='clipsHeading'>Clips</h2>
+            <div className="clipsSlider">
+              {isScrollingRequiredClips && (
+                <button onClick={() => slideLeft(clipsSliderRef)}>&#60;</button>
               )}
-            </Fragment>
-          ))}
-        </div>
+              <div className="clipsSliderContainer" ref={clipsSliderRef}>
+                {clipData.map((clip) => (
+                  <div key={clip.clipId} className='clipsItem'>
+                    <ReactPlayer url={clip.clipUrl} controls />
+                  </div>
+                ))}
+              </div>
+              {isScrollingRequiredClips && (
+                <button onClick={() => slideRight(clipsSliderRef)}>&#62;</button>
+              )}
+            </div>
+          </div>
+        )}
+
+        {Array.isArray(relatedMoviesData) && relatedMoviesData.length > 1 && (
+          <div>
+            <h2 className='relatedMoviesHeading'>Related Movies</h2>
+            <div className="relatedMoviesSlider">
+              {isScrollingRequiredRelatedMovies && (
+                <button onClick={() => slideLeft(relatedMoviesSliderRef)}>&#60;</button>
+              )}
+              <div className="relatedMoviesSliderContainer" ref={relatedMoviesSliderRef}>
+                {relatedMoviesData.map((related) => (
+                  related.movieId != movieId && (
+                    <div key={related.movieId} className='relatedMoviesItem'>
+                      <img src={related.posterUrl} alt="" onClick={() => onClickPicture(related.movieId)} />
+                      <p>{related.title}</p>
+                    </div>
+                  )
+                ))}
+              </div>
+              {isScrollingRequiredRelatedMovies && (
+                <button onClick={() => slideRight(relatedMoviesSliderRef)}>&#62;</button>
+              )}
+            </div>
+          </div>
+        )}
+
+
 
         <div >
-          <h3>Reviews</h3>
+          <h2>Reviews</h2>
           {Array.isArray(reviewsData) && reviewsData.length > 0 && reviewsData.map((review) => (
             <Fragment key={review.reviewId}>
               <div>
