@@ -186,49 +186,80 @@
 }
 
 /*Comment section*/
-.comments-container {
-    border: 1px solid #ccc;
+.comments-heading {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .comments-container {
     border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-  }
+    margin: 0 auto;
+    width: 60%;
+    max-height: 400px; /* Set a maximum height */
+    overflow-y: auto; /* Add vertical scrollbar when content exceeds max height */
+}
+
   
-  .comments-container h2 {
-    margin-top: 0;
-  }
-  
-  .comment-content {
-    margin-bottom: 1rem;
-  }
-  
-  .userr {
-    font-weight: bold;
-    margin-bottom: 0;
-  }
-  
-  .comment {
-    margin-top: 0;
-    margin-left: 1rem;
-  }
-  
-  #commentField {
-    width: 100%;
-    resize: vertical;
-    padding: 0.5rem;
+  .comment-entry {
     margin-bottom: 0.5rem;
   }
   
-  #commentPostButton {
+  .comment-content {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem; /* Updated padding */
+    background-color: #f9f9f9;
+  }
+
+  .userr {
+    margin: 0;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    margin: 0;
+    text-decoration: underline;
+    text-transform: capitalize; /* Capitalize the first letter */
+}
+
+  
+  .comment {
+    margin: 0; /* Removed margin-top */
+    word-wrap: break-word;
+  }
+  
+  .comment-input {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Take full width of the container */
+  }
+  
+  #commentField {
+    flex: 1;
+    resize: vertical;
     padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 70%;
+  }
+  
+  
+  
+  #commentPostButton {
+    padding: 0.5rem 1rem;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 10px;
   }
   
   .error-message {
     color: red;
     font-size: 0.8rem;
-  }
-  
+    margin-top: 0;
+  }  

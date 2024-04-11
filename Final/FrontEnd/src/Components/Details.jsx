@@ -332,29 +332,6 @@ const Details = () => {
         )}
 
 
-
-
-        {Array.isArray(clipData) && clipData.length > 0 && (
-          <div>
-            <h2 className='clipsHeading'>Clips</h2>
-            <div className="clipsSlider">
-              {isScrollingRequiredClips && (
-                <button onClick={() => slideLeft(clipsSliderRef)}>&#60;</button>
-              )}
-              <div className="clipsSliderContainer" ref={clipsSliderRef}>
-                {clipData.map((clip) => (
-                  <div key={clip.clipId} className='clipsItem'>
-                    <ReactPlayer url={clip.clipUrl} controls />
-                  </div>
-                ))}
-              </div>
-              {isScrollingRequiredClips && (
-                <button onClick={() => slideRight(clipsSliderRef)}>&#62;</button>
-              )}
-            </div>
-          </div>
-        )}
-
         {Array.isArray(relatedMoviesData) && relatedMoviesData.length > 1 && (
           <div>
             <h2 className='relatedMoviesHeading'>Related Movies</h2>
@@ -379,24 +356,49 @@ const Details = () => {
           </div>
         )}
 
-
-
-        <div class="comments-container">
-          <h2>Comments</h2>
+        {Array.isArray(clipData) && clipData.length > 0 && (
           <div>
-            {Array.isArray(reviewsData) && reviewsData.length > 0 && reviewsData.map((review) => (
-              <Fragment key={review.reviewId}>
+            <h2 className='clipsHeading'>Clips</h2>
+            <div className="clipsSlider">
+              {isScrollingRequiredClips && (
+                <button onClick={() => slideLeft(clipsSliderRef)}>&#60;</button>
+              )}
+              <div className="clipsSliderContainer" ref={clipsSliderRef}>
+                {clipData.map((clip) => (
+                  <div key={clip.clipId} className='clipsItem'>
+                    <ReactPlayer url={clip.clipUrl} controls />
+                  </div>
+                ))}
+              </div>
+              {isScrollingRequiredClips && (
+                <button onClick={() => slideRight(clipsSliderRef)}>&#62;</button>
+              )}
+            </div>
+          </div>
+        )}
+
+        <div className="comments-heading">
+          <h2>Comments</h2>
+        </div>
+        <div className="comments-container" id="commentsContainer">
+          {Array.isArray(reviewsData) && reviewsData.length > 0 && reviewsData.map((review) => (
+            <Fragment key={review.reviewId}>
+              <div className='comment-entry'>
                 <div className='comment-content'>
-                  <p className='userr'>{review.user}</p>
+                  <p className='userr'><span className="user-name">{review.user}</span></p>
                   <p className='comment'>{review.comment}</p>
                 </div>
-              </Fragment>
-            ))}
-            <textarea type="text" id='commentField' placeholder="Write your comment....." onInput={clearSpan} />
-            <button onClick={postComment} id='commentPostButton'>Post</button>
-            <span className="error-message"></span>
-          </div>
+              </div>
+            </Fragment>
+          ))}
         </div>
+        <div className="comment-input">
+          <textarea type="text" id='commentField' placeholder="Write your comment....." onInput={clearSpan} />
+          <button onClick={postComment} id='commentPostButton'>Post</button>
+          <span className="error-message" id="errorMessage"></span>
+        </div>
+
+
 
       </div>
     </Fragment>
