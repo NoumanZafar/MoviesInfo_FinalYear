@@ -55,14 +55,14 @@ body {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.5); /* Translucent white background for inputs */
+    background-color: rgba(255, 255, 255, 0.5); 
 }
 
 .login-form button,
 .registration-form button {
     width: 50%;
     padding: 10px;
-    background-color: blue; /* Green button color */
+    background-color: blue;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -73,10 +73,10 @@ body {
 
 .login-form button:hover,
 .registration-form button:hover {
-    background-color: darkblue; /* Darker green on hover */
+    background-color: darkblue; 
 }
 
 .error {
-    color: #e53935; /* Red error message */
+    color: #e53935;
     margin-top: 10px;
 }

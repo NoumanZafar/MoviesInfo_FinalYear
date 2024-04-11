@@ -255,7 +255,7 @@ const Details = () => {
   // className={toggle ? 'mainBgColor' : 'secondaryBgColor'}
   return (
     <Fragment>
-      <div>
+      <div className='topContainer'>
         <div className='generalDetails'>
           {Array.isArray(moviesData) && moviesData.length > 0 && moviesData.map((movie) => (
             <Fragment key={movie.movieId}>
@@ -358,7 +358,7 @@ const Details = () => {
 
         {Array.isArray(clipData) && clipData.length > 0 && (
           <div>
-            <h2 className='clipsHeading'>Clips</h2>
+            <h2 className='clipsHeading'>Related Clips</h2>
             <div className="clipsSlider">
               {isScrollingRequiredClips && (
                 <button onClick={() => slideLeft(clipsSliderRef)}>&#60;</button>

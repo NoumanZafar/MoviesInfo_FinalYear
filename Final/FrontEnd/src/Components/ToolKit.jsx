@@ -69,6 +69,12 @@ const ToolKit = () => {
             alert('Please select a movie.');
             return;
         }
+
+        if (!clipURL) {
+            alert('Clip URL is required.');
+            return;
+        }
+
         try {
             const response = await axios.post(baseApi + '/clips/addClips', { selectedMovieId, clipURL });
             if (response.status === 200) {
@@ -132,8 +138,8 @@ const ToolKit = () => {
 
     return (
         <Fragment>
-            <div>
-                <div>
+            <div className='mainContaoner'>
+                <div className='addMovie'>
                     <h1>Add Movie</h1>
                     <form onSubmit={addMovie} id='addMovieForm'>
                         <label>Title:</label>
@@ -155,7 +161,7 @@ const ToolKit = () => {
                     </form>
                 </div>
 
-                <div>
+                <div className='addPeople'>
                     <h1>Add People</h1>
                     <form onSubmit={addPeople} id='addPeopleForm'>
                         <label>Name:</label>
@@ -171,7 +177,7 @@ const ToolKit = () => {
                     </form>
                 </div>
 
-                <div>
+                <div className='controls'>
                     <h1>Controls</h1>
                     <form id='addControlsForm'>
                         <div>
@@ -185,14 +191,12 @@ const ToolKit = () => {
                         </div>
 
                         <div>
-                            <h3>Clips</h3>
                             <label>Clip URL:</label>
                             <input type="text" onChange={(e) => setClipURL(e.target.value)} required />
                             <button type="submit" onClick={addClip}>Add Clip</button>
                         </div>
 
                         <div>
-                            <h3>People</h3>
                             <label>Person:</label>
                             <select onChange={(e) => setSelectedPersonId(e.target.value)}>
                                 <option value="">Select a Person</option>
