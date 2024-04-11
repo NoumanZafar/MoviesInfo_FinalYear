@@ -8,7 +8,7 @@ import ToolKit from './ToolKit';
 
 export const Container = React.createContext()
 const Navbar = () => {
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(false);
     const [inputValue, setInputValue] = useState('')
 
     const onClickLogout = () => {

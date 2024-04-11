@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.LoginRegistration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login,
+.registration {
+    margin: 0 20px;
+    border: solid 2px black;
+}
+
+.login h1,
+.registration h1 {
+    text-align: center;
+    color: black;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+.login-form button,
+.registration-form button {
+    display: block;
+    margin: 0 auto;
+}
+
+.login-form,
+.registration-form {
+    width: 300px;
+    padding: 20px;
+    padding-right: 40px;
+    
+    border-radius: 8px;
+   
+}
+
+.login-form label,
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.login-form input,
+.registration-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5); /* Translucent white background for inputs */
+}
+
+.login-form button,
+.registration-form button {
+    width: 50%;
+    padding: 10px;
+    background-color: blue; /* Green button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-form button:hover,
+.registration-form button:hover {
+    background-color: darkblue; /* Darker green on hover */
+}
+
+.error {
+    color: #e53935; /* Red error message */
+    margin-top: 10px;
+}
