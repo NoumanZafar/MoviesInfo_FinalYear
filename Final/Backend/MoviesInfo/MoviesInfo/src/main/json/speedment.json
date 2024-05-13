@@ -14,8 +14,10 @@
         "port" : 3306,
         "schemas" : [
           {
+            "expanded" : true,
             "tables" : [
               {
+                "expanded" : true,
                 "foreignKeys" : [
                   {
                     "expanded" : false,
@@ -36,7 +38,6 @@
                     "enabled" : true
                   }
                 ],
-                "expanded" : true,
                 "primaryKeyColumns" : [
                   {
                     "expanded" : true,
@@ -84,8 +85,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "autoIncrement" : true,
                     "name" : "CLIP_ID",
@@ -117,6 +118,7 @@
                 "enabled" : true
               },
               {
+                "expanded" : true,
                 "foreignKeys" : [
                   {
                     "expanded" : false,
@@ -155,7 +157,6 @@
                     "enabled" : true
                   }
                 ],
-                "expanded" : true,
                 "primaryKeyColumns" : [
                   {
                     "expanded" : true,
@@ -217,8 +218,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "name" : "MOVIE_ID",
                     "id" : "MOVIE_ID",
@@ -227,8 +228,8 @@
                   },
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "name" : "PERSON_ID",
                     "id" : "PERSON_ID",
@@ -271,8 +272,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "autoIncrement" : true,
                     "name" : "MOVIE_ID",
@@ -361,8 +362,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "autoIncrement" : true,
                     "name" : "PERSON_ID",
@@ -398,6 +399,7 @@
                 "id" : "people"
               },
               {
+                "expanded" : true,
                 "foreignKeys" : [
                   {
                     "expanded" : false,
@@ -434,7 +436,6 @@
                     "id" : "rating_ibfk_1"
                   }
                 ],
-                "expanded" : true,
                 "primaryKeyColumns" : [
                   {
                     "expanded" : true,
@@ -492,8 +493,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "name" : "USER_ID",
                     "id" : "USER_ID",
@@ -501,8 +502,8 @@
                   },
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "name" : "MOVIE_ID",
                     "id" : "MOVIE_ID",
@@ -521,6 +522,7 @@
                 "id" : "rating"
               },
               {
+                "expanded" : true,
                 "foreignKeys" : [
                   {
                     "expanded" : false,
@@ -557,7 +559,6 @@
                     "id" : "reviews_ibfk_1"
                   }
                 ],
-                "expanded" : true,
                 "primaryKeyColumns" : [
                   {
                     "expanded" : true,
@@ -617,8 +618,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "autoIncrement" : true,
                     "name" : "REVIEW_ID",
@@ -699,8 +700,8 @@
                 "columns" : [
                   {
                     "databaseType" : "java.lang.Integer",
-                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "expanded" : true,
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
                     "nullable" : false,
                     "autoIncrement" : true,
                     "name" : "USER_ID",
@@ -736,7 +737,6 @@
                 "id" : "users"
               }
             ],
-            "expanded" : true,
             "name" : "movies_database",
             "id" : "movies_database",
             "enabled" : true

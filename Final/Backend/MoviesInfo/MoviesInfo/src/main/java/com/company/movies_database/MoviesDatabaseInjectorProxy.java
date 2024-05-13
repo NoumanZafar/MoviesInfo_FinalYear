@@ -43,7 +43,7 @@ public final class MoviesDatabaseInjectorProxy implements InjectorProxy {
     public Object invoke(
             Method method,
             Object obj,
-            Object... args) throws InvocationTargetException, IllegalArgumentException, IllegalAccessException {
+            Object... args) throws InvocationTargetException, IllegalAccessException, IllegalArgumentException {
         return method.invoke(obj, args);
     }
 }
